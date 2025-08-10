@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
 from pydantic import Extra
 
 class Settings(BaseSettings):
@@ -12,6 +12,35 @@ class Settings(BaseSettings):
 
     MONGODB_URL: str
     MONGODB_DATABASE: str
+
+    POSTGRES_USERNAME: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_HOST: str
+    POSTGRES_PORT: int
+    POSTGRES_DB: str
+    
+    # ==========================LLM Config========================
+    GENERATION_BACKEND: str = "COHERE"
+    EMBEDDING_BACKEND: str = "COHERE"
+
+    OPENAI_API_KEY: str
+    OPENAI_API_URL: str
+    COHERE_API_KEY: str 
+
+    GENERATION_MODEL_ID: str = None 
+    EMBEDDING_MODEL_ID: str = None
+    EMBEDDING_MODEL_SIZE: int = None
+
+    INPUT_DEFAULT_MAX_CHARACTERS: int = None
+    GENERATION_DEFAULT_MAX_TOKENS: int = None
+    GENERATION_DEFAULT_TEMPERATURE: float = None
+
+    VECTOR_DB_BACKEND: str 
+    VECTOR_DB_PATH: str
+    VECTOR_DB_DISTANCE_METHOD: str = None
+
+    DEFAULT_LANG : str = "en"
+    PRIMARY_LANG : str = "en"
 
     class Config:
         env_file = ".env"

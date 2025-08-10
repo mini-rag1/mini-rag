@@ -8,3 +8,9 @@ langchain == 0.3.19
 PyMuPDF == 1.25.3
 motor == 2.5.0
 openai == 1.70.0
+cohere == 5.14.2
+qdrant-client == 1.13.3
+sqlalchemy == 2.0.42
+asyncpg == 0.30.0
+alembic 
+psycopg2
