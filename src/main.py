@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import logging
 from routes import base, data, nlp  # Ensure nlp is imported
-from motor.motor_asyncio import AsyncIOMotorClient
+# from motor.motor_asyncio import AsyncIOMotorClient
 from helpers.config import get_settings
 from models.ProjectModel import ProjectModel
 from stores.llm.LLMProviderFactory import LLMProviderFactory
@@ -29,7 +29,7 @@ async def startup_span():
     # app.db_client = app.mongo_conn[settings.MONGODB_DATABASE] # Connect to the database
     app.db_client = sessionmaker(
         app.db_engine,
-        class_= AsyncSession
+        class_= AsyncSession,
         expire_on_commit = False
     )
     logging.info("Connected to the database.")

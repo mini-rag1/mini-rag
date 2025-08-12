@@ -14,3 +14,4 @@ sqlalchemy == 2.0.42
 asyncpg == 0.30.0
 alembic 
 psycopg2
+langchain_community

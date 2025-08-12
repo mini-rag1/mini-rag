@@ -3,6 +3,7 @@ from models.db_schemas.minirag.schemes import Project,DataChunk
 from stores.llm.LLMEnums import LLMEnums,DocumentTypeEnum, CohereEnums  # Ensure this is imported
 from typing import List
 import json
+import logging
 
 class NLPController(BaseController):
     def __init__(self , vectordb_client,generation_client,embedding_client,template_parser = None):
@@ -12,6 +13,9 @@ class NLPController(BaseController):
         self.generation_client = generation_client
         self.embedding_client = embedding_client
         self.template_parser = template_parser
+        
+        # Set up logger
+        self.logger = logging.getLogger(__name__)
 
     def create_collection_name(self,project_id: str):
         return f"collection_{project_id}".strip()
@@ -33,18 +37,43 @@ class NLPController(BaseController):
         collection_name = self.create_collection_name(project_id=project.project_id)
 
         # Step 2: Prepare vectors, payloads, and record IDs
-        vectors = [
-            self.embedding_client.embed_text(
-                text=chunk.chunk_text,
-                document_type=DocumentTypeEnum.DOCUMENT.value
-            )
-            for chunk in chunks
-        ]
-        payloads = [
-            {"metadata": chunk.chunk_metadata, "text": chunk.chunk_text}
-            for chunk in chunks
-        ]
-        record_ids = chunks_ids if chunks_ids else [None] * len(chunks)
+        vectors = []
+        payloads = []
+        
+        # Process embeddings in smaller batches to avoid rate limits
+        batch_size = 5  # Process 5 chunks at a time
+        import time
+        
+        for i in range(0, len(chunks), batch_size):
+            batch_chunks = chunks[i:i+batch_size]
+            self.logger.info(f"Processing batch {i//batch_size + 1}/{(len(chunks) + batch_size - 1)//batch_size}")
+            
+            # Process each chunk in the batch
+            batch_vectors = []
+            for chunk in batch_chunks:
+                embedding = self.embedding_client.embed_text(
+                    text=chunk.chunk_text,
+                    document_type=DocumentTypeEnum.DOCUMENT.value
+                )
+                if embedding:
+                    batch_vectors.append(embedding)
+                else:
+                    self.logger.warning(f"Failed to embed chunk: {chunk.chunk_text[:50]}...")
+            
+            vectors.extend(batch_vectors)
+            
+            # Add corresponding payloads
+            batch_payloads = [
+                {"metadata": chunk.chunk_metadata, "text": chunk.chunk_text}
+                for chunk in batch_chunks[:len(batch_vectors)]
+            ]
+            payloads.extend(batch_payloads)
+            
+            # Add a small delay between batches to avoid hitting rate limits
+            if i + batch_size < len(chunks):
+                time.sleep(1)
+        
+        record_ids = chunks_ids if chunks_ids else [None] * len(vectors)
 
         # Step 3: Create collection if not exists or reset if required
         _ = self.vectordb_client.create_collection(
@@ -105,7 +134,7 @@ class NLPController(BaseController):
         documents_prompts = "\n".join([
             self.template_parser.get("rag","document_prompt", {
                 "doc_num":idx + 1,
-                "chunk_text": doc.text,
+                "chunk_text": self.generation_client.process_text(doc.text),
             })
             for idx, doc in enumerate(retrieved_docs)
         ])

@@ -1,2 +1,17 @@
-mongodb
+# Data directories
+mongodata/*
+pgdata/*
+pgdata_backup_*/*
+
+# Keep .gitkeep files
+!mongodata/.gitkeep
+!pgdata/.gitkeep
+
+# Environment variables
 .env
+
+# Logs
+*.log
+
+# Other docker-related files that shouldn't be committed
+docker-compose.override.yml

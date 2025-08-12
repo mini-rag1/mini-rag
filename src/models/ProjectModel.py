@@ -2,7 +2,6 @@ from .BaseDataModel import BaseDataModel
 from .db_schemas import Project
 from .enums.DataBaseEnum import DataBaseEnum
 import logging
-from bson import ObjectId
 from sqlalchemy import select, insert, update, delete
 from sqlalchemy import func
 
@@ -25,19 +24,20 @@ class ProjectModel(BaseDataModel):
         async with self.db_client() as session:
             async with session.begin():
                 session.add(project)
-
-            await session.commit()
-            await session.refresh(project)  # Ensure the project is refreshed with the latest data
+                await session.flush()
+                await session.refresh(project)  # Ensure the project is refreshed with the latest data
+                return project
 
     async def get_project_or_create_one(self, project_id: int):
         async with self.db_client() as session:
             async with session.begin():
                 query = select(Project).where(Project.project_id == project_id)
-                project = query.scalar_one_or_none()
+                result = await session.execute(query)
+                project = result.scalar_one_or_none()
 
                 if project is None:
                     project_rec = Project(project_id=project_id)
-                    project = self.create_project(project_rec)
+                    project = await self.create_project(project_rec)
                     return project
                 else:
                     return project

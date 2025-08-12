@@ -84,22 +84,45 @@ class CohereProvider(LLMInterface):
         if document_type == DocumentTypeEnum.QUERY.value:
             input_type = CohereEnums.QUERY.value
 
-        response = self.client.embed(
-            model=self.embedding_model_id,
-            texts=[self.process_text(text)],
-            input_type=input_type,
-            embedding_types=["float"]
-        )
-
-        if not response or not response.embeddings or not response.embeddings.float_:
-            self.logger.error("Error while embedding text with Cohere.")
-            return None
+        # Add retry logic with exponential backoff
+        max_retries = 5
+        base_delay = 1  # Start with 1 second delay
         
-        return response.embeddings.float_[0]
+        for attempt in range(max_retries):
+            try:
+                response = self.client.embed(
+                    model=self.embedding_model_id,
+                    texts=[self.process_text(text)],
+                    input_type=input_type,
+                    embedding_types=["float"]
+                )
+                
+                if not response or not response.embeddings or not response.embeddings.float_:
+                    self.logger.error("Error while embedding text with Cohere.")
+                    return None
+                
+                return response.embeddings.float_[0]
+                
+            except Exception as e:
+                # Check if it's a rate limit error
+                if hasattr(e, 'status_code') and e.status_code == 429:
+                    # Calculate exponential backoff with jitter
+                    import random
+                    import time
+                    
+                    delay = (2 ** attempt) * base_delay + random.uniform(0, 1)
+                    self.logger.warning(f"Rate limit hit. Retrying in {delay:.2f} seconds... (Attempt {attempt+1}/{max_retries})")
+                    time.sleep(delay)
+                else:
+                    self.logger.error(f"Error embedding text: {str(e)}")
+                    return None
+        
+        self.logger.error(f"Failed to embed text after {max_retries} attempts due to rate limiting")
+        return None
     
     def construct_prompt(self, prompt: str, role: str):
         # Ensure the role is lowercase to match Cohere's API requirements
         return {
             "role": role.lower(),  # Convert role to lowercase
-            "content": self.process_text(prompt)
+            "content": prompt
         }
