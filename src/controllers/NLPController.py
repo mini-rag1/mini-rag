@@ -39,8 +39,8 @@ class NLPController(BaseController):
 
         #step 2: mange items
         texts = [chunk.chunk_text for chunk in chunks]
-        metadata = [chunk.metadata for chunk in chunks]
-        vectors = self.embedding_client.embed_texts(texts=texts, document_type=DocumentTypeEnum.DOCUMENT.value)
+        metadata = [chunk.chunk_metadata for chunk in chunks]
+        vectors = self.embedding_client.embed_text(text=texts, document_type=DocumentTypeEnum.DOCUMENT.value)
 
         # Step 3: Create collection if not exists or reset if required
         _ = await self.vectordb_client.create_collection(
@@ -52,10 +52,10 @@ class NLPController(BaseController):
         # Step 4: Insert data into the vector database
         _ = await self.vectordb_client.insert_many(
             collection_name=collection_name,
-            texts=texts,
+            text=texts,
             metadata=metadata,
-            vectors=vectors,
-            record_ids=chunks_ids
+            vector=vectors,
+            record_id=chunks_ids
         )
 
         return True
@@ -65,7 +65,7 @@ class NLPController(BaseController):
         collection_name = await self.create_collection_name(project_id=project.project_id)
         
         # Step 2: Get text embedding vector
-        vectors = self.embedding_client.embed_texts(texts=[text], 
+        vectors = self.embedding_client.embed_text(text=[text], 
                                                   document_type=DocumentTypeEnum.QUERY.value)
         
         if not vectors or len(vectors) == 0:
@@ -99,17 +99,17 @@ class NLPController(BaseController):
             return answer , full_prompt, chat_history
             
         #construct llm prompt
-        system_prompt = await self.template_parser.get("rag","system_prompt")
+        system_prompt = self.template_parser.get("rag","system_prompt")
 
         documents_prompts = "\n".join([
-            await self.template_parser.get("rag","document_prompt", {
+            self.template_parser.get("rag","document_prompt", {
                 "doc_num":idx + 1,
-                "chunk_text": await self.generation_client.process_text(doc.text),
+                "chunk_text": self.generation_client.process_text(doc.text),
             })
             for idx, doc in enumerate(retrieved_docs)
         ])
 
-        footer_prompt = await self.template_parser.get("rag","footer_prompt")
+        footer_prompt = self.template_parser.get("rag","footer_prompt")
 
         chat_history = [
             self.generation_client.construct_prompt(
@@ -120,7 +120,7 @@ class NLPController(BaseController):
 
         full_prompt = "\n\n".join([documents_prompts, footer_prompt])
 
-        answer = await self.generation_client.generate_text(
+        answer = self.generation_client.generate_text(
             prompt = full_prompt,
             chat_history = chat_history,
         )
