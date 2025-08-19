@@ -2,6 +2,7 @@ from ..LLMInterface import LLMInterface
 from ..LLMEnums import CohereEnums, DocumentTypeEnum
 from cohere import ClientV2
 import logging
+from typing import List,Union
 
 class CohereProvider(LLMInterface):
     def __init__(self, api_key: str,
@@ -71,11 +72,14 @@ class CohereProvider(LLMInterface):
         return text[:self.default_input_max_characters].strip()
         
     
-    def embed_text(self, text, document_type:str):
+    def embed_text(self, text:Union[str,List[str]], document_type:str):
         if not self.client:
             self.logger.error("Cohere client not initialized.")
             return None
-        
+
+        if isinstance(text, str):
+            text = [text]
+
         if not self.embedding_model_id:
             self.logger.error("Embedding model ID not set.")
             return None
@@ -92,7 +96,7 @@ class CohereProvider(LLMInterface):
             try:
                 response = self.client.embed(
                     model=self.embedding_model_id,
-                    texts=[self.process_text(text)],
+                    texts=[self.process_text(t) for t in text],
                     input_type=input_type,
                     embedding_types=["float"]
                 )
@@ -101,7 +105,7 @@ class CohereProvider(LLMInterface):
                     self.logger.error("Error while embedding text with Cohere.")
                     return None
                 
-                return response.embeddings.float_[0]
+                return [f for f in response.embeddings.float]
                 
             except Exception as e:
                 # Check if it's a rate limit error

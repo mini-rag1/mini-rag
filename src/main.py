@@ -38,7 +38,7 @@ async def startup_span():
     logging.info("Initialized ProjectModel.")
 
     llm_provider_factory = LLMProviderFactory(config=settings)
-    vectordb_provider_factory = VectorDBProviderFactory(config=settings)
+    vectordb_provider_factory = VectorDBProviderFactory(config=settings, db_client=app.db_client)
 
     # generation client
     app.generation_client = llm_provider_factory.create(settings.GENERATION_BACKEND)
@@ -55,7 +55,7 @@ async def startup_span():
 
     # vectordb client
     app.vectordb_client = vectordb_provider_factory.create(settings.VECTOR_DB_BACKEND)
-    app.vectordb_client.connect()
+    await app.vectordb_client.connect()
     logging.info("Connected to VectorDB client.")
 
     #template parser
@@ -65,7 +65,7 @@ async def startup_span():
 async def shutdown_span():
     # app.mongo_conn.close()
     app.db_engine.dispose()
-    app.vectordb_client.disconnect()
+    await app.vectordb_client.disconnect()
 
 app.on_event("startup")(startup_span)
 app.on_event("shutdown")(shutdown_span)

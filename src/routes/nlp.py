@@ -5,6 +5,7 @@ from models.ProjectModel import ProjectModel
 from models.ChunkModel import ChunkModel
 from controllers import NLPController
 from models import ResponseSignal
+from tqdm.auto import tqdm
 
 import logging
 
@@ -45,6 +46,19 @@ async def index_project(request: Request, project_id: int, push_request: PushReq
     inserted_items_count = 0
     idx = 0
 
+    #creating the collection if not exist
+    collection_name = await nlp_controller.create_collection_name(project_id = project.project_id)
+
+    _ = await request.app.vectordb_client.create_collection(collection_name=collection_name,
+                                                            embedding_dimension=request.app.embedding_client.embedding_size,
+                                                            do_reset=push_request.do_reset)
+
+    #setup batching
+    total_chunks_count = await chunk_model.get_total_chunks_count(project_id=project.project_id)
+    pbar = tqdm(total = total_chunks_count,
+                desc = "Vector Indexing Progress",
+                position = 0)
+
     while has_records:
         page_chunks = await chunk_model.get_project_chunks(project_id=project_id, page_no=page_no)
         if len(page_chunks):
@@ -57,13 +71,14 @@ async def index_project(request: Request, project_id: int, push_request: PushReq
         chunks_ids =  list(range(idx, idx + len(page_chunks)))
         idx += len(page_chunks)
         
-        is_inserted = nlp_controller.index_into_vector_db(
+        is_inserted = await nlp_controller.index_into_vector_db(
             project=project,
             chunks=page_chunks,
             do_reset=push_request.do_reset,
             chunks_ids=chunks_ids
         )
 
+        pbar.update(len(page_chunks))
         inserted_items_count += len(page_chunks)
         
     return JSONResponse(
@@ -89,7 +104,7 @@ async def get_project_index_info(request: Request, project_id: int):
         embedding_client=request.app.embedding_client,
     )
 
-    collection_info = nlp_controller.get_vector_db_collection_info(
+    collection_info = await nlp_controller.get_vector_db_collection_info(
         project=project
     )
 
@@ -117,11 +132,11 @@ async def search_index(request: Request, project_id: int, search_request: Search
         template_parser = request.app.template_parser
     )
 
-    collection_name = nlp_controller.create_collection_name(project_id=project.project_id)
+    collection_name = await nlp_controller.create_collection_name(project_id=project.project_id)
     logger.info(f"Searching collection: {collection_name}")
 
     # Check if the collection exists using get_vector_db_collection_info
-    collection_info = nlp_controller.get_vector_db_collection_info(project=project)
+    collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
     if not collection_info:
         logger.error(f"Collection {collection_name} does not exist.")
         return JSONResponse(
@@ -132,7 +147,7 @@ async def search_index(request: Request, project_id: int, search_request: Search
             status_code=status.HTTP_400_BAD_REQUEST
         )
 
-    results = nlp_controller.search_vector_db_collection(
+    results = await nlp_controller.search_vector_db_collection(
         project=project,
         text=search_request.text,
         limit=search_request.limit
@@ -171,7 +186,7 @@ async def answer_rag(request : Request, project_id: int,search_request : SearchR
         template_parser = request.app.template_parser
     )
 
-    answer , full_prompt, chat_history = nlp_controller.answer_rag_question(
+    answer , full_prompt, chat_history = await nlp_controller.answer_rag_question(
         project=project,
         query = search_request.text,
         limit=search_request.limit

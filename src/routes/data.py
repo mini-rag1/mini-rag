@@ -13,6 +13,7 @@ from models.AssetModel import AssetModel
 from models.db_schemas.minirag.schemes import DataChunk
 from models.db_schemas.minirag.schemes import Asset
 from models.enums.AssetTypeEnum import AssetTypeEnum
+from controllers import NLPController
 
 logger = logging.getLogger('uvicorn.error')
 
@@ -111,6 +112,13 @@ async def process_endpoint(request: Request,
         project_id=project_id
     )
 
+    nlp_controller = NLPController(
+        vectordb_client = request.app.vectordb_client,
+        generation_client = request.app.generation_client,
+        embedding_client = request.app.embedding_client,
+        template_parser = request.app.template_parser
+    )
+
     asset_model = await AssetModel.create_instance(
             db_client=request.app.db_client
         )
@@ -175,12 +183,16 @@ async def process_endpoint(request: Request,
                     )
 
     if do_reset == 1:
+        #delete associated vectors collection
+        collection_name = await nlp_controller.create_collection_name(project_id=project.project_id)
+        _ = await request.app.vectordb_client.delete_collection(collection_name=collection_name)
+
+        #delete associated chunks
         _ = await chunk_model.delete_chunks_by_project_id(
-            project_id=project_id
+            project_id=project.project_id
         )
 
     for asset_id, file_id in project_files_ids.items():
-
         file_path = ProjectController().get_project_path(project_id=project_id) + f"/{file_id}"
         logger.info(f"Attempting to read file content from: {file_path}")
 

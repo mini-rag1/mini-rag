@@ -17,109 +17,79 @@ class NLPController(BaseController):
         # Set up logger
         self.logger = logging.getLogger(__name__)
 
-    def create_collection_name(self,project_id: str):
-        return f"collection_{project_id}".strip()
+    async def create_collection_name(self,project_id: str):
+        return  f"collection_{project_id}".strip()
     
-    def reset_vector_db_collection(self,project: Project):
-        collection_name = self.create_collection_name(project_id = project.project_id)
-        return self.vectordb_client.delete_collection(collection_name = collection_name)
-    
-    def get_vector_db_collection_info(self,project: Project):
-        collection_name = self.create_collection_name(project_id = project.project_id)
-        collection_info =  self.vectordb_client.get_collection_info(collection_name = collection_name)
+    async def reset_vector_db_collection(self,project: Project):
+        collection_name = await self.create_collection_name(project_id = project.project_id)
+        return await self.vectordb_client.delete_collection(collection_name = collection_name)
+
+    async def get_vector_db_collection_info(self,project: Project):
+        collection_name = await self.create_collection_name(project_id = project.project_id)
+        collection_info =  await self.vectordb_client.get_collection_info(collection_name = collection_name)
 
         return json.loads(
             json.dumps(collection_info,default = lambda x : x.__dict__)
         )
 
-    def index_into_vector_db(self, project, chunks, do_reset=False, chunks_ids=None):
+    async def index_into_vector_db(self, project:Project, chunks: List[DataChunk], 
+                                   do_reset: bool =False, chunks_ids: List[int] = None):
         # Step 1: Get collection name
-        collection_name = self.create_collection_name(project_id=project.project_id)
+        collection_name = await self.create_collection_name(project_id=project.project_id)
 
-        # Step 2: Prepare vectors, payloads, and record IDs
-        vectors = []
-        payloads = []
-        
-        # Process embeddings in smaller batches to avoid rate limits
-        batch_size = 5  # Process 5 chunks at a time
-        import time
-        
-        for i in range(0, len(chunks), batch_size):
-            batch_chunks = chunks[i:i+batch_size]
-            self.logger.info(f"Processing batch {i//batch_size + 1}/{(len(chunks) + batch_size - 1)//batch_size}")
-            
-            # Process each chunk in the batch
-            batch_vectors = []
-            for chunk in batch_chunks:
-                embedding = self.embedding_client.embed_text(
-                    text=chunk.chunk_text,
-                    document_type=DocumentTypeEnum.DOCUMENT.value
-                )
-                if embedding:
-                    batch_vectors.append(embedding)
-                else:
-                    self.logger.warning(f"Failed to embed chunk: {chunk.chunk_text[:50]}...")
-            
-            vectors.extend(batch_vectors)
-            
-            # Add corresponding payloads
-            batch_payloads = [
-                {"metadata": chunk.chunk_metadata, "text": chunk.chunk_text}
-                for chunk in batch_chunks[:len(batch_vectors)]
-            ]
-            payloads.extend(batch_payloads)
-            
-            # Add a small delay between batches to avoid hitting rate limits
-            if i + batch_size < len(chunks):
-                time.sleep(1)
-        
-        record_ids = chunks_ids if chunks_ids else [None] * len(vectors)
+        #step 2: mange items
+        texts = [chunk.chunk_text for chunk in chunks]
+        metadata = [chunk.metadata for chunk in chunks]
+        vectors = self.embedding_client.embed_texts(texts=texts, document_type=DocumentTypeEnum.DOCUMENT.value)
 
         # Step 3: Create collection if not exists or reset if required
-        _ = self.vectordb_client.create_collection(
+        _ = await self.vectordb_client.create_collection(
             collection_name=collection_name,
             embedding_dimension=self.embedding_client.embedding_size,
             do_reset=do_reset
         )
 
         # Step 4: Insert data into the vector database
-        _ = self.vectordb_client.insert_many(
+        _ = await self.vectordb_client.insert_many(
             collection_name=collection_name,
+            texts=texts,
+            metadata=metadata,
             vectors=vectors,
-            payloads=payloads,
-            record_ids=record_ids
+            record_ids=chunks_ids
         )
 
         return True
 
-    def search_vector_db_collection(self,project: Project, text:str,limit:int = 10):
-        #step1 : get_collection name
-        collection_name = self.create_collection_name(project_id=project.project_id)
-
-        #step2 : get text embediign vector
-        vector = self.embedding_client.embed_text(text=text, 
-                                                 document_type=DocumentTypeEnum.QUERY.value)
-
-        if not vector or len(vector) == 0:
+    async def search_vector_db_collection(self, project: Project, text: str, limit: int = 10):
+        # Step 1: Get collection name
+        collection_name = await self.create_collection_name(project_id=project.project_id)
+        
+        # Step 2: Get text embedding vector
+        vectors = self.embedding_client.embed_texts(texts=[text], 
+                                                  document_type=DocumentTypeEnum.QUERY.value)
+        
+        if not vectors or len(vectors) == 0:
             return False
-
-        #step3 : search vector db collection
-        results = self.vectordb_client.search_by_vector(
+        
+        query_vector = vectors[0]
+        
+        # Step 3: Search vector db collection
+        results = await self.vectordb_client.search_by_vector(
             collection_name=collection_name,
-            vector=vector,
+            vector=query_vector,
             limit=limit
         )
-
+        
         if not results or len(results) == 0:
             return False
-
+        
         return results
-    
-    def answer_rag_question(self,project: Project, query: str,limit : int = 10):
+
+    async def answer_rag_question(self,project: Project, query: str,limit : int = 10):
         answer , full_prompt, chat_history = None, None, None
 
         #step 1 : retrieve documents from vector db
-        retrieved_docs = self.search_vector_db_collection(
+        retrieved_docs = await self.search_vector_db_collection(
             project=project,
             text=query,
             limit=limit
@@ -129,17 +99,17 @@ class NLPController(BaseController):
             return answer , full_prompt, chat_history
             
         #construct llm prompt
-        system_prompt = self.template_parser.get("rag","system_prompt")
+        system_prompt = await self.template_parser.get("rag","system_prompt")
 
         documents_prompts = "\n".join([
-            self.template_parser.get("rag","document_prompt", {
+            await self.template_parser.get("rag","document_prompt", {
                 "doc_num":idx + 1,
-                "chunk_text": self.generation_client.process_text(doc.text),
+                "chunk_text": await self.generation_client.process_text(doc.text),
             })
             for idx, doc in enumerate(retrieved_docs)
         ])
 
-        footer_prompt = self.template_parser.get("rag","footer_prompt")
+        footer_prompt = await self.template_parser.get("rag","footer_prompt")
 
         chat_history = [
             self.generation_client.construct_prompt(
@@ -150,7 +120,7 @@ class NLPController(BaseController):
 
         full_prompt = "\n\n".join([documents_prompts, footer_prompt])
 
-        answer = self.generation_client.generate_text(
+        answer = await self.generation_client.generate_text(
             prompt = full_prompt,
             chat_history = chat_history,
         )
