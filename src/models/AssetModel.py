@@ -4,7 +4,6 @@ from .enums.DataBaseEnum import DataBaseEnum
 from sqlalchemy import select, insert, update, delete
 
 class AssetModel(BaseDataModel):
-
     def __init__(self, db_client: object):
         super().__init__(db_client=db_client)
         self.db_client = db_client

@@ -7,7 +7,7 @@ aiofiles == 24.1.0
 langchain == 0.3.27
 PyMuPDF == 1.25.3
 motor == 2.5.0
-openai == 1.70.0
+openai == 1.100.2
 cohere == 5.14.2
 qdrant-client == 1.13.3
 sqlalchemy == 2.0.42
@@ -17,3 +17,10 @@ psycopg2 == 2.9.10
 langchain_community == 0.3.27
 pgvector == 0.4.1
 nltk == 3.9.1
+
+#monitoring ,metrics
+prometheus-client == 0.22.1
+starlette-exporter == 0.23.0
+
+#health checks
+fastapi-health == 0.4.0
