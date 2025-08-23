@@ -10,10 +10,12 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from stores.llm.templates.template_parser import TemplateParser
 from sqlalchemy.ext.asyncio import create_async_engine,AsyncSession
 from sqlalchemy.orm import sessionmaker
+from utils import setup_metrics
 
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
+setup_metrics(app)
 
 async def startup_span():
     logging.info("Starting application setup...")
