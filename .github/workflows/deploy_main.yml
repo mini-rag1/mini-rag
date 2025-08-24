@@ -11,21 +11,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SSH_MAIN_HOST_IP }}
           username: github_user
           key: ${{ secrets.SSH_MAIN_PRIVATE_KEY }}
           script: |
             cd /home/github_user/workspace/mini-rag
-            git checkout main
+            git checkout develop
             git pull
             sudo systemctl restart minirag.service
             echo "Waiting..."
-            sleep 5
+            sleep 20
 
             for i in {1..6}; do
               if ss -tuln | grep -q ':80'; then
