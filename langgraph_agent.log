@@ -1,0 +1,1821 @@
+2025-08-31 19:11:42,463 - INFO - Main execution started
+2025-08-31 19:12:19,877 - INFO - run_agent function entered
+2025-08-31 19:12:19,878 - INFO - get_agent function entered
+2025-08-31 19:12:19,881 - INFO - get_agent function exited
+2025-08-31 19:12:19,932 - INFO - call_model function entered
+2025-08-31 19:12:20,576 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:12:20,644 - INFO - call_model function exited
+2025-08-31 19:12:20,646 - INFO - should_continue function entered
+2025-08-31 19:12:20,647 - INFO - should_continue: returning 'tools'
+2025-08-31 19:12:20,650 - INFO - handle_tools function entered
+2025-08-31 19:12:20,655 - INFO - suggest_trips_tool entered
+2025-08-31 19:12:23,745 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:12:23,753 - INFO - suggest_trips_tool exited
+2025-08-31 19:12:23,757 - INFO - search_query_tool entered
+2025-08-31 19:12:23,766 - INFO - search_query_tool exited
+2025-08-31 19:12:23,773 - INFO - rag_process_tool entered
+2025-08-31 19:12:26,576 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 19:12:27,288 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 19:12:28,443 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:12:28,447 - INFO - rag_process_tool exited
+2025-08-31 19:12:28,449 - INFO - handle_tools function exited
+2025-08-31 19:12:28,452 - INFO - call_model function entered
+2025-08-31 19:12:29,315 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:12:29,319 - INFO - call_model function exited
+2025-08-31 19:12:29,320 - INFO - should_continue function entered
+2025-08-31 19:12:29,321 - INFO - should_continue: returning END
+2025-08-31 19:13:26,727 - INFO - Main execution started
+2025-08-31 19:13:52,807 - INFO - run_agent function entered
+2025-08-31 19:13:52,808 - INFO - get_agent function entered
+2025-08-31 19:13:52,812 - INFO - get_agent function exited
+2025-08-31 19:13:52,872 - INFO - call_model function entered
+2025-08-31 19:13:53,916 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:13:53,949 - INFO - call_model function exited
+2025-08-31 19:13:53,950 - INFO - should_continue function entered
+2025-08-31 19:13:53,951 - INFO - should_continue: returning 'tools'
+2025-08-31 19:13:53,954 - INFO - handle_tools function entered
+2025-08-31 19:13:53,962 - INFO - suggest_trips_tool entered
+2025-08-31 19:13:57,888 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:13:57,895 - INFO - suggest_trips_tool exited
+2025-08-31 19:13:57,897 - INFO - handle_tools function exited
+2025-08-31 19:13:57,901 - INFO - call_model function entered
+2025-08-31 19:13:58,482 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:13:58,486 - INFO - call_model function exited
+2025-08-31 19:13:58,487 - INFO - should_continue function entered
+2025-08-31 19:13:58,488 - INFO - should_continue: returning 'tools'
+2025-08-31 19:13:58,490 - INFO - handle_tools function entered
+2025-08-31 19:13:58,495 - INFO - rag_process_tool entered
+2025-08-31 19:14:02,357 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 19:14:03,093 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 19:14:04,495 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:14:04,499 - INFO - rag_process_tool exited
+2025-08-31 19:14:04,500 - INFO - handle_tools function exited
+2025-08-31 19:14:04,503 - INFO - call_model function entered
+2025-08-31 19:14:04,794 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 19:18:40,218 - INFO - Main execution started
+2025-08-31 19:19:31,781 - INFO - run_agent function entered
+2025-08-31 19:19:31,782 - INFO - get_agent function entered
+2025-08-31 19:19:31,785 - INFO - get_agent function exited
+2025-08-31 19:19:31,821 - INFO - call_model function entered
+2025-08-31 19:19:32,497 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:19:32,544 - INFO - call_model function exited
+2025-08-31 19:19:32,546 - INFO - should_continue function entered
+2025-08-31 19:19:32,548 - INFO - should_continue: returning 'tools'
+2025-08-31 19:19:32,552 - INFO - handle_tools function entered
+2025-08-31 19:19:32,555 - INFO - suggest_trips_tool entered
+2025-08-31 19:19:36,141 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:19:36,146 - INFO - suggest_trips_tool exited
+2025-08-31 19:19:36,149 - INFO - rag_process_tool entered
+2025-08-31 19:19:39,859 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 19:19:40,744 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 19:19:42,229 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:19:42,233 - INFO - rag_process_tool exited
+2025-08-31 19:19:42,236 - INFO - search_query_tool entered
+2025-08-31 19:19:42,240 - INFO - search_query_tool exited
+2025-08-31 19:19:42,243 - INFO - summarize_trip_tool entered
+2025-08-31 19:19:44,942 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:19:44,947 - INFO - summarize_trip_tool exited
+2025-08-31 19:19:44,949 - INFO - handle_tools function exited
+2025-08-31 19:19:44,957 - INFO - call_model function entered
+2025-08-31 19:19:45,193 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-31 19:19:45,195 - INFO - Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2025-08-31 19:19:51,947 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:19:51,950 - INFO - call_model function exited
+2025-08-31 19:19:51,951 - INFO - should_continue function entered
+2025-08-31 19:19:51,952 - INFO - should_continue: returning END
+2025-08-31 19:19:51,957 - INFO - run_agent function exited
+2025-08-31 19:19:52,008 - INFO - Main execution completed
+2025-08-31 19:24:40,090 - INFO - Main execution started
+2025-08-31 19:27:18,846 - INFO - run_agent function entered
+2025-08-31 19:27:18,847 - INFO - get_agent function entered
+2025-08-31 19:27:18,850 - INFO - get_agent function exited
+2025-08-31 19:27:18,894 - INFO - call_model function entered
+2025-08-31 19:27:19,664 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:27:19,729 - INFO - call_model function exited
+2025-08-31 19:27:19,731 - INFO - should_continue function entered
+2025-08-31 19:27:19,732 - INFO - should_continue: returning 'tools'
+2025-08-31 19:27:19,734 - INFO - handle_tools function entered
+2025-08-31 19:27:19,738 - INFO - suggest_trips_tool entered
+2025-08-31 19:27:23,264 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:27:23,269 - INFO - suggest_trips_tool exited
+2025-08-31 19:27:23,272 - INFO - search_query_tool entered
+2025-08-31 19:27:23,277 - INFO - search_query_tool exited
+2025-08-31 19:27:23,279 - INFO - rag_process_tool entered
+2025-08-31 19:27:26,372 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 19:27:27,117 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 19:27:28,539 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:27:28,542 - INFO - rag_process_tool exited
+2025-08-31 19:27:28,543 - INFO - handle_tools function exited
+2025-08-31 19:27:28,545 - INFO - call_model function entered
+2025-08-31 19:27:29,703 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:27:29,707 - INFO - call_model function exited
+2025-08-31 19:27:29,708 - INFO - should_continue function entered
+2025-08-31 19:27:29,708 - INFO - should_continue: returning END
+2025-08-31 19:27:29,714 - INFO - run_agent function exited
+2025-08-31 19:27:29,806 - INFO - Main execution completed
+2025-08-31 19:33:40,115 - INFO - Main execution started
+2025-08-31 19:34:45,150 - INFO - run_agent function entered
+2025-08-31 19:34:45,150 - INFO - get_agent function entered
+2025-08-31 19:34:45,153 - INFO - get_agent function exited
+2025-08-31 19:34:45,207 - INFO - call_model function entered
+2025-08-31 19:34:48,059 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:34:48,118 - INFO - call_model function exited
+2025-08-31 19:34:48,119 - INFO - should_continue function entered
+2025-08-31 19:34:48,120 - INFO - should_continue: returning 'tools'
+2025-08-31 19:34:48,122 - INFO - handle_tools function entered
+2025-08-31 19:34:48,125 - INFO - suggest_trips_tool entered
+2025-08-31 19:34:51,342 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:34:51,346 - INFO - suggest_trips_tool exited
+2025-08-31 19:34:51,347 - INFO - handle_tools function exited
+2025-08-31 19:34:51,350 - INFO - call_model function entered
+2025-08-31 19:34:51,940 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 19:34:51,945 - INFO - call_model function exited
+2025-08-31 19:34:51,947 - INFO - should_continue function entered
+2025-08-31 19:34:51,948 - INFO - should_continue: returning END
+2025-08-31 19:34:51,958 - INFO - run_agent function exited
+2025-08-31 19:34:52,009 - INFO - Main execution completed
+2025-08-31 21:15:40,687 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:15:43,475 - INFO - Main execution started
+2025-08-31 21:16:51,366 - INFO - run_agent function entered
+2025-08-31 21:16:51,368 - INFO - get_agent function entered
+2025-08-31 21:16:51,373 - INFO - get_agent function exited
+2025-08-31 21:16:51,556 - INFO - call_model function entered
+2025-08-31 21:16:52,067 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:16:52,073 - INFO - call_model function exited
+2025-08-31 21:16:52,075 - INFO - should_continue function entered
+2025-08-31 21:16:52,076 - INFO - should_continue: returning 'tools'
+2025-08-31 21:16:52,079 - INFO - handle_tools function entered
+2025-08-31 21:16:52,085 - INFO - suggest_trips_tool entered
+2025-08-31 21:16:56,311 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:16:56,315 - INFO - suggest_trips_tool exited
+2025-08-31 21:16:56,318 - INFO - rag_process_tool entered
+2025-08-31 21:17:01,501 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 21:17:02,783 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 21:17:03,786 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:17:03,797 - INFO - rag_process_tool exited
+2025-08-31 21:17:03,808 - INFO - handle_tools function exited
+2025-08-31 21:17:03,847 - INFO - call_model function entered
+2025-08-31 21:17:05,723 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:17:05,727 - INFO - call_model function exited
+2025-08-31 21:17:05,728 - INFO - should_continue function entered
+2025-08-31 21:17:05,729 - INFO - should_continue: returning END
+2025-08-31 21:17:05,742 - INFO - run_agent function exited
+2025-08-31 21:17:05,973 - INFO - Main execution completed
+2025-08-31 21:21:34,793 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:02,759 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:05,527 - INFO - Main execution started
+2025-08-31 21:23:40,344 - INFO - run_agent function entered
+2025-08-31 21:23:40,345 - INFO - get_agent function entered
+2025-08-31 21:23:40,348 - INFO - get_agent function exited
+2025-08-31 21:23:40,387 - INFO - call_model function entered
+2025-08-31 21:23:40,876 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:40,882 - INFO - call_model function exited
+2025-08-31 21:23:40,885 - INFO - should_continue function entered
+2025-08-31 21:23:40,887 - INFO - should_continue: returning 'tools'
+2025-08-31 21:23:40,894 - INFO - handle_tools function entered
+2025-08-31 21:23:40,899 - INFO - suggest_trips_tool entered
+2025-08-31 21:23:45,222 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:45,226 - INFO - suggest_trips_tool exited
+2025-08-31 21:23:45,228 - INFO - rag_process_tool entered
+2025-08-31 21:23:49,247 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 21:23:50,187 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 21:23:50,881 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:50,898 - INFO - rag_process_tool exited
+2025-08-31 21:23:50,913 - INFO - search_query_tool entered
+2025-08-31 21:23:53,406 - INFO - search_query_tool exited
+2025-08-31 21:23:53,407 - INFO - handle_tools function exited
+2025-08-31 21:23:53,410 - INFO - call_model function entered
+2025-08-31 21:23:54,716 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:54,720 - INFO - call_model function exited
+2025-08-31 21:23:54,721 - INFO - should_continue function entered
+2025-08-31 21:23:54,722 - INFO - should_continue: returning END
+2025-08-31 21:23:54,727 - INFO - Running fallback flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 21:23:59,354 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:23:59,358 - INFO - run_agent function exited
+2025-08-31 21:23:59,585 - INFO - Main execution completed
+2025-08-31 21:32:18,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:32:20,363 - INFO - Main execution started
+2025-08-31 21:34:05,594 - INFO - run_agent function entered
+2025-08-31 21:34:05,595 - INFO - get_agent function entered
+2025-08-31 21:34:05,599 - INFO - get_agent function exited
+2025-08-31 21:34:05,731 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 21:34:05,750 - INFO - call_model function entered
+2025-08-31 21:34:06,383 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:34:06,386 - INFO - call_model function exited
+2025-08-31 21:34:06,387 - INFO - should_continue function entered
+2025-08-31 21:34:06,388 - INFO - should_continue: returning END
+2025-08-31 21:34:06,391 - INFO - run_agent function exited - no itinerary found
+2025-08-31 21:34:06,393 - INFO - Main execution completed
+2025-08-31 21:36:16,179 - INFO - Main execution started
+2025-08-31 21:36:49,293 - INFO - run_agent function entered
+2025-08-31 21:36:49,295 - INFO - get_agent function entered
+2025-08-31 21:36:49,299 - INFO - get_agent function exited
+2025-08-31 21:36:49,397 - INFO - Pre-seeding tool call for flight search: Flights from new yorks to cairo roundtrip duration 5 days
+2025-08-31 21:36:49,399 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 21:36:49,413 - INFO - search_query_tool entered
+2025-08-31 21:36:51,299 - INFO - search_query_tool exited
+2025-08-31 21:36:51,316 - INFO - call_model function entered
+2025-08-31 21:36:52,870 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:36:52,945 - INFO - call_model function exited
+2025-08-31 21:36:52,950 - INFO - should_continue function entered
+2025-08-31 21:36:52,952 - INFO - should_continue: returning 'tools'
+2025-08-31 21:36:52,956 - INFO - handle_tools function entered
+2025-08-31 21:36:52,963 - INFO - suggest_trips_tool entered
+2025-08-31 21:36:55,989 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:36:55,991 - INFO - suggest_trips_tool exited
+2025-08-31 21:36:55,992 - INFO - handle_tools function exited
+2025-08-31 21:36:55,994 - INFO - call_model function entered
+2025-08-31 21:36:56,490 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:36:56,493 - INFO - call_model function exited
+2025-08-31 21:36:56,494 - INFO - should_continue function entered
+2025-08-31 21:36:56,495 - INFO - should_continue: returning 'tools'
+2025-08-31 21:36:56,496 - INFO - handle_tools function entered
+2025-08-31 21:36:56,506 - INFO - summarize_trip_tool entered
+2025-08-31 21:36:56,508 - INFO - handle_tools function exited
+2025-08-31 21:36:56,511 - INFO - call_model function entered
+2025-08-31 21:36:56,726 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 21:42:26,638 - INFO - Main execution started
+2025-08-31 21:42:54,858 - INFO - run_agent function entered
+2025-08-31 21:42:54,859 - INFO - get_agent function entered
+2025-08-31 21:42:54,863 - INFO - get_agent function exited
+2025-08-31 21:42:54,952 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 21:42:54,960 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 21:42:54,975 - INFO - search_query_tool entered
+2025-08-31 21:42:57,804 - INFO - search_query_tool exited
+2025-08-31 21:42:57,817 - INFO - call_model function entered
+2025-08-31 21:42:58,461 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:42:58,520 - INFO - call_model function exited
+2025-08-31 21:42:58,523 - INFO - should_continue function entered
+2025-08-31 21:42:58,523 - INFO - should_continue: returning 'tools'
+2025-08-31 21:42:58,527 - INFO - handle_tools function entered
+2025-08-31 21:42:58,533 - INFO - summarize_trip_tool entered
+2025-08-31 21:42:58,536 - INFO - handle_tools function exited
+2025-08-31 21:42:58,542 - INFO - call_model function entered
+2025-08-31 21:42:59,184 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:42:59,215 - INFO - call_model function exited
+2025-08-31 21:42:59,253 - INFO - should_continue function entered
+2025-08-31 21:42:59,294 - INFO - should_continue: returning 'tools'
+2025-08-31 21:42:59,303 - INFO - handle_tools function entered
+2025-08-31 21:42:59,337 - INFO - rag_process_tool entered
+2025-08-31 21:43:03,009 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 21:43:04,190 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 21:43:05,669 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:43:05,673 - INFO - rag_process_tool exited
+2025-08-31 21:43:05,674 - INFO - handle_tools function exited
+2025-08-31 21:43:05,675 - INFO - call_model function entered
+2025-08-31 21:43:06,034 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 21:47:34,224 - INFO - Main execution started
+2025-08-31 21:48:42,368 - INFO - run_agent function entered
+2025-08-31 21:48:42,369 - INFO - get_agent function entered
+2025-08-31 21:48:42,371 - INFO - get_agent function exited
+2025-08-31 21:48:42,408 - INFO - Pre-seeding tool call for flight search: Flights from new york  to cairo roundtrip duration 5 days
+2025-08-31 21:48:42,408 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 21:48:42,420 - INFO - search_query_tool entered
+2025-08-31 21:48:44,032 - INFO - search_query_tool exited
+2025-08-31 21:48:44,039 - INFO - call_model function entered
+2025-08-31 21:48:44,972 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:48:45,038 - INFO - call_model function exited
+2025-08-31 21:48:45,042 - INFO - should_continue function entered
+2025-08-31 21:48:45,043 - INFO - should_continue: returning 'tools'
+2025-08-31 21:48:45,046 - INFO - handle_tools function entered
+2025-08-31 21:48:45,050 - INFO - suggest_trips_tool entered
+2025-08-31 21:48:50,155 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:48:50,161 - INFO - suggest_trips_tool exited
+2025-08-31 21:48:50,163 - INFO - handle_tools function exited
+2025-08-31 21:48:50,166 - INFO - call_model function entered
+2025-08-31 21:48:50,931 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:48:50,935 - INFO - call_model function exited
+2025-08-31 21:48:50,936 - INFO - should_continue function entered
+2025-08-31 21:48:50,937 - INFO - should_continue: returning 'tools'
+2025-08-31 21:48:50,939 - INFO - handle_tools function entered
+2025-08-31 21:48:50,944 - INFO - summarize_trip_tool entered
+2025-08-31 21:48:50,945 - INFO - handle_tools function exited
+2025-08-31 21:48:50,950 - INFO - call_model function entered
+2025-08-31 21:48:51,186 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 21:54:34,798 - INFO - Main execution started
+2025-08-31 21:54:56,190 - INFO - run_agent function entered
+2025-08-31 21:54:56,191 - INFO - get_agent function entered
+2025-08-31 21:54:56,196 - INFO - get_agent function exited
+2025-08-31 21:54:56,241 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 21:54:56,242 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 21:54:56,253 - INFO - search_query_tool entered
+2025-08-31 21:54:58,366 - INFO - search_query_tool exited
+2025-08-31 21:54:58,377 - INFO - call_model function entered
+2025-08-31 21:54:59,187 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:54:59,268 - INFO - call_model function exited
+2025-08-31 21:54:59,279 - INFO - should_continue function entered
+2025-08-31 21:54:59,282 - INFO - should_continue: returning 'tools'
+2025-08-31 21:54:59,289 - INFO - handle_tools function entered
+2025-08-31 21:54:59,303 - INFO - summarize_trip_tool entered
+2025-08-31 21:54:59,350 - INFO - handle_tools function exited
+2025-08-31 21:54:59,433 - INFO - call_model function entered
+2025-08-31 21:55:00,046 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:55:00,049 - INFO - call_model function exited
+2025-08-31 21:55:00,050 - INFO - should_continue function entered
+2025-08-31 21:55:00,051 - INFO - should_continue: returning 'tools'
+2025-08-31 21:55:00,052 - INFO - handle_tools function entered
+2025-08-31 21:55:00,055 - INFO - rag_process_tool entered
+2025-08-31 21:55:03,654 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 21:55:04,430 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 21:55:05,868 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:55:05,874 - INFO - rag_process_tool exited
+2025-08-31 21:55:05,875 - INFO - handle_tools function exited
+2025-08-31 21:55:05,893 - INFO - call_model function entered
+2025-08-31 21:55:06,285 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 21:58:10,043 - INFO - Main execution started
+2025-08-31 21:59:13,648 - INFO - run_agent function entered
+2025-08-31 21:59:13,649 - INFO - get_agent function entered
+2025-08-31 21:59:13,655 - INFO - get_agent function exited
+2025-08-31 21:59:13,764 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 21:59:13,765 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 21:59:13,780 - INFO - search_query_tool entered
+2025-08-31 21:59:19,348 - INFO - search_query_tool exited
+2025-08-31 21:59:19,358 - INFO - call_model function entered
+2025-08-31 21:59:20,125 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:59:20,180 - INFO - call_model function exited
+2025-08-31 21:59:20,181 - INFO - should_continue function entered
+2025-08-31 21:59:20,182 - INFO - should_continue: returning 'tools'
+2025-08-31 21:59:20,185 - INFO - handle_tools function entered
+2025-08-31 21:59:20,188 - INFO - suggest_trips_tool entered
+2025-08-31 21:59:23,343 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:59:23,347 - INFO - suggest_trips_tool exited
+2025-08-31 21:59:23,348 - INFO - handle_tools function exited
+2025-08-31 21:59:23,349 - INFO - call_model function entered
+2025-08-31 21:59:23,932 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 21:59:23,935 - INFO - call_model function exited
+2025-08-31 21:59:23,936 - INFO - should_continue function entered
+2025-08-31 21:59:23,937 - INFO - should_continue: returning 'tools'
+2025-08-31 21:59:23,938 - INFO - handle_tools function entered
+2025-08-31 21:59:23,945 - INFO - summarize_trip_tool entered
+2025-08-31 21:59:23,946 - INFO - handle_tools function exited
+2025-08-31 21:59:23,949 - INFO - call_model function entered
+2025-08-31 21:59:24,134 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-08-31 22:01:07,787 - INFO - Main execution started
+2025-08-31 22:01:57,736 - INFO - run_agent function entered
+2025-08-31 22:01:57,737 - INFO - get_agent function entered
+2025-08-31 22:01:57,741 - INFO - get_agent function exited
+2025-08-31 22:01:57,853 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 22:01:57,854 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 22:01:57,868 - INFO - search_query_tool entered
+2025-08-31 22:02:00,232 - INFO - search_query_tool exited
+2025-08-31 22:02:00,246 - INFO - call_model function entered
+2025-08-31 22:02:00,917 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 22:02:00,977 - INFO - call_model function exited
+2025-08-31 22:02:00,979 - INFO - should_continue function entered
+2025-08-31 22:02:00,980 - INFO - should_continue: returning 'tools'
+2025-08-31 22:02:00,983 - INFO - handle_tools function entered
+2025-08-31 22:02:00,992 - INFO - summarize_trip_tool entered
+2025-08-31 22:02:00,996 - INFO - handle_tools function exited
+2025-08-31 22:02:00,999 - INFO - call_model function entered
+2025-08-31 22:02:02,088 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 22:02:02,091 - INFO - call_model function exited
+2025-08-31 22:02:02,092 - INFO - should_continue function entered
+2025-08-31 22:02:02,093 - INFO - should_continue: returning 'tools'
+2025-08-31 22:02:02,094 - INFO - handle_tools function entered
+2025-08-31 22:02:02,098 - INFO - rag_process_tool entered
+2025-08-31 22:02:04,333 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 22:02:05,044 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 22:02:05,610 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised NotFound: 404 models/gemini_2.0-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..
+2025-08-31 22:02:07,737 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 4.0 seconds as it raised NotFound: 404 models/gemini_2.0-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..
+2025-08-31 22:02:11,838 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 8.0 seconds as it raised NotFound: 404 models/gemini_2.0-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..
+2025-08-31 22:02:19,954 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 16.0 seconds as it raised NotFound: 404 models/gemini_2.0-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..
+2025-08-31 22:05:22,266 - INFO - Main execution started
+2025-08-31 22:07:10,177 - INFO - run_agent function entered
+2025-08-31 22:07:10,177 - INFO - get_agent function entered
+2025-08-31 22:07:10,180 - INFO - get_agent function exited
+2025-08-31 22:07:10,211 - INFO - Pre-seeding tool call for flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 22:07:10,212 - INFO - Executing 1 pre-seeded tool call(s)
+2025-08-31 22:07:10,224 - INFO - search_query_tool entered
+2025-08-31 22:07:12,591 - INFO - search_query_tool exited
+2025-08-31 22:07:12,599 - INFO - call_model function entered
+2025-08-31 22:07:13,562 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 22:07:13,641 - INFO - call_model function exited
+2025-08-31 22:07:13,643 - INFO - should_continue function entered
+2025-08-31 22:07:13,644 - INFO - should_continue: returning 'tools'
+2025-08-31 22:07:13,655 - INFO - handle_tools function entered
+2025-08-31 22:07:13,658 - INFO - summarize_trip_tool entered
+2025-08-31 22:07:13,660 - INFO - handle_tools function exited
+2025-08-31 22:07:13,665 - INFO - call_model function entered
+2025-08-31 22:07:15,325 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 22:07:15,555 - INFO - call_model function exited
+2025-08-31 22:07:15,559 - INFO - should_continue function entered
+2025-08-31 22:07:15,654 - INFO - should_continue: returning END
+2025-08-31 22:07:15,825 - INFO - run_agent function exited
+2025-08-31 22:07:16,094 - INFO - Main execution completed
+2025-08-31 23:51:28,375 - INFO - Main execution started
+2025-08-31 23:52:46,339 - INFO - run_agent function entered
+2025-08-31 23:52:46,340 - INFO - get_agent function entered
+2025-08-31 23:52:46,343 - INFO - get_agent function exited
+2025-08-31 23:52:46,398 - INFO - call_model function entered
+2025-08-31 23:52:47,151 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 23:52:47,234 - INFO - call_model function exited
+2025-08-31 23:52:47,237 - INFO - should_continue function entered
+2025-08-31 23:52:47,240 - INFO - should_continue: returning 'tools'
+2025-08-31 23:52:47,252 - INFO - handle_tools function entered
+2025-08-31 23:52:47,277 - INFO - suggest_trips_tool entered
+2025-08-31 23:52:52,849 - INFO - suggest_trips_tool exited
+2025-08-31 23:52:52,853 - INFO - rag_process_tool entered
+2025-08-31 23:52:54,930 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-31 23:52:55,927 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-08-31 23:52:56,901 - INFO - rag_process_tool exited
+2025-08-31 23:52:56,933 - INFO - handle_tools function exited
+2025-08-31 23:52:56,937 - INFO - call_model function entered
+2025-08-31 23:52:57,579 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 23:52:57,585 - INFO - call_model function exited
+2025-08-31 23:52:57,593 - INFO - should_continue function entered
+2025-08-31 23:52:57,595 - INFO - should_continue: returning 'tools'
+2025-08-31 23:52:57,599 - INFO - handle_tools function entered
+2025-08-31 23:52:57,615 - INFO - search_query_tool entered
+2025-08-31 23:52:59,912 - INFO - search_query_tool exited
+2025-08-31 23:52:59,913 - INFO - handle_tools function exited
+2025-08-31 23:52:59,916 - INFO - call_model function entered
+2025-08-31 23:53:00,459 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-31 23:53:00,461 - INFO - Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2025-08-31 23:53:09,434 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 23:53:09,439 - INFO - call_model function exited
+2025-08-31 23:53:09,450 - INFO - should_continue function entered
+2025-08-31 23:53:09,451 - INFO - should_continue: returning END
+2025-08-31 23:53:11,711 - INFO - run_agent function exited
+2025-08-31 23:53:11,819 - INFO - Main execution completed
+2025-08-31 23:55:20,651 - INFO - Main execution started
+2025-08-31 23:55:52,900 - INFO - run_agent function entered
+2025-08-31 23:55:52,900 - INFO - get_agent function entered
+2025-08-31 23:55:52,903 - INFO - get_agent function exited
+2025-08-31 23:55:53,037 - INFO - call_model function entered
+2025-08-31 23:55:53,701 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 23:55:53,778 - INFO - call_model function exited
+2025-08-31 23:55:53,783 - INFO - should_continue function entered
+2025-08-31 23:55:53,784 - INFO - should_continue: returning 'tools'
+2025-08-31 23:55:53,788 - INFO - handle_tools function entered
+2025-08-31 23:55:53,791 - INFO - suggest_trips_tool entered
+2025-08-31 23:55:58,864 - INFO - suggest_trips_tool exited
+2025-08-31 23:55:58,886 - INFO - search_query_tool entered
+2025-08-31 23:56:00,619 - INFO - search_query_tool exited
+2025-08-31 23:56:00,622 - INFO - handle_tools function exited
+2025-08-31 23:56:00,627 - INFO - call_model function entered
+2025-08-31 23:56:01,591 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-31 23:56:01,595 - INFO - call_model function exited
+2025-08-31 23:56:01,597 - INFO - should_continue function entered
+2025-08-31 23:56:01,599 - INFO - should_continue: returning END
+2025-08-31 23:56:01,608 - INFO - Running fallback flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-08-31 23:56:08,534 - INFO - run_agent function exited
+2025-08-31 23:56:08,699 - INFO - Main execution completed
+2025-09-01 00:26:46,135 - INFO - Main execution started
+2025-09-01 00:27:30,018 - INFO - run_agent function entered
+2025-09-01 00:27:30,019 - INFO - get_agent function entered
+2025-09-01 00:27:30,022 - INFO - get_agent function exited
+2025-09-01 00:27:30,067 - INFO - call_model function entered
+2025-09-01 00:27:30,878 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:27:30,943 - INFO - call_model function exited
+2025-09-01 00:27:30,945 - INFO - should_continue function entered
+2025-09-01 00:37:58,949 - INFO - Main execution started
+2025-09-01 00:38:28,739 - INFO - run_agent function entered
+2025-09-01 00:38:28,740 - INFO - get_agent function entered
+2025-09-01 00:38:28,743 - INFO - get_agent function exited
+2025-09-01 00:38:28,792 - INFO - call_model function entered
+2025-09-01 00:38:29,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:38:29,488 - INFO - call_model function exited
+2025-09-01 00:38:29,489 - INFO - should_continue function entered
+2025-09-01 00:38:29,492 - INFO - call_model function entered
+2025-09-01 00:38:29,739 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:38:29,742 - INFO - call_model function exited
+2025-09-01 00:38:29,743 - INFO - should_continue function entered
+2025-09-01 00:38:29,745 - INFO - call_model function entered
+2025-09-01 00:38:30,549 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:38:30,554 - INFO - call_model function exited
+2025-09-01 00:38:30,556 - INFO - should_continue function entered
+2025-09-01 00:38:30,559 - INFO - call_model function entered
+2025-09-01 00:38:30,828 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:38:30,833 - INFO - call_model function exited
+2025-09-01 00:38:30,835 - INFO - should_continue function entered
+2025-09-01 00:38:30,840 - INFO - call_model function entered
+2025-09-01 00:38:31,011 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-01 00:38:31,013 - INFO - Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+2025-09-01 00:38:45,703 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:38:45,708 - INFO - call_model function exited
+2025-09-01 00:38:45,709 - INFO - should_continue function entered
+2025-09-01 00:38:45,712 - INFO - call_model function entered
+2025-09-01 00:38:45,885 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-01 00:38:45,886 - INFO - Retrying request to /openai/v1/chat/completions in 43.000000 seconds
+2025-09-01 00:39:35,111 - INFO - Main execution started
+2025-09-01 00:40:19,435 - INFO - run_agent function entered
+2025-09-01 00:40:19,436 - INFO - get_agent function entered
+2025-09-01 00:40:19,439 - INFO - get_agent function exited
+2025-09-01 00:40:19,474 - INFO - call_model function entered
+2025-09-01 00:40:20,691 - INFO - call_model function exited
+2025-09-01 00:40:20,693 - INFO - should_continue function entered
+2025-09-01 00:40:20,697 - INFO - call_model function entered
+2025-09-01 00:40:21,368 - INFO - call_model function exited
+2025-09-01 00:40:21,370 - INFO - should_continue function entered
+2025-09-01 00:40:21,373 - INFO - call_model function entered
+2025-09-01 00:42:21,879 - INFO - Main execution started
+2025-09-01 00:45:41,451 - INFO - run_agent function entered
+2025-09-01 00:45:41,452 - INFO - get_agent function entered
+2025-09-01 00:45:41,455 - INFO - get_agent function exited
+2025-09-01 00:45:41,503 - INFO - call_model function entered
+2025-09-01 00:45:42,174 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:45:42,228 - INFO - call_model function exited
+2025-09-01 00:45:42,230 - INFO - should_continue function entered
+2025-09-01 00:45:42,232 - INFO - call_model function entered
+2025-09-01 00:45:43,216 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:45:43,221 - INFO - call_model function exited
+2025-09-01 00:45:43,223 - INFO - should_continue function entered
+2025-09-01 00:45:43,226 - INFO - call_model function entered
+2025-09-01 00:45:44,189 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:45:44,195 - INFO - call_model function exited
+2025-09-01 00:45:44,197 - INFO - should_continue function entered
+2025-09-01 00:45:44,201 - INFO - call_model function entered
+2025-09-01 00:45:44,538 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:45:44,541 - INFO - call_model function exited
+2025-09-01 00:45:44,542 - INFO - should_continue function entered
+2025-09-01 00:45:44,544 - INFO - call_model function entered
+2025-09-01 00:45:44,652 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-01 00:45:44,654 - INFO - Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2025-09-01 00:45:57,200 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 00:45:57,207 - INFO - call_model function exited
+2025-09-01 00:45:57,209 - INFO - should_continue function entered
+2025-09-01 00:45:57,213 - INFO - call_model function entered
+2025-09-01 00:45:57,382 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-01 00:45:57,385 - INFO - Retrying request to /openai/v1/chat/completions in 42.000000 seconds
+2025-09-01 01:24:11,317 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 01:24:55,507 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 01:27:42,644 - INFO - run_agent function entered
+2025-09-01 01:27:42,645 - INFO - get_agent function entered
+2025-09-01 01:27:42,647 - INFO - get_agent function exited
+2025-09-01 01:27:42,700 - INFO - call_model function entered
+2025-09-01 01:27:43,331 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:27:43,398 - INFO - call_model function exited
+2025-09-01 01:27:43,401 - INFO - should_continue function entered
+2025-09-01 01:27:43,401 - INFO - should_continue: returning 'tools'
+2025-09-01 01:27:43,404 - INFO - handle_tools function entered
+2025-09-01 01:27:43,408 - INFO - suggest_trips_tool entered
+2025-09-01 01:27:48,757 - INFO - suggest_trips_tool exited
+2025-09-01 01:27:48,761 - INFO - search_query_tool entered
+2025-09-01 01:27:51,709 - INFO - search_query_tool exited
+2025-09-01 01:27:51,710 - INFO - handle_tools function exited
+2025-09-01 01:27:51,714 - INFO - call_model function entered
+2025-09-01 01:27:53,239 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:27:53,242 - INFO - call_model function exited
+2025-09-01 01:27:53,243 - INFO - should_continue function entered
+2025-09-01 01:27:53,244 - INFO - should_continue: returning END
+2025-09-01 01:27:53,248 - INFO - Running fallback flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-09-01 01:27:57,623 - INFO - run_agent function exited
+2025-09-01 01:52:16,399 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 01:54:56,483 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:54:56,555 - INFO - suggest_trips_tool entered
+2025-09-01 01:54:56,558 - INFO - rag_process_tool entered
+2025-09-01 01:54:58,645 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-01 01:55:00,472 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-01 01:55:01,837 - INFO - rag_process_tool exited
+2025-09-01 01:55:02,202 - INFO - suggest_trips_tool exited
+2025-09-01 01:55:49,000 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 01:57:15,697 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 02:01:05,194 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-01 02:09:56,849 - INFO - suggest_trips_tool entered
+2025-09-01 02:09:56,855 - INFO - search_query_tool entered
+2025-09-01 02:09:58,676 - INFO - search_query_tool exited
+2025-09-01 02:10:01,635 - INFO - suggest_trips_tool exited
+2025-09-02 00:56:49,476 - INFO - Main execution started
+2025-09-02 00:57:36,811 - INFO - run_agent function entered
+2025-09-02 00:57:36,812 - INFO - get_agent function entered
+2025-09-02 00:57:36,815 - INFO - get_agent function exited
+2025-09-02 00:57:36,900 - INFO - call_model function entered
+2025-09-02 00:57:37,651 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 00:57:37,706 - INFO - call_model function exited
+2025-09-02 00:57:37,708 - INFO - should_continue function entered
+2025-09-02 00:57:37,709 - INFO - should_continue: returning 'tools'
+2025-09-02 00:57:37,713 - INFO - handle_tools function entered
+2025-09-02 01:04:16,300 - INFO - Main execution started
+2025-09-02 01:05:00,796 - INFO - run_agent function entered
+2025-09-02 01:05:00,797 - INFO - get_agent function entered
+2025-09-02 01:05:00,800 - INFO - get_agent function exited
+2025-09-02 01:05:00,910 - INFO - rag_retrieval function entered
+2025-09-02 01:05:03,220 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 01:05:04,952 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:05:11,263 - INFO - rag_retrieval function exited successfully
+2025-09-02 01:05:11,266 - INFO - call_model function entered
+2025-09-02 01:05:12,058 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:05:12,135 - INFO - call_model function exited
+2025-09-02 01:05:12,138 - INFO - should_continue function entered
+2025-09-02 01:05:12,139 - INFO - should_continue: returning 'tools'
+2025-09-02 01:05:12,141 - INFO - handle_tools function entered
+2025-09-02 01:05:12,143 - INFO - Executing tool: rag_process_tool with args: {'query': '5 days trip from New York to Cairo, flight links, travel requirements, accommodation, internal transportation, and itinerary suggestions.'}
+2025-09-02 01:05:12,145 - INFO - rag_process_tool entered
+2025-09-02 01:05:14,011 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:05:24,199 - INFO - rag_process_tool exited
+2025-09-02 01:05:24,201 - INFO - Executing tool: search_query_tool with args: {'query': 'live flight prices from New York to Cairo, roundtrip, economy, next week, JFK airport.'}
+2025-09-02 01:05:24,205 - INFO - search_query_tool entered
+2025-09-02 01:05:25,842 - INFO - search_query_tool exited
+2025-09-02 01:05:25,844 - INFO - handle_tools function exited
+2025-09-02 01:05:25,847 - INFO - call_model function entered
+2025-09-02 01:05:26,937 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:05:26,943 - INFO - call_model function exited
+2025-09-02 01:05:26,945 - INFO - should_continue function entered
+2025-09-02 01:05:26,951 - INFO - should_continue: returning END
+2025-09-02 01:05:26,962 - INFO - Running fallback flight search: Flights from new york to cairo roundtrip duration 5 days
+2025-09-02 01:05:31,155 - INFO - run_agent function exited
+2025-09-02 01:05:31,230 - INFO - Main execution completed
+2025-09-02 01:25:47,056 - INFO - Main execution started
+2025-09-02 01:26:56,916 - INFO - run_agent function entered
+2025-09-02 01:26:56,917 - INFO - get_agent function entered
+2025-09-02 01:26:56,920 - INFO - get_agent function exited
+2025-09-02 01:26:56,968 - INFO - call_model function entered
+2025-09-02 01:26:57,592 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 01:29:33,808 - INFO - Main execution started
+2025-09-02 01:30:09,859 - INFO - run_agent function entered
+2025-09-02 01:30:09,860 - INFO - get_agent function entered
+2025-09-02 01:30:09,863 - INFO - get_agent function exited
+2025-09-02 01:30:09,918 - INFO - call_model function entered
+2025-09-02 01:30:10,557 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:30:10,623 - INFO - call_model function exited
+2025-09-02 01:30:10,625 - INFO - should_continue function entered
+2025-09-02 01:30:10,626 - INFO - should_continue: returning 'tools'
+2025-09-02 01:30:10,629 - INFO - handle_tools function entered
+2025-09-02 01:30:10,631 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:30:10,634 - INFO - suggest_trips_tool entered
+2025-09-02 01:30:22,744 - INFO - suggest_trips_tool exited
+2025-09-02 01:30:22,745 - INFO - handle_tools function exited
+2025-09-02 01:30:22,748 - INFO - call_model function entered
+2025-09-02 01:30:23,342 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:30:23,346 - INFO - call_model function exited
+2025-09-02 01:30:23,347 - INFO - should_continue function entered
+2025-09-02 01:30:23,347 - INFO - should_continue: returning 'tools'
+2025-09-02 01:30:23,350 - INFO - handle_tools function entered
+2025-09-02 01:30:23,352 - INFO - Executing tool: search_query_tool with args: {'query': 'Egyptian visa requirements for European citizens'}
+2025-09-02 01:30:23,355 - INFO - search_query_tool entered
+2025-09-02 01:30:26,700 - INFO - search_query_tool exited
+2025-09-02 01:30:26,701 - INFO - handle_tools function exited
+2025-09-02 01:30:26,703 - INFO - call_model function entered
+2025-09-02 01:30:26,939 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 01:30:26,942 - ERROR - Model invocation failed: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01jr92b0r4fh5rh7jgggpe77zt` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 8755, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2025-09-02 01:32:02,243 - INFO - Main execution started
+2025-09-02 01:32:37,010 - INFO - run_agent function entered
+2025-09-02 01:32:37,011 - INFO - get_agent function entered
+2025-09-02 01:32:37,014 - INFO - get_agent function exited
+2025-09-02 01:32:37,053 - INFO - call_model function entered
+2025-09-02 01:32:37,777 - INFO - call_model function exited
+2025-09-02 01:32:37,778 - INFO - should_continue function entered
+2025-09-02 01:32:37,779 - INFO - should_continue: returning 'tools'
+2025-09-02 01:32:37,783 - INFO - handle_tools function entered
+2025-09-02 01:32:37,785 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:32:37,791 - INFO - suggest_trips_tool entered
+2025-09-02 01:32:52,730 - INFO - suggest_trips_tool exited
+2025-09-02 01:32:52,731 - INFO - handle_tools function exited
+2025-09-02 01:32:52,735 - INFO - call_model function entered
+2025-09-02 01:32:55,169 - INFO - call_model function exited
+2025-09-02 01:32:55,171 - INFO - should_continue function entered
+2025-09-02 01:32:55,172 - INFO - should_continue: returning END
+2025-09-02 01:32:55,179 - INFO - Found AIMessage with itinerary (fallback)
+2025-09-02 01:32:55,180 - INFO - run_agent function exited - no itinerary found
+2025-09-02 01:32:55,182 - INFO - Main execution completed
+2025-09-02 01:33:13,895 - INFO - Main execution started
+2025-09-02 01:33:46,691 - INFO - run_agent function entered
+2025-09-02 01:33:46,691 - INFO - get_agent function entered
+2025-09-02 01:33:46,694 - INFO - get_agent function exited
+2025-09-02 01:33:46,730 - INFO - call_model function entered
+2025-09-02 01:33:47,703 - INFO - call_model function exited
+2025-09-02 01:33:47,705 - INFO - should_continue function entered
+2025-09-02 01:33:47,707 - INFO - should_continue: returning 'tools'
+2025-09-02 01:33:47,713 - INFO - handle_tools function entered
+2025-09-02 01:33:47,718 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from rome to cairo'}
+2025-09-02 01:33:47,723 - INFO - suggest_trips_tool entered
+2025-09-02 01:34:03,382 - INFO - suggest_trips_tool exited
+2025-09-02 01:34:03,384 - INFO - handle_tools function exited
+2025-09-02 01:34:03,387 - INFO - call_model function entered
+2025-09-02 01:34:09,469 - INFO - call_model function exited
+2025-09-02 01:34:09,470 - INFO - should_continue function entered
+2025-09-02 01:34:09,471 - INFO - should_continue: returning END
+2025-09-02 01:34:09,475 - INFO - Found AIMessage with itinerary (fallback)
+2025-09-02 01:34:09,475 - INFO - run_agent function exited - no itinerary found
+2025-09-02 01:34:09,476 - INFO - Main execution completed
+2025-09-02 01:34:49,211 - INFO - Main execution started
+2025-09-02 01:35:11,730 - INFO - run_agent function entered
+2025-09-02 01:35:11,731 - INFO - get_agent function entered
+2025-09-02 01:35:11,734 - INFO - get_agent function exited
+2025-09-02 01:35:11,777 - INFO - call_model function entered
+2025-09-02 01:35:12,363 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:35:12,417 - INFO - call_model function exited
+2025-09-02 01:35:12,418 - INFO - should_continue function entered
+2025-09-02 01:35:12,418 - INFO - should_continue: returning 'tools'
+2025-09-02 01:35:12,421 - INFO - handle_tools function entered
+2025-09-02 01:35:12,423 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:35:12,425 - INFO - suggest_trips_tool entered
+2025-09-02 01:35:25,589 - INFO - suggest_trips_tool exited
+2025-09-02 01:35:25,590 - INFO - handle_tools function exited
+2025-09-02 01:35:25,593 - INFO - call_model function entered
+2025-09-02 01:35:26,469 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:35:26,472 - INFO - call_model function exited
+2025-09-02 01:35:26,474 - INFO - should_continue function entered
+2025-09-02 01:35:26,474 - INFO - should_continue: returning 'tools'
+2025-09-02 01:35:26,476 - INFO - handle_tools function entered
+2025-09-02 01:35:26,478 - INFO - Executing tool: rag_process_tool with args: {'query': '5 days trip from Rome to Cairo, including flights, accommodation, activities and transportation costs.'}
+2025-09-02 01:35:26,481 - INFO - rag_process_tool entered
+2025-09-02 01:35:27,884 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 01:35:28,747 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:35:34,381 - INFO - rag_process_tool exited
+2025-09-02 01:35:34,382 - INFO - handle_tools function exited
+2025-09-02 01:35:34,384 - INFO - call_model function entered
+2025-09-02 01:35:34,677 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 01:40:03,771 - INFO - Main execution started
+2025-09-02 01:40:30,763 - INFO - run_agent function entered
+2025-09-02 01:40:30,764 - INFO - get_agent function entered
+2025-09-02 01:40:30,767 - INFO - get_agent function exited
+2025-09-02 01:40:30,833 - INFO - call_model function entered
+2025-09-02 01:40:31,447 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:40:31,510 - INFO - call_model function exited
+2025-09-02 01:40:31,511 - INFO - should_continue function entered
+2025-09-02 01:40:31,512 - INFO - should_continue: returning 'tools'
+2025-09-02 01:40:31,514 - INFO - handle_tools function entered
+2025-09-02 01:40:31,516 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:40:31,519 - INFO - suggest_trips_tool entered
+2025-09-02 01:40:45,771 - INFO - suggest_trips_tool exited
+2025-09-02 01:40:45,773 - INFO - handle_tools function exited
+2025-09-02 01:40:45,776 - INFO - call_model function entered
+2025-09-02 01:40:46,861 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:40:46,864 - INFO - call_model function exited
+2025-09-02 01:40:46,866 - INFO - should_continue function entered
+2025-09-02 01:40:46,866 - INFO - should_continue: returning END
+2025-09-02 01:40:46,870 - INFO - Found AIMessage with itinerary (fallback)
+2025-09-02 01:40:46,871 - INFO - run_agent function exited - no itinerary found
+2025-09-02 01:40:46,872 - INFO - Main execution completed
+2025-09-02 01:47:06,212 - INFO - Main execution started
+2025-09-02 01:47:31,811 - INFO - run_agent function entered
+2025-09-02 01:47:31,812 - INFO - get_agent function entered
+2025-09-02 01:47:31,815 - INFO - get_agent function exited
+2025-09-02 01:47:31,856 - INFO - call_model function entered
+2025-09-02 01:47:32,456 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:47:32,512 - INFO - call_model function exited
+2025-09-02 01:47:32,513 - INFO - should_continue function entered
+2025-09-02 01:47:32,514 - INFO - should_continue: returning 'tools'
+2025-09-02 01:47:32,515 - INFO - handle_tools function entered
+2025-09-02 01:47:32,517 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:47:32,519 - INFO - suggest_trips_tool entered
+2025-09-02 01:47:44,476 - INFO - suggest_trips_tool exited
+2025-09-02 01:47:44,478 - INFO - handle_tools function exited
+2025-09-02 01:47:44,481 - INFO - call_model function entered
+2025-09-02 01:47:45,521 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:47:45,527 - INFO - call_model function exited
+2025-09-02 01:47:45,529 - INFO - should_continue function entered
+2025-09-02 01:47:45,530 - INFO - should_continue: returning 'tools'
+2025-09-02 01:47:45,532 - INFO - handle_tools function entered
+2025-09-02 01:47:45,535 - INFO - Executing tool: rag_process_tool with args: {'query': 'Rome to Cairo 5-day trip itinerary, including flights, accommodation, and activities, with estimated costs and recommendations for restaurants and transportation.'}
+2025-09-02 01:47:45,539 - INFO - rag_process_tool entered
+2025-09-02 01:47:46,928 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 01:47:47,567 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:48:00,177 - INFO - rag_process_tool exited
+2025-09-02 01:48:00,181 - INFO - handle_tools function exited
+2025-09-02 01:48:00,184 - INFO - call_model function entered
+2025-09-02 01:48:00,575 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 01:51:54,113 - INFO - Main execution started
+2025-09-02 01:52:29,971 - INFO - run_agent function entered
+2025-09-02 01:52:29,972 - INFO - get_agent function entered
+2025-09-02 01:52:29,975 - INFO - get_agent function exited
+2025-09-02 01:52:30,022 - INFO - call_model function entered
+2025-09-02 01:52:30,594 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:52:30,646 - INFO - call_model function exited
+2025-09-02 01:52:30,648 - INFO - should_continue function entered
+2025-09-02 01:52:30,649 - INFO - should_continue: returning 'tools'
+2025-09-02 01:52:30,651 - INFO - handle_tools function entered
+2025-09-02 01:52:30,652 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:52:30,655 - INFO - suggest_trips_tool entered
+2025-09-02 01:52:36,352 - INFO - suggest_trips_tool exited
+2025-09-02 01:52:36,354 - INFO - handle_tools function exited
+2025-09-02 01:52:36,357 - INFO - call_model function entered
+2025-09-02 01:52:36,937 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:52:36,943 - INFO - call_model function exited
+2025-09-02 01:52:36,945 - INFO - should_continue function entered
+2025-09-02 01:52:36,946 - INFO - should_continue: returning 'tools'
+2025-09-02 01:52:36,950 - INFO - handle_tools function entered
+2025-09-02 01:52:36,955 - INFO - Executing tool: rag_process_tool with args: {'query': '5 days trip from Rome to Cairo, itinerary, costs, transportation, tips'}
+2025-09-02 01:52:36,960 - INFO - rag_process_tool entered
+2025-09-02 01:52:38,338 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 01:52:39,987 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:52:50,705 - INFO - rag_process_tool exited
+2025-09-02 01:52:50,707 - INFO - handle_tools function exited
+2025-09-02 01:52:50,710 - INFO - call_model function entered
+2025-09-02 01:52:51,017 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 01:52:51,019 - INFO - Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+2025-09-02 01:52:56,111 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:52:56,117 - INFO - call_model function exited
+2025-09-02 01:52:56,118 - INFO - should_continue function entered
+2025-09-02 01:52:56,119 - INFO - should_continue: returning 'tools'
+2025-09-02 01:52:56,123 - INFO - handle_tools function entered
+2025-09-02 01:52:56,131 - INFO - Executing tool: rag_process_tool with args: {'query': '5 days trip from Rome to Cairo, itinerary, costs, transportation, tips'}
+2025-09-02 01:52:56,136 - INFO - rag_process_tool entered
+2025-09-02 01:52:57,947 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 01:53:09,928 - INFO - rag_process_tool exited
+2025-09-02 01:53:09,930 - INFO - handle_tools function exited
+2025-09-02 01:53:09,933 - INFO - call_model function entered
+2025-09-02 01:53:10,335 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 01:53:56,536 - INFO - Main execution started
+2025-09-02 01:54:22,379 - INFO - run_agent function entered
+2025-09-02 01:54:22,380 - INFO - get_agent function entered
+2025-09-02 01:54:22,383 - INFO - get_agent function exited
+2025-09-02 01:54:22,428 - INFO - call_model function entered
+2025-09-02 01:54:22,975 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:54:23,030 - INFO - call_model function exited
+2025-09-02 01:54:23,031 - INFO - should_continue function entered
+2025-09-02 01:54:23,032 - INFO - should_continue: returning 'tools'
+2025-09-02 01:54:23,034 - INFO - handle_tools function entered
+2025-09-02 01:54:23,035 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:54:23,037 - INFO - suggest_trips_tool entered
+2025-09-02 01:54:30,852 - INFO - suggest_trips_tool exited
+2025-09-02 01:54:30,853 - INFO - handle_tools function exited
+2025-09-02 01:54:30,855 - INFO - call_model function entered
+2025-09-02 01:54:32,348 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:54:32,355 - INFO - call_model function exited
+2025-09-02 01:54:32,357 - INFO - should_continue function entered
+2025-09-02 01:54:32,358 - INFO - should_continue: returning END
+2025-09-02 01:54:32,365 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:54:32,366 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:54:32,370 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 01:54:32,372 - INFO - Selected non-empty itinerary content
+2025-09-02 01:54:32,377 - INFO - run_agent function exited
+2025-09-02 01:54:32,397 - INFO - Main execution completed
+2025-09-02 01:54:43,498 - INFO - Main execution started
+2025-09-02 01:55:20,035 - INFO - run_agent function entered
+2025-09-02 01:55:20,036 - INFO - get_agent function entered
+2025-09-02 01:55:20,039 - INFO - get_agent function exited
+2025-09-02 01:55:20,079 - INFO - call_model function entered
+2025-09-02 01:55:20,559 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:55:20,607 - INFO - call_model function exited
+2025-09-02 01:55:20,608 - INFO - should_continue function entered
+2025-09-02 01:55:20,608 - INFO - should_continue: returning 'tools'
+2025-09-02 01:55:20,611 - INFO - handle_tools function entered
+2025-09-02 01:55:20,612 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo, flights and accommodations'}
+2025-09-02 01:55:20,614 - INFO - suggest_trips_tool entered
+2025-09-02 01:55:26,189 - INFO - suggest_trips_tool exited
+2025-09-02 01:55:26,191 - INFO - Executing tool: search_query_tool with args: {'query': 'Rome to Cairo flights, roundtrip, 5 days, economy, next week, prices and links'}
+2025-09-02 01:55:26,195 - INFO - search_query_tool entered
+2025-09-02 01:55:27,877 - INFO - search_query_tool exited
+2025-09-02 01:55:27,879 - INFO - handle_tools function exited
+2025-09-02 01:55:27,882 - INFO - call_model function entered
+2025-09-02 01:55:28,851 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:55:28,857 - INFO - call_model function exited
+2025-09-02 01:55:28,859 - INFO - should_continue function entered
+2025-09-02 01:55:28,860 - INFO - should_continue: returning END
+2025-09-02 01:55:28,868 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:55:28,871 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:55:28,872 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 01:55:28,874 - INFO - Selected non-empty itinerary content
+2025-09-02 01:55:28,877 - INFO - run_agent function exited
+2025-09-02 01:55:28,914 - INFO - Main execution completed
+2025-09-02 01:55:57,860 - INFO - Main execution started
+2025-09-02 01:56:38,275 - INFO - run_agent function entered
+2025-09-02 01:56:38,276 - INFO - get_agent function entered
+2025-09-02 01:56:38,279 - INFO - get_agent function exited
+2025-09-02 01:56:38,319 - INFO - call_model function entered
+2025-09-02 01:56:39,424 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:56:39,478 - INFO - call_model function exited
+2025-09-02 01:56:39,479 - INFO - should_continue function entered
+2025-09-02 01:56:39,480 - INFO - should_continue: returning 'tools'
+2025-09-02 01:56:39,481 - INFO - handle_tools function entered
+2025-09-02 01:56:39,483 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo'}
+2025-09-02 01:56:39,485 - INFO - suggest_trips_tool entered
+2025-09-02 01:56:45,245 - INFO - suggest_trips_tool exited
+2025-09-02 01:56:45,247 - INFO - handle_tools function exited
+2025-09-02 01:56:45,250 - INFO - call_model function entered
+2025-09-02 01:56:45,721 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:56:45,726 - INFO - call_model function exited
+2025-09-02 01:56:45,727 - INFO - should_continue function entered
+2025-09-02 01:56:45,729 - INFO - should_continue: returning 'tools'
+2025-09-02 01:56:45,733 - INFO - handle_tools function entered
+2025-09-02 01:56:45,736 - INFO - Executing tool: search_query_tool with args: {'query': 'flights from Rome to Cairo roundtrip, departure next week, economy'}
+2025-09-02 01:56:45,740 - INFO - search_query_tool entered
+2025-09-02 01:56:47,593 - INFO - search_query_tool exited
+2025-09-02 01:56:47,594 - INFO - handle_tools function exited
+2025-09-02 01:56:47,597 - INFO - call_model function entered
+2025-09-02 01:56:47,808 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 01:56:47,809 - INFO - Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2025-09-02 01:56:59,064 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 01:56:59,069 - INFO - call_model function exited
+2025-09-02 01:56:59,071 - INFO - should_continue function entered
+2025-09-02 01:56:59,072 - INFO - should_continue: returning END
+2025-09-02 01:56:59,084 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:56:59,085 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 01:56:59,086 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 01:56:59,088 - INFO - Selected non-empty itinerary content
+2025-09-02 01:56:59,091 - INFO - Running fallback flight search: Flights from rome to cairo roundtrip duration 6 days
+2025-09-02 01:57:01,713 - INFO - run_agent function exited
+2025-09-02 01:57:01,758 - INFO - Main execution completed
+2025-09-02 02:00:52,128 - INFO - Main execution started
+2025-09-02 02:02:34,529 - INFO - Main execution started
+2025-09-02 02:03:17,940 - INFO - run_agent function entered
+2025-09-02 02:03:17,940 - INFO - get_agent function entered
+2025-09-02 02:03:17,943 - INFO - get_agent function exited
+2025-09-02 02:03:17,984 - INFO - call_model function entered
+2025-09-02 02:03:18,597 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:03:18,659 - INFO - call_model function exited
+2025-09-02 02:03:18,661 - INFO - should_continue function entered
+2025-09-02 02:03:18,662 - INFO - should_continue: returning 'tools'
+2025-09-02 02:03:18,665 - INFO - handle_tools function entered
+2025-09-02 02:03:18,667 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo', 'user': {'budget': '$1000', 'destination': 'Cairo', 'duration': '5 days', 'interests': 'history, architecture', 'travel_style': 'culture', 'user_location': 'Rome', 'want_flight_links': True}}
+2025-09-02 02:03:18,669 - INFO - suggest_trips_tool entered
+2025-09-02 02:03:25,432 - INFO - suggest_trips_tool exited
+2025-09-02 02:03:25,433 - INFO - handle_tools function exited
+2025-09-02 02:03:25,435 - INFO - call_model function entered
+2025-09-02 02:03:33,509 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:03:33,512 - INFO - call_model function exited
+2025-09-02 02:03:33,513 - INFO - should_continue function entered
+2025-09-02 02:03:33,514 - INFO - should_continue: returning END
+2025-09-02 02:03:33,518 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:03:33,519 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:03:33,521 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 02:03:33,522 - INFO - Selected non-empty itinerary content
+2025-09-02 02:03:33,524 - INFO - Running fallback flight search: Flights from rome to cairo roundtrip duration 6 days
+2025-09-02 02:03:35,096 - INFO - run_agent function exited
+2025-09-02 02:03:35,134 - INFO - Main execution completed
+2025-09-02 02:10:33,988 - INFO - Main execution started
+2025-09-02 02:11:59,060 - INFO - run_agent function entered
+2025-09-02 02:11:59,061 - INFO - get_agent function entered
+2025-09-02 02:11:59,063 - INFO - get_agent function exited
+2025-09-02 02:11:59,113 - INFO - call_model function entered
+2025-09-02 02:11:59,915 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:11:59,946 - INFO - call_model function exited
+2025-09-02 02:11:59,947 - INFO - should_continue function entered
+2025-09-02 02:11:59,951 - INFO - should_continue: returning 'tools'
+2025-09-02 02:11:59,956 - INFO - handle_tools function entered
+2025-09-02 02:11:59,957 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo', 'user': {'budget': '$500', 'destination': 'Cairo', 'duration': '5 days', 'interests': 'history, architecture', 'travel_style': 'culture', 'user_location': 'Rome', 'want_flight_links': True}}
+2025-09-02 02:11:59,963 - INFO - suggest_trips_tool entered
+2025-09-02 02:12:05,147 - INFO - suggest_trips_tool exited
+2025-09-02 02:12:05,148 - INFO - handle_tools function exited
+2025-09-02 02:12:05,149 - INFO - call_model function entered
+2025-09-02 02:12:12,399 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:12:12,404 - INFO - call_model function exited
+2025-09-02 02:12:12,405 - INFO - should_continue function entered
+2025-09-02 02:12:12,406 - INFO - should_continue: returning END
+2025-09-02 02:12:12,410 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:12:12,411 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:12:12,412 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 02:12:12,414 - INFO - Selected non-empty itinerary content
+2025-09-02 02:12:12,417 - INFO - Running fallback flight search: Flights from roe to cairo roundtrip duration 6 days
+2025-09-02 02:12:14,275 - INFO - run_agent function exited
+2025-09-02 02:12:14,531 - INFO - Main execution completed
+2025-09-02 02:13:46,719 - INFO - Main execution started
+2025-09-02 02:14:13,052 - INFO - run_agent function entered
+2025-09-02 02:14:13,052 - INFO - get_agent function entered
+2025-09-02 02:14:13,055 - INFO - get_agent function exited
+2025-09-02 02:14:13,105 - INFO - rag_retrieval function entered
+2025-09-02 02:14:14,562 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 02:14:15,228 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 02:14:21,260 - INFO - rag_retrieval function exited successfully
+2025-09-02 02:14:21,264 - INFO - call_model function entered
+2025-09-02 02:14:23,014 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 02:33:54,041 - INFO - Main execution started
+2025-09-02 02:34:26,955 - INFO - Main execution started
+2025-09-02 02:34:54,572 - INFO - run_agent function entered
+2025-09-02 02:34:54,573 - INFO - get_agent function entered
+2025-09-02 02:34:54,576 - INFO - get_agent function exited
+2025-09-02 02:34:54,624 - INFO - call_model function entered
+2025-09-02 02:34:55,847 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:34:55,912 - INFO - call_model function exited
+2025-09-02 02:34:55,913 - INFO - should_continue function entered
+2025-09-02 02:34:55,914 - INFO - should_continue: returning 'tools'
+2025-09-02 02:34:55,917 - INFO - handle_tools function entered
+2025-09-02 02:34:55,919 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo', 'user': {'destination': 'Cairo', 'duration': '5 days', 'travel_style': 'culture', 'user_location': 'Rome', 'want_flight_links': True}}
+2025-09-02 02:34:55,921 - INFO - suggest_trips_tool entered
+2025-09-02 02:35:02,774 - INFO - suggest_trips_tool exited
+2025-09-02 02:35:02,776 - INFO - handle_tools function exited
+2025-09-02 02:35:02,779 - INFO - call_model function entered
+2025-09-02 02:42:28,654 - INFO - Main execution started
+2025-09-02 02:43:05,292 - INFO - run_agent function entered
+2025-09-02 02:43:05,293 - INFO - get_agent function entered
+2025-09-02 02:43:05,296 - INFO - get_agent function exited
+2025-09-02 02:43:05,340 - INFO - call_model function entered
+2025-09-02 02:43:06,276 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:43:06,341 - INFO - call_model function exited
+2025-09-02 02:43:06,342 - INFO - should_continue function entered
+2025-09-02 02:43:06,346 - INFO - should_continue: returning 'tools'
+2025-09-02 02:43:06,348 - INFO - handle_tools function entered
+2025-09-02 02:43:06,350 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo', 'user': {'departure': 'Rome', 'destination': 'Cairo', 'duration': 5, 'interests': ['history', 'culture', 'food']}}
+2025-09-02 02:43:06,354 - INFO - suggest_trips_tool entered
+2025-09-02 02:43:12,017 - INFO - suggest_trips_tool exited
+2025-09-02 02:43:12,018 - INFO - Executing tool: search_query_tool with args: {'query': 'Flights from Rome to Cairo roundtrip, departure next week, economy'}
+2025-09-02 02:43:12,022 - INFO - search_query_tool entered
+2025-09-02 02:43:13,913 - INFO - search_query_tool exited
+2025-09-02 02:43:13,915 - INFO - handle_tools function exited
+2025-09-02 02:43:13,918 - INFO - call_model function entered
+2025-09-02 02:43:14,850 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:43:14,856 - INFO - call_model function exited
+2025-09-02 02:43:14,857 - INFO - should_continue function entered
+2025-09-02 02:43:14,859 - INFO - should_continue: returning END
+2025-09-02 02:43:14,867 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:43:14,869 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:43:14,871 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 02:43:14,871 - INFO - Selected non-empty itinerary content
+2025-09-02 02:43:14,874 - INFO - run_agent function exited
+2025-09-02 02:43:14,908 - INFO - Main execution completed
+2025-09-02 02:46:09,401 - INFO - Main execution started
+2025-09-02 02:46:44,813 - INFO - run_agent function entered
+2025-09-02 02:46:44,814 - INFO - User preferences in run_agent: {'user_location': 'rome', 'destination': 'cairo', 'duration': '6 days', 'interests': 'want to visit cultural places', 'budget': '6000$', 'travel_style': 'cultural', 'want_flight_links': False}
+2025-09-02 02:46:44,815 - INFO - get_agent function entered
+2025-09-02 02:46:44,819 - INFO - get_agent function exited
+2025-09-02 02:46:44,882 - INFO - call_model function entered
+2025-09-02 02:46:44,886 - INFO - Processing with user preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '6 days', 'interests': 'want to visit cultural places', 'budget': '6000$', 'travel_style': 'cultural', 'want_flight_links': False}
+2025-09-02 02:46:45,559 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:46:45,615 - INFO - call_model function exited
+2025-09-02 02:46:45,616 - INFO - should_continue function entered
+2025-09-02 02:46:45,617 - INFO - should_continue: returning 'tools'
+2025-09-02 02:46:45,619 - INFO - handle_tools function entered
+2025-09-02 02:46:45,620 - INFO - Executing tool: suggest_trips_tool with args: {'query': '5 days trip from Rome to Cairo', 'user': {'departure': 'Rome', 'destination': 'Cairo', 'duration': 5, 'want_flight_links': True}}
+2025-09-02 02:46:45,622 - INFO - suggest_trips_tool entered with query: 5 days trip from Rome to Cairo, user: {'user_location': 'rome', 'destination': 'cairo', 'duration': '6 days', 'interests': 'want to visit cultural places', 'budget': '6000$', 'travel_style': 'cultural', 'want_flight_links': False}
+2025-09-02 02:46:45,624 - INFO - User preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '6 days', 'interests': 'want to visit cultural places', 'budget': '6000$', 'travel_style': 'cultural', 'want_flight_links': False}
+2025-09-02 02:46:51,461 - INFO - suggest_trips_tool exited
+2025-09-02 02:46:51,463 - INFO - Executing tool: rag_process_tool with args: {'query': '5 days trip itinerary from Rome to Cairo including flights, accommodation, and activities'}
+2025-09-02 02:46:51,467 - INFO - rag_process_tool entered
+2025-09-02 02:46:52,902 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 02:46:54,125 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 02:47:04,567 - INFO - rag_process_tool exited
+2025-09-02 02:47:04,568 - INFO - handle_tools function exited
+2025-09-02 02:47:04,571 - INFO - call_model function entered
+2025-09-02 02:47:04,574 - INFO - Processing with user preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '6 days', 'interests': 'want to visit cultural places', 'budget': '6000$', 'travel_style': 'cultural', 'want_flight_links': False}
+2025-09-02 02:47:07,351 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 02:47:07,356 - INFO - call_model function exited
+2025-09-02 02:47:07,358 - INFO - should_continue function entered
+2025-09-02 02:47:07,360 - INFO - should_continue: returning END
+2025-09-02 02:47:07,367 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:47:07,368 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 02:47:07,371 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 02:47:07,372 - INFO - Selected non-empty itinerary content
+2025-09-02 02:47:07,376 - INFO - run_agent function exited
+2025-09-02 02:47:07,413 - INFO - Main execution completed
+2025-09-02 16:25:34,687 - INFO - Main execution started
+2025-09-02 16:27:00,663 - INFO - run_agent function entered
+2025-09-02 16:27:00,667 - INFO - User preferences in run_agent: {'user_location': 'rome', 'destination': 'cairo', 'duration': '4 days', 'interests': 'want to visit ancient places', 'budget': '5000$', 'travel_style': 'historical', 'want_flight_links': True}
+2025-09-02 16:27:00,668 - INFO - get_agent function entered
+2025-09-02 16:27:00,672 - INFO - get_agent function exited
+2025-09-02 16:27:00,797 - INFO - call_model function entered
+2025-09-02 16:27:00,798 - INFO - Processing with user preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '4 days', 'interests': 'want to visit ancient places', 'budget': '5000$', 'travel_style': 'historical', 'want_flight_links': True}
+2025-09-02 16:27:02,087 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 16:27:02,136 - INFO - call_model function exited
+2025-09-02 16:27:02,137 - INFO - should_continue function entered
+2025-09-02 16:27:02,138 - INFO - should_continue: returning 'tools'
+2025-09-02 16:27:02,141 - INFO - handle_tools function entered
+2025-09-02 16:27:02,149 - INFO - Executing tool: suggest_trips_tool with args: {'query': '4 days trip from Rome to Cairo', 'user': {'budget': 'medium', 'interests': ['history', 'culture'], 'want_flight_links': True}}
+2025-09-02 16:27:02,156 - INFO - suggest_trips_tool entered with query: 4 days trip from Rome to Cairo, user: {'user_location': 'rome', 'destination': 'cairo', 'duration': '4 days', 'interests': 'want to visit ancient places', 'budget': '5000$', 'travel_style': 'historical', 'want_flight_links': True}
+2025-09-02 16:27:02,158 - INFO - User preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '4 days', 'interests': 'want to visit ancient places', 'budget': '5000$', 'travel_style': 'historical', 'want_flight_links': True}
+2025-09-02 16:27:09,995 - INFO - suggest_trips_tool exited
+2025-09-02 16:27:09,996 - INFO - Executing tool: search_query_tool with args: {'query': 'Flights from Rome to Cairo roundtrip, departure next week, economy, links'}
+2025-09-02 16:27:09,998 - INFO - search_query_tool entered
+2025-09-02 16:27:11,498 - INFO - search_query_tool exited
+2025-09-02 16:27:11,499 - INFO - handle_tools function exited
+2025-09-02 16:27:11,500 - INFO - call_model function entered
+2025-09-02 16:27:11,502 - INFO - Processing with user preferences: {'user_location': 'rome', 'destination': 'cairo', 'duration': '4 days', 'interests': 'want to visit ancient places', 'budget': '5000$', 'travel_style': 'historical', 'want_flight_links': True}
+2025-09-02 16:27:12,859 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 16:27:12,862 - INFO - call_model function exited
+2025-09-02 16:27:12,863 - INFO - should_continue function entered
+2025-09-02 16:27:12,863 - INFO - should_continue: returning END
+2025-09-02 16:27:12,866 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 16:27:12,867 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 16:27:12,868 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 16:27:12,868 - INFO - Selected non-empty itinerary content
+2025-09-02 16:27:12,870 - INFO - Running flight search: Flights from rome to cairo roundtrip duration 4 days
+2025-09-02 16:27:14,973 - INFO - run_agent function exited
+2025-09-02 16:27:14,995 - INFO - Main execution completed
+2025-09-02 16:29:59,095 - INFO - Main execution started
+2025-09-02 16:30:41,303 - INFO - run_agent function entered
+2025-09-02 16:30:41,304 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'cape town', 'duration': 'anything', 'interests': 'anything', 'budget': '1000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 16:30:41,304 - INFO - get_agent function entered
+2025-09-02 16:30:41,307 - INFO - get_agent function exited
+2025-09-02 16:30:41,346 - INFO - call_model function entered
+2025-09-02 16:30:41,348 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cape town', 'duration': 'anything', 'interests': 'anything', 'budget': '1000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 16:30:41,878 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 16:34:57,584 - INFO - Main execution started
+2025-09-02 16:35:53,186 - INFO - Main execution started
+2025-09-02 16:36:03,838 - INFO - run_agent function entered
+2025-09-02 16:36:03,839 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 16:36:03,840 - INFO - get_agent function entered
+2025-09-02 16:36:03,843 - INFO - get_agent function exited
+2025-09-02 16:36:03,891 - INFO - call_model function entered
+2025-09-02 16:36:03,892 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 16:36:04,598 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 17:46:49,168 - INFO - Main execution started
+2025-09-02 17:47:00,830 - INFO - run_agent function entered
+2025-09-02 17:47:00,830 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:47:00,831 - INFO - get_agent function entered
+2025-09-02 17:47:00,833 - INFO - get_agent function exited
+2025-09-02 17:47:00,889 - INFO - call_model function entered
+2025-09-02 17:47:00,890 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:47:01,531 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 17:47:27,100 - INFO - Main execution started
+2025-09-02 17:47:52,672 - INFO - Main execution started
+2025-09-02 17:48:08,910 - INFO - run_agent function entered
+2025-09-02 17:48:08,911 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:48:08,911 - INFO - get_agent function entered
+2025-09-02 17:48:08,914 - INFO - get_agent function exited
+2025-09-02 17:48:08,962 - INFO - call_model function entered
+2025-09-02 17:48:08,962 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:48:09,903 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:48:09,964 - INFO - call_model function exited
+2025-09-02 17:48:09,968 - INFO - should_continue function entered
+2025-09-02 17:48:09,970 - INFO - should_continue: returning 'tools'
+2025-09-02 17:48:09,973 - INFO - handle_tools function entered
+2025-09-02 17:48:09,975 - INFO - Executing tool: search_query_tool with args: {'query': 'Next flight from Dubai to Cape Town'}
+2025-09-02 17:48:09,978 - INFO - search_query_tool entered
+2025-09-02 17:48:11,628 - INFO - search_query_tool exited
+2025-09-02 17:48:11,628 - INFO - handle_tools function exited
+2025-09-02 17:48:11,630 - INFO - call_model function entered
+2025-09-02 17:48:11,631 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:48:12,946 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:48:12,951 - INFO - call_model function exited
+2025-09-02 17:48:12,953 - INFO - should_continue function entered
+2025-09-02 17:48:12,955 - INFO - should_continue: returning END
+2025-09-02 17:48:12,962 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 17:48:12,964 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 17:48:12,966 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 17:48:12,967 - INFO - Selected non-empty itinerary content
+2025-09-02 17:48:12,971 - INFO - run_agent function exited
+2025-09-02 17:48:12,981 - INFO - Main execution completed
+2025-09-02 17:49:17,052 - INFO - Main execution started
+2025-09-02 17:49:42,334 - INFO - run_agent function entered
+2025-09-02 17:49:42,335 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:42,335 - INFO - get_agent function entered
+2025-09-02 17:49:42,338 - INFO - get_agent function exited
+2025-09-02 17:49:42,384 - INFO - call_model function entered
+2025-09-02 17:49:42,385 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:43,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:49:43,183 - INFO - call_model function exited
+2025-09-02 17:49:43,185 - INFO - should_continue function entered
+2025-09-02 17:49:43,190 - INFO - should_continue: returning 'tools'
+2025-09-02 17:49:43,194 - INFO - handle_tools function entered
+2025-09-02 17:49:43,196 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro', 'user': {'budget': 'medium', 'destination': 'Rio de Janeiro', 'duration': '7 days', 'interests': ['beaches', 'culture', 'food']}}
+2025-09-02 17:49:43,201 - INFO - suggest_trips_tool entered with query: Rio de Janeiro, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:43,201 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:45,196 - INFO - suggest_trips_tool exited
+2025-09-02 17:49:45,197 - INFO - handle_tools function exited
+2025-09-02 17:49:45,200 - INFO - call_model function entered
+2025-09-02 17:49:45,203 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:45,637 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:49:45,640 - INFO - call_model function exited
+2025-09-02 17:49:45,641 - INFO - should_continue function entered
+2025-09-02 17:49:45,641 - INFO - should_continue: returning 'tools'
+2025-09-02 17:49:45,642 - INFO - handle_tools function entered
+2025-09-02 17:49:45,644 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro', 'user': {'budget': 'mid-range', 'destination': 'Rio de Janeiro', 'duration': '7', 'interests': 'beaches, culture', 'travel_style': 'relaxed', 'user_location': 'New York', 'want_flight_links': False}}
+2025-09-02 17:49:45,647 - INFO - suggest_trips_tool entered with query: Rio de Janeiro, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:45,647 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:47,247 - INFO - suggest_trips_tool exited
+2025-09-02 17:49:47,248 - INFO - handle_tools function exited
+2025-09-02 17:49:47,251 - INFO - call_model function entered
+2025-09-02 17:49:47,257 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:47,889 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:49:47,891 - INFO - call_model function exited
+2025-09-02 17:49:47,892 - INFO - should_continue function entered
+2025-09-02 17:49:47,893 - INFO - should_continue: returning 'tools'
+2025-09-02 17:49:47,894 - INFO - handle_tools function entered
+2025-09-02 17:49:47,897 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro', 'user': {'budget': 'mid-range', 'destination': 'Rio de Janeiro', 'duration': '7 days', 'interests': 'beaches, culture, history', 'travel_style': 'relaxed', 'user_location': 'New York', 'want_flight_links': False}}
+2025-09-02 17:49:47,900 - INFO - suggest_trips_tool entered with query: Rio de Janeiro, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:47,902 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:49,585 - INFO - suggest_trips_tool exited
+2025-09-02 17:49:49,586 - INFO - handle_tools function exited
+2025-09-02 17:49:49,588 - INFO - call_model function entered
+2025-09-02 17:49:49,593 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:49:49,783 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 17:49:49,785 - INFO - Retrying request to /openai/v1/chat/completions in 29.000000 seconds
+2025-09-02 17:50:20,097 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:50:20,107 - INFO - call_model function exited
+2025-09-02 17:50:20,109 - INFO - should_continue function entered
+2025-09-02 17:50:20,110 - INFO - should_continue: returning 'tools'
+2025-09-02 17:50:20,115 - INFO - handle_tools function entered
+2025-09-02 17:50:20,147 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro', 'user': {'budget': '', 'destination': '', 'duration': '', 'interests': '', 'travel_style': '', 'user_location': '', 'want_flight_links': False}}
+2025-09-02 17:50:20,151 - INFO - suggest_trips_tool entered with query: Rio de Janeiro, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:50:20,152 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:50:21,764 - INFO - suggest_trips_tool exited
+2025-09-02 17:50:21,765 - INFO - handle_tools function exited
+2025-09-02 17:50:21,767 - INFO - call_model function entered
+2025-09-02 17:50:21,792 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:50:22,522 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 17:58:50,116 - INFO - Main execution started
+2025-09-02 17:58:54,974 - INFO - run_agent function entered
+2025-09-02 17:58:54,975 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:58:54,975 - INFO - get_agent function entered
+2025-09-02 17:58:54,978 - INFO - get_agent function exited
+2025-09-02 17:58:55,029 - INFO - call_model function entered
+2025-09-02 17:58:55,030 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:58:56,109 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:58:56,177 - INFO - call_model function exited
+2025-09-02 17:58:56,179 - INFO - should_continue function entered
+2025-09-02 17:58:56,181 - INFO - should_continue: returning 'tools'
+2025-09-02 17:58:56,188 - INFO - handle_tools function entered
+2025-09-02 17:58:56,189 - INFO - Executing tool: rag_process_tool with args: {'query': 'JFK airport name'}
+2025-09-02 17:58:56,192 - INFO - rag_process_tool entered
+2025-09-02 17:58:57,733 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 17:58:58,558 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 17:58:59,665 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 17:59:00,428 - INFO - rag_process_tool exited
+2025-09-02 17:59:00,429 - INFO - handle_tools function exited
+2025-09-02 17:59:00,433 - INFO - call_model function entered
+2025-09-02 17:59:00,435 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:00,867 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:59:00,872 - INFO - call_model function exited
+2025-09-02 17:59:00,874 - INFO - should_continue function entered
+2025-09-02 17:59:00,876 - INFO - should_continue: returning END
+2025-09-02 17:59:00,883 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 17:59:00,884 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 17:59:00,885 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 17:59:00,887 - INFO - Selected non-empty itinerary content
+2025-09-02 17:59:00,889 - INFO - run_agent function exited
+2025-09-02 17:59:00,891 - INFO - Main execution completed
+2025-09-02 17:59:41,523 - INFO - Main execution started
+2025-09-02 17:59:54,246 - INFO - run_agent function entered
+2025-09-02 17:59:54,246 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:54,247 - INFO - get_agent function entered
+2025-09-02 17:59:54,249 - INFO - get_agent function exited
+2025-09-02 17:59:54,292 - INFO - call_model function entered
+2025-09-02 17:59:54,293 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:54,909 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:59:54,967 - INFO - call_model function exited
+2025-09-02 17:59:54,968 - INFO - should_continue function entered
+2025-09-02 17:59:54,969 - INFO - should_continue: returning 'tools'
+2025-09-02 17:59:54,972 - INFO - handle_tools function entered
+2025-09-02 17:59:54,974 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro trip', 'user': {'budget': 'mid-range', 'destination': 'Rio de Janeiro', 'duration': '7 days', 'interests': 'beaches, culture, nightlife'}}
+2025-09-02 17:59:54,977 - INFO - suggest_trips_tool entered with query: Rio de Janeiro trip, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:54,978 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:56,654 - INFO - suggest_trips_tool exited
+2025-09-02 17:59:56,655 - INFO - handle_tools function exited
+2025-09-02 17:59:56,659 - INFO - call_model function entered
+2025-09-02 17:59:56,662 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:57,271 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:59:57,277 - INFO - call_model function exited
+2025-09-02 17:59:57,279 - INFO - should_continue function entered
+2025-09-02 17:59:57,280 - INFO - should_continue: returning 'tools'
+2025-09-02 17:59:57,284 - INFO - handle_tools function entered
+2025-09-02 17:59:57,288 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro trip', 'user': {'budget': 'Mid-Range', 'destination': 'Rio de Janeiro', 'duration': '7', 'interests': 'Beaches, Culture', 'travel_style': 'Relaxed', 'user_location': 'New York', 'want_flight_links': False}}
+2025-09-02 17:59:57,293 - INFO - suggest_trips_tool entered with query: Rio de Janeiro trip, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:57,296 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:59,174 - INFO - suggest_trips_tool exited
+2025-09-02 17:59:59,175 - INFO - handle_tools function exited
+2025-09-02 17:59:59,177 - INFO - call_model function entered
+2025-09-02 17:59:59,179 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:59,722 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 17:59:59,725 - INFO - call_model function exited
+2025-09-02 17:59:59,726 - INFO - should_continue function entered
+2025-09-02 17:59:59,727 - INFO - should_continue: returning 'tools'
+2025-09-02 17:59:59,729 - INFO - handle_tools function entered
+2025-09-02 17:59:59,733 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro trip', 'user': {'budget': '', 'destination': '', 'duration': '', 'interests': '', 'travel_style': '', 'user_location': '', 'want_flight_links': False}}
+2025-09-02 17:59:59,737 - INFO - suggest_trips_tool entered with query: Rio de Janeiro trip, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 17:59:59,738 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:00:01,725 - INFO - suggest_trips_tool exited
+2025-09-02 18:00:01,726 - INFO - handle_tools function exited
+2025-09-02 18:00:01,727 - INFO - call_model function entered
+2025-09-02 18:00:01,732 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:00:01,921 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 18:00:01,923 - INFO - Retrying request to /openai/v1/chat/completions in 28.000000 seconds
+2025-09-02 18:00:31,094 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 18:00:31,102 - INFO - call_model function exited
+2025-09-02 18:00:31,104 - INFO - should_continue function entered
+2025-09-02 18:00:31,105 - INFO - should_continue: returning 'tools'
+2025-09-02 18:00:31,109 - INFO - handle_tools function entered
+2025-09-02 18:00:31,133 - INFO - Executing tool: suggest_trips_tool with args: {'query': 'Rio de Janeiro trip', 'user': {'budget': '', 'destination': '', 'duration': '', 'interests': '', 'travel_style': '', 'user_location': '', 'want_flight_links': False}}
+2025-09-02 18:00:31,137 - INFO - suggest_trips_tool entered with query: Rio de Janeiro trip, user: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:00:31,138 - INFO - User preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:00:40,802 - INFO - suggest_trips_tool exited
+2025-09-02 18:00:40,803 - INFO - handle_tools function exited
+2025-09-02 18:00:40,806 - INFO - call_model function entered
+2025-09-02 18:00:40,850 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:00:41,485 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 18:03:27,961 - INFO - Main execution started
+2025-09-02 18:03:47,838 - INFO - run_agent function entered
+2025-09-02 18:03:47,838 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:47,839 - INFO - get_agent function entered
+2025-09-02 18:03:47,842 - INFO - get_agent function exited
+2025-09-02 18:03:47,882 - INFO - call_model function entered
+2025-09-02 18:03:47,884 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:48,895 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 18:03:48,946 - INFO - call_model function exited
+2025-09-02 18:03:48,948 - INFO - should_continue function entered
+2025-09-02 18:03:48,948 - INFO - should_continue: returning 'tools'
+2025-09-02 18:03:48,952 - INFO - handle_tools function entered
+2025-09-02 18:03:48,955 - INFO - Executing tool: rag_process_tool with args: {'query': 'layover meaning in travel'}
+2025-09-02 18:03:48,960 - INFO - rag_process_tool entered
+2025-09-02 18:03:50,444 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 18:03:51,489 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 18:03:52,367 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 18:03:53,663 - INFO - rag_process_tool exited
+2025-09-02 18:03:53,664 - INFO - handle_tools function exited
+2025-09-02 18:03:53,668 - INFO - call_model function entered
+2025-09-02 18:03:53,670 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:54,007 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 18:03:54,013 - INFO - call_model function exited
+2025-09-02 18:03:54,015 - INFO - should_continue function entered
+2025-09-02 18:03:54,017 - INFO - should_continue: returning 'tools'
+2025-09-02 18:03:54,020 - INFO - handle_tools function entered
+2025-09-02 18:03:54,025 - INFO - Executing tool: rag_process_tool with args: {'query': 'layover travel examples'}
+2025-09-02 18:03:54,030 - INFO - rag_process_tool entered
+2025-09-02 18:03:55,408 - INFO - rag_process_tool exited
+2025-09-02 18:03:55,409 - INFO - handle_tools function exited
+2025-09-02 18:03:55,410 - INFO - call_model function entered
+2025-09-02 18:03:55,412 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:55,915 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 18:03:55,920 - INFO - call_model function exited
+2025-09-02 18:03:55,921 - INFO - should_continue function entered
+2025-09-02 18:03:55,922 - INFO - should_continue: returning 'tools'
+2025-09-02 18:03:55,926 - INFO - handle_tools function entered
+2025-09-02 18:03:55,933 - INFO - Executing tool: rag_process_tool with args: {'query': 'layover travel examples'}
+2025-09-02 18:03:55,938 - INFO - rag_process_tool entered
+2025-09-02 18:03:57,337 - INFO - rag_process_tool exited
+2025-09-02 18:03:57,341 - INFO - handle_tools function exited
+2025-09-02 18:03:57,352 - INFO - call_model function entered
+2025-09-02 18:03:57,391 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:58,012 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 18:03:58,022 - INFO - call_model function exited
+2025-09-02 18:03:58,024 - INFO - should_continue function entered
+2025-09-02 18:03:58,025 - INFO - should_continue: returning 'tools'
+2025-09-02 18:03:58,028 - INFO - handle_tools function entered
+2025-09-02 18:03:58,046 - INFO - Executing tool: rag_process_tool with args: {'query': 'layover travel examples'}
+2025-09-02 18:03:58,048 - INFO - rag_process_tool entered
+2025-09-02 18:03:59,370 - INFO - rag_process_tool exited
+2025-09-02 18:03:59,371 - INFO - handle_tools function exited
+2025-09-02 18:03:59,372 - INFO - call_model function entered
+2025-09-02 18:03:59,387 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 18:03:59,782 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 19:19:45,675 - INFO - Main execution started
+2025-09-02 19:20:10,365 - INFO - run_agent function entered
+2025-09-02 19:20:10,369 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:20:10,369 - INFO - get_agent function entered
+2025-09-02 19:20:10,372 - INFO - get_agent function exited
+2025-09-02 19:20:10,417 - INFO - call_model function entered
+2025-09-02 19:20:10,418 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:20:11,351 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:20:11,405 - INFO - call_model function exited
+2025-09-02 19:20:11,412 - INFO - rag_process_tool entered
+2025-09-02 19:20:13,261 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:20:14,661 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:20:15,597 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:20:16,600 - INFO - rag_process_tool exited
+2025-09-02 19:20:16,606 - INFO - rag_retrieval function entered
+2025-09-02 19:20:17,969 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:20:17,971 - INFO - call_model function entered
+2025-09-02 19:20:17,972 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:20:18,555 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:20:18,561 - INFO - call_model function exited
+2025-09-02 19:20:18,571 - INFO - search_query_tool entered
+2025-09-02 19:20:20,219 - INFO - search_query_tool exited
+2025-09-02 19:20:20,225 - INFO - rag_retrieval function entered
+2025-09-02 19:20:21,984 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:20:21,985 - INFO - call_model function entered
+2025-09-02 19:20:21,988 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:20:22,875 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:20:22,881 - INFO - call_model function exited
+2025-09-02 19:20:22,891 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:20:22,892 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:20:22,893 - INFO - Selected non-empty itinerary content
+2025-09-02 19:20:22,896 - INFO - run_agent function exited
+2025-09-02 19:20:22,899 - INFO - Main execution completed
+2025-09-02 19:24:17,015 - INFO - Main execution started
+2025-09-02 19:24:24,118 - INFO - run_agent function entered
+2025-09-02 19:24:24,118 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:24:24,119 - INFO - get_agent function entered
+2025-09-02 19:24:24,123 - INFO - get_agent function exited
+2025-09-02 19:24:24,175 - INFO - call_model function entered
+2025-09-02 19:24:24,175 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:24:24,801 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:24:24,869 - INFO - call_model function exited
+2025-09-02 19:24:24,877 - INFO - rag_process_tool entered
+2025-09-02 19:24:26,485 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:24:27,135 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:24:27,993 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:24:30,044 - INFO - rag_process_tool exited
+2025-09-02 19:24:30,048 - INFO - rag_retrieval function entered
+2025-09-02 19:24:31,486 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:24:31,488 - INFO - call_model function entered
+2025-09-02 19:24:31,490 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:24:32,075 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:24:32,080 - INFO - call_model function exited
+2025-09-02 19:24:32,095 - INFO - rag_process_tool entered
+2025-09-02 19:24:32,105 - INFO - rag_process_tool entered
+2025-09-02 19:24:34,609 - INFO - rag_process_tool exited
+2025-09-02 19:24:34,610 - INFO - rag_process_tool exited
+2025-09-02 19:24:34,612 - INFO - rag_retrieval function entered
+2025-09-02 19:24:36,026 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:24:36,028 - INFO - call_model function entered
+2025-09-02 19:24:36,030 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:24:37,317 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:24:37,322 - INFO - call_model function exited
+2025-09-02 19:24:37,338 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:24:37,338 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:24:37,339 - INFO - Selected non-empty itinerary content
+2025-09-02 19:24:37,340 - INFO - run_agent function exited
+2025-09-02 19:24:37,341 - INFO - Main execution completed
+2025-09-02 19:24:56,704 - INFO - Main execution started
+2025-09-02 19:25:06,957 - INFO - run_agent function entered
+2025-09-02 19:25:06,958 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:25:06,958 - INFO - get_agent function entered
+2025-09-02 19:25:06,961 - INFO - get_agent function exited
+2025-09-02 19:25:07,005 - INFO - call_model function entered
+2025-09-02 19:25:07,006 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:25:07,657 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:25:07,719 - INFO - call_model function exited
+2025-09-02 19:25:07,727 - INFO - rag_process_tool entered
+2025-09-02 19:25:09,334 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:25:10,436 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:25:11,404 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:25:13,618 - INFO - rag_process_tool exited
+2025-09-02 19:25:13,621 - INFO - rag_retrieval function entered
+2025-09-02 19:25:15,098 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:25:15,099 - INFO - call_model function entered
+2025-09-02 19:25:15,101 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:25:15,581 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:25:15,584 - INFO - call_model function exited
+2025-09-02 19:25:15,588 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:25:15,588 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:25:15,589 - INFO - Selected non-empty itinerary content
+2025-09-02 19:25:15,591 - INFO - run_agent function exited
+2025-09-02 19:25:15,592 - INFO - Main execution completed
+2025-09-02 19:27:05,903 - INFO - Main execution started
+2025-09-02 19:27:29,949 - INFO - run_agent function entered
+2025-09-02 19:27:29,952 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:27:29,953 - INFO - get_agent function entered
+2025-09-02 19:27:29,956 - INFO - get_agent function exited
+2025-09-02 19:27:30,053 - INFO - call_model function entered
+2025-09-02 19:27:30,054 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:27:30,853 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:27:30,911 - INFO - call_model function exited
+2025-09-02 19:27:30,922 - INFO - suggest_trips_tool entered with query: Dubai to Capetown trip, user: {'budget': 'mid-range', 'duration': '7-10 days', 'interests': ['beaches', 'culture'], 'want_flight_links': True}
+2025-09-02 19:27:30,929 - ERROR - Error in suggest_trips_tool: 1 validation error for UserScheme
+interests
+  Input should be a valid string [type=string_type, input_value=['beaches', 'culture'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-09-02 19:27:30,941 - INFO - rag_retrieval function entered
+2025-09-02 19:27:33,107 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:27:34,126 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:27:35,220 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:27:36,790 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:27:36,793 - INFO - call_model function entered
+2025-09-02 19:27:36,794 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:27:37,384 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:27:37,387 - INFO - call_model function exited
+2025-09-02 19:27:37,394 - INFO - rag_process_tool entered
+2025-09-02 19:27:38,934 - INFO - rag_process_tool exited
+2025-09-02 19:27:38,937 - INFO - rag_retrieval function entered
+2025-09-02 19:27:40,454 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:27:40,456 - INFO - call_model function entered
+2025-09-02 19:27:40,458 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:27:41,515 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:27:41,518 - INFO - call_model function exited
+2025-09-02 19:27:41,526 - INFO - search_query_tool entered
+2025-09-02 19:27:43,271 - INFO - search_query_tool exited
+2025-09-02 19:27:43,277 - INFO - rag_retrieval function entered
+2025-09-02 19:27:44,808 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:27:44,810 - INFO - call_model function entered
+2025-09-02 19:27:44,815 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:27:45,167 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 19:27:45,169 - INFO - Retrying request to /openai/v1/chat/completions in 39.000000 seconds
+2025-09-02 19:38:23,095 - INFO - Main execution started
+2025-09-02 19:38:33,101 - INFO - run_agent function entered
+2025-09-02 19:38:33,102 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:38:33,102 - INFO - get_agent function entered
+2025-09-02 19:38:33,107 - INFO - get_agent function exited
+2025-09-02 19:38:33,154 - INFO - call_model function entered
+2025-09-02 19:38:33,155 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:38:33,856 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:38:33,920 - INFO - call_model function exited
+2025-09-02 19:38:33,925 - INFO - rag_process_tool entered
+2025-09-02 19:38:35,669 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:38:36,655 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:38:37,528 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:38:38,440 - INFO - rag_process_tool exited
+2025-09-02 19:38:38,444 - INFO - rag_retrieval function entered
+2025-09-02 19:38:39,922 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:38:39,924 - INFO - call_model function entered
+2025-09-02 19:38:39,925 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:38:40,507 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:38:40,512 - INFO - call_model function exited
+2025-09-02 19:38:40,521 - INFO - search_query_tool entered
+2025-09-02 19:38:42,662 - INFO - search_query_tool exited
+2025-09-02 19:38:42,666 - INFO - rag_retrieval function entered
+2025-09-02 19:38:44,115 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:38:44,117 - INFO - call_model function entered
+2025-09-02 19:38:44,119 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:38:45,098 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:38:45,103 - INFO - call_model function exited
+2025-09-02 19:38:45,121 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:38:45,123 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:38:45,127 - INFO - Selected non-empty itinerary content
+2025-09-02 19:38:45,129 - INFO - run_agent function exited
+2025-09-02 19:38:45,132 - INFO - Main execution completed
+2025-09-02 19:39:06,587 - INFO - Main execution started
+2025-09-02 19:39:21,270 - INFO - run_agent function entered
+2025-09-02 19:39:21,271 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:39:21,272 - INFO - get_agent function entered
+2025-09-02 19:39:21,275 - INFO - get_agent function exited
+2025-09-02 19:39:21,337 - INFO - call_model function entered
+2025-09-02 19:39:21,338 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:39:21,993 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:39:22,048 - INFO - call_model function exited
+2025-09-02 19:39:22,196 - INFO - suggest_trips_tool entered with query: Dubai to Cape Town 5-day trip, user: {'departure': 'Dubai', 'destination': 'Cape Town', 'duration': 5, 'interests': ['beach', 'culture', 'food']}
+2025-09-02 19:39:22,213 - ERROR - Validation error in suggest_trips_tool: 1 validation error for UserScheme
+duration
+  Input should be a valid string [type=string_type, input_value=5, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-09-02 19:39:22,219 - INFO - rag_retrieval function entered
+2025-09-02 19:39:24,099 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:39:25,404 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:39:26,536 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:39:31,375 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:39:31,383 - INFO - call_model function entered
+2025-09-02 19:39:31,388 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:39:31,892 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:39:31,905 - INFO - call_model function exited
+2025-09-02 19:39:31,958 - INFO - rag_process_tool entered
+2025-09-02 19:39:33,543 - INFO - rag_process_tool exited
+2025-09-02 19:39:33,546 - INFO - rag_retrieval function entered
+2025-09-02 19:39:34,980 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:39:34,983 - INFO - call_model function entered
+2025-09-02 19:39:34,987 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:39:36,300 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:39:36,306 - INFO - call_model function exited
+2025-09-02 19:39:36,319 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:39:36,319 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:39:36,320 - INFO - Selected non-empty itinerary content
+2025-09-02 19:39:36,322 - INFO - run_agent function exited
+2025-09-02 19:39:36,327 - INFO - Main execution completed
+2025-09-02 19:41:29,070 - INFO - Main execution started
+2025-09-02 19:41:40,605 - INFO - run_agent function entered
+2025-09-02 19:41:40,606 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:41:40,606 - INFO - get_agent function entered
+2025-09-02 19:41:40,612 - INFO - get_agent function exited
+2025-09-02 19:41:40,659 - INFO - call_model function entered
+2025-09-02 19:41:40,663 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:41:41,278 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:41:41,342 - INFO - call_model function exited
+2025-09-02 19:41:41,354 - INFO - suggest_trips_tool entered with query: 5 days trip to Dubai to Cape Town, user: {'budget': 'moderate', 'destination': 'Dubai to Cape Town', 'duration': 5, 'interests': ['beach', 'culture', 'adventure']}
+2025-09-02 19:41:41,364 - INFO - User preferences: {'user_location': '', 'destination': 'Dubai to Cape Town', 'duration': '5', 'interests': 'beach, culture, adventure', 'budget': 'moderate', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:41:50,450 - INFO - suggest_trips_tool exited
+2025-09-02 19:41:50,454 - INFO - rag_retrieval function entered
+2025-09-02 19:41:52,248 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:41:52,944 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:41:53,894 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:41:58,140 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:41:58,145 - INFO - call_model function entered
+2025-09-02 19:41:58,151 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:42:05,693 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:42:05,696 - INFO - call_model function exited
+2025-09-02 19:42:05,700 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:42:05,701 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:42:05,701 - INFO - Selected non-empty itinerary content
+2025-09-02 19:42:05,703 - INFO - run_agent function exited
+2025-09-02 19:42:05,718 - INFO - Main execution completed
+2025-09-02 19:42:41,864 - INFO - Main execution started
+2025-09-02 19:42:50,149 - INFO - run_agent function entered
+2025-09-02 19:42:50,150 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:42:50,151 - INFO - get_agent function entered
+2025-09-02 19:42:50,153 - INFO - get_agent function exited
+2025-09-02 19:42:50,203 - INFO - call_model function entered
+2025-09-02 19:42:50,204 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:42:51,331 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:42:51,379 - INFO - call_model function exited
+2025-09-02 19:42:51,396 - INFO - rag_process_tool entered
+2025-09-02 19:42:53,138 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:42:53,893 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:42:54,787 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:42:55,593 - INFO - rag_process_tool exited
+2025-09-02 19:42:55,597 - INFO - rag_retrieval function entered
+2025-09-02 19:42:57,248 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:42:57,251 - INFO - call_model function entered
+2025-09-02 19:42:57,252 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:42:57,676 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:42:57,681 - INFO - call_model function exited
+2025-09-02 19:42:57,691 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:42:57,692 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:42:57,694 - INFO - Selected non-empty itinerary content
+2025-09-02 19:42:57,696 - INFO - run_agent function exited
+2025-09-02 19:42:57,699 - INFO - Main execution completed
+2025-09-02 19:43:26,713 - INFO - Main execution started
+2025-09-02 19:43:33,037 - INFO - run_agent function entered
+2025-09-02 19:43:33,038 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:43:33,042 - INFO - get_agent function entered
+2025-09-02 19:43:33,047 - INFO - get_agent function exited
+2025-09-02 19:43:33,096 - INFO - call_model function entered
+2025-09-02 19:43:33,097 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:43:34,388 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:43:34,450 - INFO - call_model function exited
+2025-09-02 19:43:34,463 - INFO - rag_process_tool entered
+2025-09-02 19:43:36,131 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:43:37,255 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:43:38,194 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:43:39,538 - INFO - rag_process_tool exited
+2025-09-02 19:43:39,546 - INFO - rag_retrieval function entered
+2025-09-02 19:43:41,469 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:43:41,472 - INFO - call_model function entered
+2025-09-02 19:43:41,473 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:43:42,003 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:43:42,013 - INFO - call_model function exited
+2025-09-02 19:43:42,025 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:43:42,065 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:43:42,115 - INFO - Selected non-empty itinerary content
+2025-09-02 19:43:42,127 - INFO - run_agent function exited
+2025-09-02 19:43:42,131 - INFO - Main execution completed
+2025-09-02 19:44:06,057 - INFO - Main execution started
+2025-09-02 19:44:40,663 - INFO - run_agent function entered
+2025-09-02 19:44:40,685 - INFO - Detected flight link request in user input, enabling want_flight_links
+2025-09-02 19:44:40,694 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:44:40,697 - INFO - get_agent function entered
+2025-09-02 19:44:40,744 - INFO - get_agent function exited
+2025-09-02 19:44:40,806 - INFO - call_model function entered
+2025-09-02 19:44:40,808 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:44:41,422 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 19:44:41,427 - ERROR - LLM invoke error: Error code: 400 - {'error': {'message': "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=suggest_trips_tool>{"query": "6 days trip from Dubai to Cape Town", "user": {"want_flight_links": True, "budget": "mid-range", "interests": ["beach", "culture", "food"]}}</function>'}}
+2025-09-02 19:48:34,306 - INFO - Main execution started
+2025-09-02 19:49:26,253 - INFO - run_agent function entered
+2025-09-02 19:49:26,254 - INFO - Detected flight link request in user input, enabling want_flight_links
+2025-09-02 19:49:26,254 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:49:26,255 - INFO - get_agent function entered
+2025-09-02 19:49:26,258 - INFO - get_agent function exited
+2025-09-02 19:49:26,300 - INFO - call_model function entered
+2025-09-02 19:49:26,300 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:49:26,926 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:49:26,996 - INFO - call_model function exited
+2025-09-02 19:49:27,004 - INFO - suggest_trips_tool entered with query: 6-day trip from Dubai to Cape Town, budget $6000, interests: famous places, travel style: anything, wants_flight_links: True
+2025-09-02 19:49:35,607 - INFO - suggest_trips_tool exited
+2025-09-02 19:49:35,614 - INFO - rag_retrieval function entered
+2025-09-02 19:49:37,297 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:49:38,248 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:49:39,213 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:49:40,823 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:49:40,827 - INFO - call_model function entered
+2025-09-02 19:49:40,829 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:49:41,468 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:49:41,470 - INFO - call_model function exited
+2025-09-02 19:49:41,475 - INFO - search_query_tool entered
+2025-09-02 19:49:43,363 - INFO - search_query_tool exited
+2025-09-02 19:49:43,368 - INFO - rag_retrieval function entered
+2025-09-02 19:49:44,833 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:49:44,835 - INFO - call_model function entered
+2025-09-02 19:49:44,837 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'capetown', 'duration': '6 days', 'interests': 'want to visit famous places', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-02 19:49:45,012 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-02 19:49:45,014 - ERROR - LLM invoke error: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.1-8b-instant` in organization `org_01jr92b0r4fh5rh7jgggpe77zt` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 10163, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2025-09-02 19:52:40,636 - INFO - Main execution started
+2025-09-02 19:52:45,229 - INFO - run_agent function entered
+2025-09-02 19:52:45,230 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:52:45,231 - INFO - get_agent function entered
+2025-09-02 19:52:45,234 - INFO - get_agent function exited
+2025-09-02 19:52:45,291 - INFO - call_model function entered
+2025-09-02 19:52:45,292 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:52:46,003 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:52:46,068 - INFO - call_model function exited
+2025-09-02 19:52:46,073 - INFO - search_query_tool entered
+2025-09-02 19:52:47,700 - INFO - search_query_tool exited
+2025-09-02 19:52:47,706 - INFO - rag_retrieval function entered
+2025-09-02 19:52:49,282 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:52:49,965 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:52:50,897 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:52:52,008 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:52:52,019 - INFO - call_model function entered
+2025-09-02 19:52:52,033 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:52:52,886 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:52:52,889 - INFO - call_model function exited
+2025-09-02 19:52:52,893 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:52:52,894 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:52:52,894 - INFO - Selected non-empty itinerary content
+2025-09-02 19:52:52,896 - INFO - run_agent function exited
+2025-09-02 19:52:52,905 - INFO - Main execution completed
+2025-09-02 19:54:13,780 - INFO - Main execution started
+2025-09-02 19:54:35,740 - INFO - run_agent function entered
+2025-09-02 19:54:35,741 - INFO - User preferences in run_agent: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:54:35,742 - INFO - get_agent function entered
+2025-09-02 19:54:35,745 - INFO - get_agent function exited
+2025-09-02 19:54:35,800 - INFO - call_model function entered
+2025-09-02 19:54:35,804 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:54:36,542 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:54:36,577 - INFO - call_model function exited
+2025-09-02 19:54:36,582 - INFO - suggest_trips_tool entered with query: 6 days trip from Dubai to Cape Town, user: {'budget': 'medium', 'interests': ['beach', 'culture', 'food'], 'want_flight_links': True}
+2025-09-02 19:54:36,595 - ERROR - Error in suggest_trips_tool: 1 validation error for UserScheme
+interests
+  Input should be a valid string [type=string_type, input_value=['beach', 'culture', 'food'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-09-02 19:54:36,600 - INFO - rag_process_tool entered
+2025-09-02 19:54:38,462 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 19:54:39,799 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:54:40,914 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 19:54:41,884 - INFO - rag_process_tool exited
+2025-09-02 19:54:41,891 - INFO - rag_retrieval function entered
+2025-09-02 19:54:43,694 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:54:43,696 - INFO - call_model function entered
+2025-09-02 19:54:43,698 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:54:44,181 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:54:44,187 - INFO - call_model function exited
+2025-09-02 19:54:44,201 - INFO - search_query_tool entered
+2025-09-02 19:54:46,403 - INFO - search_query_tool exited
+2025-09-02 19:54:46,411 - INFO - rag_retrieval function entered
+2025-09-02 19:54:48,049 - INFO - rag_retrieval function exited successfully
+2025-09-02 19:54:48,052 - INFO - call_model function entered
+2025-09-02 19:54:48,055 - INFO - Processing with user preferences: {'user_location': '', 'destination': '', 'duration': '', 'interests': '', 'budget': '', 'travel_style': '', 'want_flight_links': False}
+2025-09-02 19:54:50,497 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 19:54:50,500 - INFO - call_model function exited
+2025-09-02 19:54:50,508 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 19:54:50,515 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 19:54:50,516 - INFO - Selected non-empty itinerary content
+2025-09-02 19:54:50,518 - INFO - run_agent function exited
+2025-09-02 19:54:50,520 - INFO - Main execution completed
+2025-09-02 20:09:27,396 - INFO - Main execution started
+2025-09-02 20:09:38,708 - INFO - run_agent function entered
+2025-09-02 20:09:38,709 - INFO - User preferences in run_agent: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False}
+2025-09-02 20:09:38,710 - INFO - get_agent function entered
+2025-09-02 20:09:38,713 - INFO - get_agent function exited
+2025-09-02 20:09:38,754 - INFO - call_model function entered
+2025-09-02 20:09:38,764 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False}
+2025-09-02 20:09:39,590 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:09:39,628 - INFO - call_model function exited
+2025-09-02 20:09:39,634 - INFO - suggest_trips_tool entered with query: 6 days trip from Dubai to Cape Town, user: {'destination': 'Cape Town', 'duration': 6, 'origin': 'Dubai', 'want_flight_links': True}
+2025-09-02 20:09:39,635 - INFO - User preferences: {'origin': 'Dubai', 'destination': 'Cape Town', 'interests': None, 'budget': None, 'want_flight_links': True}
+2025-09-02 20:09:39,644 - INFO - rag_process_tool entered
+2025-09-02 20:09:39,699 - ERROR - Error in suggest_trips_tool: 'UserScheme' object has no attribute 'user_location'
+2025-09-02 20:09:41,257 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 20:09:42,067 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:09:43,138 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:09:44,278 - INFO - rag_process_tool exited
+2025-09-02 20:09:44,284 - INFO - rag_retrieval function entered
+2025-09-02 20:09:46,386 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:09:46,389 - INFO - call_model function entered
+2025-09-02 20:09:46,390 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False}
+2025-09-02 20:09:46,917 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:09:46,924 - INFO - call_model function exited
+2025-09-02 20:09:46,936 - INFO - search_query_tool entered
+2025-09-02 20:09:49,320 - INFO - search_query_tool exited
+2025-09-02 20:09:49,325 - INFO - rag_retrieval function entered
+2025-09-02 20:09:51,190 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:09:51,192 - INFO - call_model function entered
+2025-09-02 20:09:51,194 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False}
+2025-09-02 20:09:52,104 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:09:52,110 - INFO - call_model function exited
+2025-09-02 20:09:52,125 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 20:09:52,127 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 20:09:52,127 - INFO - Selected non-empty itinerary content
+2025-09-02 20:09:52,129 - INFO - run_agent function exited
+2025-09-02 20:09:52,130 - INFO - Main execution completed
+2025-09-02 20:12:24,346 - INFO - Main execution started
+2025-09-02 20:12:49,452 - INFO - run_agent function entered
+2025-09-02 20:12:49,453 - INFO - User preferences in run_agent: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:12:49,454 - INFO - get_agent function entered
+2025-09-02 20:12:49,457 - INFO - get_agent function exited
+2025-09-02 20:12:49,495 - INFO - call_model function entered
+2025-09-02 20:12:49,496 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:12:50,629 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:12:50,673 - INFO - call_model function exited
+2025-09-02 20:12:50,683 - INFO - suggest_trips_tool entered with query: 6 days trip from Dubai to Cape Town, user: {'destination': 'Cape Town', 'duration': 6, 'origin': 'Dubai', 'want_flight_links': True}
+2025-09-02 20:12:50,686 - INFO - rag_process_tool entered
+2025-09-02 20:12:50,686 - ERROR - Error in suggest_trips_tool: 1 validation error for UserScheme
+duration
+  Input should be a valid string [type=string_type, input_value=6, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-09-02 20:12:52,549 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 20:12:53,282 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:12:54,209 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:12:56,466 - INFO - rag_process_tool exited
+2025-09-02 20:12:56,470 - INFO - rag_retrieval function entered
+2025-09-02 20:12:58,249 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:12:58,251 - INFO - call_model function entered
+2025-09-02 20:12:58,252 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:12:58,738 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:12:58,744 - INFO - call_model function exited
+2025-09-02 20:12:58,755 - INFO - search_query_tool entered
+2025-09-02 20:13:01,178 - INFO - search_query_tool exited
+2025-09-02 20:13:01,184 - INFO - rag_retrieval function entered
+2025-09-02 20:13:02,592 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:13:02,594 - INFO - call_model function entered
+2025-09-02 20:13:02,598 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:13:02,761 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-02 20:13:02,762 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-09-02 20:13:06,686 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:13:06,691 - INFO - call_model function exited
+2025-09-02 20:13:06,708 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-02 20:13:06,709 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-02 20:13:06,710 - INFO - Selected non-empty itinerary content
+2025-09-02 20:13:06,711 - INFO - run_agent function exited
+2025-09-02 20:13:06,718 - INFO - Main execution completed
+2025-09-02 20:14:11,688 - INFO - Main execution started
+2025-09-02 20:14:24,948 - INFO - run_agent function entered
+2025-09-02 20:14:24,949 - INFO - User preferences in run_agent: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:14:24,950 - INFO - get_agent function entered
+2025-09-02 20:14:24,954 - INFO - get_agent function exited
+2025-09-02 20:14:25,018 - INFO - call_model function entered
+2025-09-02 20:14:25,019 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:14:26,101 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-02 20:14:42,546 - INFO - Main execution started
+2025-09-02 20:14:45,101 - INFO - run_agent function entered
+2025-09-02 20:14:45,101 - INFO - User preferences in run_agent: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:14:45,102 - INFO - get_agent function entered
+2025-09-02 20:14:45,105 - INFO - get_agent function exited
+2025-09-02 20:14:45,149 - INFO - call_model function entered
+2025-09-02 20:14:45,155 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:14:45,712 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:14:45,771 - INFO - call_model function exited
+2025-09-02 20:14:45,776 - INFO - suggest_trips_tool entered with query: 5 days trip from Rome to Dubai, user: {'budget': None, 'destination': 'Dubai', 'duration': 5, 'interests': None, 'origin': 'Rome', 'want_flight_links': True}
+2025-09-02 20:14:45,778 - INFO - User preferences: {'origin': 'Rome', 'destination': 'Dubai', 'interests': None, 'budget': None, 'want_flight_links': True, 'duration': '5 days', 'travel_style': None}
+2025-09-02 20:14:53,593 - INFO - suggest_trips_tool exited
+2025-09-02 20:14:53,597 - INFO - rag_retrieval function entered
+2025-09-02 20:14:55,217 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-02 20:14:55,940 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:14:56,841 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-02 20:14:59,256 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:14:59,260 - INFO - call_model function entered
+2025-09-02 20:14:59,266 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:15:00,136 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-02 20:15:00,139 - INFO - call_model function exited
+2025-09-02 20:15:00,144 - INFO - rag_process_tool entered
+2025-09-02 20:15:01,633 - INFO - rag_process_tool exited
+2025-09-02 20:15:01,636 - INFO - rag_retrieval function entered
+2025-09-02 20:15:03,075 - INFO - rag_retrieval function exited successfully
+2025-09-02 20:15:03,079 - INFO - call_model function entered
+2025-09-02 20:15:03,082 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
+2025-09-02 20:15:03,234 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"

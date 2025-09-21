@@ -1,0 +1,15 @@
+langchain_groq
+langgraph
+pydantic
+pydantic-settings
+langchain_tavily
+langchain_cohere
+langchain_chroma
+langchain-community
+pypdf
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+colorama
+langchain-hub
+streamlit
