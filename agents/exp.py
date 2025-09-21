@@ -1,7 +1,7 @@
 import sys
 import os
 import logging
-from typing import Annotated, Dict, List, Sequence, TypedDict, Any,Optional
+from typing import Annotated, Dict, List, Sequence, TypedDict, Any, Optional, Union, cast
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, ToolMessage, SystemMessage
 from langgraph.graph import END, StateGraph
 from langchain_core.tools import BaseTool
@@ -11,6 +11,24 @@ import re
 import json
 import uuid
 from langgraph.store.memory import InMemoryStore
+from langchain_core.runnables.config import RunnableConfig
+from langgraph.store.base import BaseStore
+
+# Import for create_extractor - this might need to be adjusted based on your actual package
+try:
+    from trustcall import create_extractor
+except ImportError:
+    # If trustcall is not available, you may need to install it or use an alternative
+    # You can modify this to use the correct package for your environment
+    print("Warning: 'trustcall' package not found. Please install it if needed for create_extractor functionality.")
+    
+    # Placeholder function in case the import fails
+    def create_extractor(llm, tools, tool_choice=None, enable_inserts=False):
+        """Placeholder function when trustcall is not available."""
+        print("Warning: Using placeholder create_extractor function")
+        def invoke(inputs):
+            return {"responses": []}
+        return type('Extractor', (), {'invoke': invoke})
 
 # Configure logging
 logging.basicConfig(
@@ -55,11 +73,16 @@ class AgentState(TypedDict):
     context: str
     rag_context: str
 
-llm = ChatGroq(
-    model="llama-3.1-8b-instant",
-    temperature=0.3,
-    max_retries=2,
-    groq_api_key=settings.GROQ_API_KEY,
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key=settings.GOOGLE_API_KEY)
+
+user_extractor = create_extractor(
+    llm,
+    tools = [{"type": "function", "function": {"name": "UserScheme", "description": "Extract user preferences from conversation", "parameters": UserScheme.model_json_schema()}}],
+    tool_choice = "UserScheme",
+    enable_inserts= True,
 )
 
 @tool
@@ -87,8 +110,34 @@ def suggest_trips_tool(query: str, user: Dict[str, Any]) -> str:
     """Suggest travel itineraries based on user preferences and queries."""
     logger.info(f"suggest_trips_tool entered with query: {query}, user: {user}")
     try:
-        # Convert user dict to UserScheme
-        user_scheme = UserScheme(**user)
+        # Handle case when user is empty or not properly formatted
+        if not user or (isinstance(user, str) and user.strip() in ["{}", "'{}'"]):
+            user = {}
+        
+        # Convert string to dict if needed
+        if isinstance(user, str):
+            try:
+                user = json.loads(user.replace("'", '"'))
+            except (json.JSONDecodeError, TypeError):
+                user = {}
+        
+        # Ensure the user data has the correct types before creating UserScheme
+        if "duration" in user and not isinstance(user["duration"], str):
+            user["duration"] = str(user["duration"])
+        
+        if "interests" in user and not isinstance(user["interests"], str):
+            if isinstance(user["interests"], list):
+                user["interests"] = ", ".join(user["interests"]) if user["interests"] else ""
+            else:
+                user["interests"] = str(user["interests"])
+        
+        # Create a default UserScheme if user dict is empty
+        if not user:
+            user_scheme = UserScheme()
+        else:
+            # Convert user dict to UserScheme
+            user_scheme = UserScheme(**user)
+            
         # Log user preferences for debugging
         logger.info(f"User preferences: {user_scheme.model_dump()}")
 
@@ -115,9 +164,47 @@ def should_continue(state: AgentState) -> str:
     logger.info("should_continue: returning END")
     return END
 
-def call_model(state: AgentState) -> AgentState:
+def extract_user_info(state: AgentState, config: RunnableConfig, store: BaseStore):
+    """Extract user information from conversation and store it in memory."""
+    logger.info("extract_user_info function entered")
+    
+    user_id = config["configurable"].get("user_id", "default_user")
+    namespace = ("memory", user_id)
+    
+    # Extract user profile
+    system_msg = "Extract the user profile from the following conversation"
+    result = user_extractor.invoke({"messages": [SystemMessage(content=system_msg)] + state["messages"]})
+    scheme = result.get("responses", [])
+    user_preferences = scheme[0].model_dump() if scheme else {}
+    
+    # Store user preferences
+    key = "user_preferences"
+    store.put(namespace, key, user_preferences)
+    
+    logger.info("extract_user_info function exited")
+    return state
+
+def call_model(state: AgentState, config: RunnableConfig, 
+               store: BaseStore) -> AgentState:
     """Process the conversation and generate AI responses."""
     logger.info("call_model function entered")
+
+    user_id = config["configurable"].get("user_id", "default_user")
+
+    namespace = ("memory", user_id)
+    key = "user_memory"
+    existing_memory = store.get(namespace, key)
+
+    if existing_memory:
+        existing_memory_content = existing_memory.value.get("memory")
+    else:
+        existing_memory_content = "No existing memory."
+
+    MODEL_SYSTEM_MESSAGE = """You are a helpful assistant with memory that provides information about the user. 
+    If you have memory for this user, use it to personalize your responses.
+    Here is the memory (it may be empty): {memory}"""
+
+    system_msg = MODEL_SYSTEM_MESSAGE.format(memory = existing_memory_content)
 
     messages = state["messages"]
     rag_context = state.get("rag_context", "")
@@ -219,6 +306,58 @@ def call_model(state: AgentState) -> AgentState:
         "context": state.get("context", ""),
         "rag_context": rag_context
     }
+
+def write_memory(state: AgentState, config: RunnableConfig, store: BaseStore) -> AgentState:
+    """Reflect on the chat history and save a memory to the store."""
+    logger.info("write_memory function entered")
+    
+    # Get the user ID from the config
+    user_id = config["configurable"].get("user_id", "default_user")
+
+    # Retrieve existing memory from the store
+    namespace = ("memory", user_id)
+    existing_memory = store.get(namespace, "user_memory")
+        
+    # Extract the memory
+    if existing_memory:
+        existing_memory_content = existing_memory.value.get('memory')
+    else:
+        existing_memory_content = "No existing memory found."
+
+    # Create new memory from the chat history and any existing memory
+    CREATE_MEMORY_INSTRUCTION = """You are collecting information about the user to personalize your responses.
+
+    CURRENT USER INFORMATION:
+    {memory}
+
+    INSTRUCTIONS:
+    1. Review the chat history below carefully
+    2. Identify new information about the user, such as:
+    - Personal details (name, location)
+    - Preferences (likes, dislikes)
+    - Interests and hobbies
+    - Past experiences
+    - Goals or future plans
+    3. Merge any new information with existing memory
+    4. Format the memory as a clear, bulleted list
+    5. If new information conflicts with existing memory, keep the most recent version
+
+    Remember: Only include factual information directly stated by the user. Do not make assumptions or inferences.
+
+    Based on the chat history below, please update the user information:"""
+
+    # Format the memory in the system prompt
+    system_msg = CREATE_MEMORY_INSTRUCTION.format(memory=existing_memory_content)
+    new_memory = llm.invoke([SystemMessage(content=system_msg)] + state['messages'])
+
+    # Overwrite the existing memory in the store 
+    key = "user_memory"
+
+    # Write value as a dictionary with a memory key
+    store.put(namespace, key, {"memory": new_memory.content})
+    
+    logger.info("write_memory function exited")
+    return state
 
 # def handle_tools(state: AgentState) -> AgentState:
 #     """Handle tool execution and return updated state with tool messages."""
@@ -325,7 +464,37 @@ def custom_tool_node(tools):
     base_tool_node = ToolNode(tools)
 
     def _tool_node(state: AgentState) -> AgentState:
+        # First, let's process any tool calls to fix JSON parsing issues
+        messages = state["messages"]
+        last_message = messages[-1]
+        
+        if hasattr(last_message, 'tool_calls') and last_message.tool_calls:
+            for tool_call in last_message.tool_calls:
+                if tool_call["name"] == "suggest_trips_tool" and "user" in tool_call["args"]:
+                    # Check if user is a string that looks like a dict
+                    user_arg = tool_call["args"]["user"]
+                    if isinstance(user_arg, str):
+                        try:
+                            # Try to parse it as JSON
+                            if user_arg.strip() in ["{}", "'{}'"]:
+                                # Empty user dict, replace with actual user data from state
+                                user_data = state.get("user")
+                                if hasattr(user_data, "model_dump"):
+                                    tool_call["args"]["user"] = user_data.model_dump()
+                                else:
+                                    # Create a basic empty dict if we can't get user data
+                                    tool_call["args"]["user"] = {}
+                            else:
+                                # Try to parse as JSON if it's a non-empty string
+                                parsed_user = json.loads(user_arg.replace("'", '"'))
+                                tool_call["args"]["user"] = parsed_user
+                        except (json.JSONDecodeError, TypeError):
+                            # If parsing fails, create a basic empty dict
+                            tool_call["args"]["user"] = {}
+        
+        # Now invoke the base tool node
         result = base_tool_node.invoke(state)
+        
         return {
             "messages": result["messages"],
             "user": state.get("user"),
@@ -342,24 +511,31 @@ def get_agent():
 
     workflow = StateGraph(AgentState)
 
+    workflow.add_node("extract_user_info", extract_user_info)
     workflow.add_node("call_model", call_model)
     workflow.add_node("tools", custom_tool_node(tools))
     workflow.add_node("rag_retrieval", rag_retrieval)
+    workflow.add_node("memory", write_memory)
 
-    workflow.set_entry_point("call_model")
+    workflow.set_entry_point("extract_user_info")
+    workflow.add_edge("extract_user_info", "call_model")
     workflow.add_conditional_edges(
         "call_model",
         route_to_tools,
-        {"tools": "tools", END: END}
+        {"tools": "tools", END: "memory"}
     )
     workflow.add_edge("tools", "rag_retrieval")
     workflow.add_edge("rag_retrieval", "call_model")
+    workflow.add_edge("memory", END)
 
-    memory = MemorySaver()
-    in_memory_store = InMemoryStore()
+    # Create in-memory store for across thread memory
+    across_thread_memory = InMemoryStore() 
+
+    # Checkpointer for short-term (within-thread) memory
+    within_thread_memory = MemorySaver()
 
     logger.info("get_agent function exited")
-    return workflow.compile(checkpointer=memory)
+    return workflow.compile(checkpointer=within_thread_memory, store=across_thread_memory)
 
 def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
     """Run the agent with a user input."""
@@ -370,7 +546,11 @@ def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
     
     logger.info(f"User preferences in run_agent: {user_preferences.model_dump()}")
     agent = get_agent()
-    config = {"configurable": {"user_id": "1", "thread_id": "1"}}
+    
+    # Create a unique user_id and thread_id for this conversation
+    user_id = str(uuid.uuid4())
+    thread_id = str(uuid.uuid4())
+    config = {"configurable": {"user_id": user_id, "thread_id": thread_id}}
 
     initial_state = {
         "messages": [HumanMessage(content=user_input)],
@@ -378,7 +558,16 @@ def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
         "context": "",
         "rag_context": ""
     }
+    
+    # Get the complete result first
     result = agent.invoke(initial_state, config=config)
+    
+    # Optional: Stream the responses for real-time output
+    # for chunk in agent.stream(initial_state, config, stream_mode="values"):
+    #     if "messages" in chunk and chunk["messages"]:
+    #         latest_msg = chunk["messages"][-1]
+    #         if hasattr(latest_msg, "pretty_print"):
+    #             latest_msg.pretty_print()
     
     trip_itinerary = None
     for msg in result.get("messages", []):

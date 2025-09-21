@@ -1819,3 +1819,196 @@ duration
 2025-09-02 20:15:03,079 - INFO - call_model function entered
 2025-09-02 20:15:03,082 - INFO - Processing with user preferences: {'origin': None, 'destination': None, 'interests': None, 'budget': None, 'want_flight_links': False, 'duration': None, 'travel_style': None}
 2025-09-02 20:15:03,234 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 413 Payload Too Large"
+2025-09-22 01:17:05,680 - INFO - Main execution started
+2025-09-22 01:17:52,060 - INFO - run_agent function entered
+2025-09-22 01:17:52,060 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 dys', 'interests': 'historical sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:17:52,060 - INFO - get_agent function entered
+2025-09-22 01:17:52,077 - INFO - get_agent function exited
+2025-09-22 01:17:52,113 - INFO - extract_user_info function entered
+2025-09-22 01:17:52,477 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-22 01:18:23,755 - INFO - Main execution started
+2025-09-22 01:20:05,797 - INFO - run_agent function entered
+2025-09-22 01:20:05,797 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historcial sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:20:05,797 - INFO - get_agent function entered
+2025-09-22 01:20:05,797 - INFO - get_agent function exited
+2025-09-22 01:20:05,835 - INFO - extract_user_info function entered
+2025-09-22 01:20:06,611 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-22 01:20:06,670 - INFO - extract_user_info function exited
+2025-09-22 01:20:06,670 - INFO - call_model function entered
+2025-09-22 01:20:06,670 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historcial sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:20:06,977 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-22 01:20:06,987 - INFO - call_model function exited
+2025-09-22 01:20:06,995 - INFO - suggest_trips_tool entered with query: 6 day trip from Dubai to Cairo, user: {'destination': 'Cairo', 'duration': 6, 'interests': [], 'origin': 'Dubai'}
+2025-09-22 01:20:07,001 - ERROR - Error in suggest_trips_tool: 2 validation errors for UserScheme
+duration
+  Input should be a valid string [type=string_type, input_value=6, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+interests
+  Input should be a valid string [type=string_type, input_value=[], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-09-22 01:20:07,004 - INFO - rag_retrieval function entered
+2025-09-22 01:20:07,848 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 01:20:08,613 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:20:09,197 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:20:12,066 - INFO - rag_retrieval function exited successfully
+2025-09-22 01:20:12,066 - INFO - call_model function entered
+2025-09-22 01:20:12,066 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historcial sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:20:13,075 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-22 01:20:13,082 - INFO - call_model function exited
+2025-09-22 01:20:13,087 - INFO - rag_process_tool entered
+2025-09-22 01:20:13,828 - INFO - rag_process_tool exited
+2025-09-22 01:20:13,843 - INFO - rag_retrieval function entered
+2025-09-22 01:20:14,541 - INFO - rag_retrieval function exited successfully
+2025-09-22 01:20:14,541 - INFO - call_model function entered
+2025-09-22 01:20:14,557 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historcial sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:20:15,427 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-22 01:20:15,443 - INFO - call_model function exited
+2025-09-22 01:20:15,443 - INFO - write_memory function entered
+2025-09-22 01:20:15,582 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-22 01:20:15,583 - INFO - Retrying request to /openai/v1/chat/completions in 37.000000 seconds
+2025-09-22 01:20:53,582 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-22 01:20:53,582 - INFO - write_memory function exited
+2025-09-22 01:20:53,582 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 01:20:53,582 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 01:20:53,582 - INFO - Selected non-empty itinerary content
+2025-09-22 01:20:53,582 - INFO - Running flight search: Flights from dubai to cairo roundtrip duration 6 days
+2025-09-22 01:20:55,622 - INFO - run_agent function exited
+2025-09-22 01:20:55,622 - INFO - Main execution completed
+2025-09-22 01:23:33,567 - INFO - Main execution started
+2025-09-22 01:24:04,114 - INFO - run_agent function entered
+2025-09-22 01:24:04,114 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:24:04,114 - INFO - get_agent function entered
+2025-09-22 01:24:04,114 - INFO - get_agent function exited
+2025-09-22 01:24:04,148 - INFO - extract_user_info function entered
+2025-09-22 01:24:05,448 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250
+Please retry in 24.632857348s. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+].
+2025-09-22 01:24:07,756 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250
+Please retry in 22.197846512s. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+].
+2025-09-22 01:24:12,085 - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250
+Please retry in 17.890116904s. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+].
+2025-09-22 01:24:40,433 - INFO - Main execution started
+2025-09-22 01:24:46,696 - INFO - run_agent function entered
+2025-09-22 01:24:46,696 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:24:46,696 - INFO - get_agent function entered
+2025-09-22 01:24:46,699 - INFO - get_agent function exited
+2025-09-22 01:24:46,726 - INFO - extract_user_info function entered
+2025-09-22 01:24:48,437 - INFO - extract_user_info function exited
+2025-09-22 01:24:48,437 - INFO - call_model function entered
+2025-09-22 01:24:48,437 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:24:49,352 - INFO - call_model function exited
+2025-09-22 01:24:49,363 - INFO - rag_retrieval function entered
+2025-09-22 01:24:50,129 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 01:24:50,762 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:24:51,375 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:24:53,757 - INFO - rag_retrieval function exited successfully
+2025-09-22 01:24:53,762 - INFO - call_model function entered
+2025-09-22 01:24:53,762 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:24:54,987 - INFO - call_model function exited
+2025-09-22 01:24:54,987 - INFO - write_memory function entered
+2025-09-22 01:24:55,802 - INFO - write_memory function exited
+2025-09-22 01:24:55,807 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 01:24:55,807 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 01:24:55,807 - INFO - Selected non-empty itinerary content
+2025-09-22 01:24:55,807 - INFO - run_agent function exited
+2025-09-22 01:24:55,813 - INFO - Main execution completed
+2025-09-22 01:27:38,804 - INFO - Main execution started
+2025-09-22 01:27:41,533 - INFO - run_agent function entered
+2025-09-22 01:27:41,533 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:27:41,534 - INFO - get_agent function entered
+2025-09-22 01:27:41,535 - INFO - get_agent function exited
+2025-09-22 01:27:41,560 - INFO - extract_user_info function entered
+2025-09-22 01:27:43,240 - INFO - extract_user_info function exited
+2025-09-22 01:27:43,240 - INFO - call_model function entered
+2025-09-22 01:27:43,240 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:27:44,489 - INFO - call_model function exited
+2025-09-22 01:27:44,498 - INFO - suggest_trips_tool entered with query: trip to cairo, user: {'origin': 'dubai', 'days': '6'}
+2025-09-22 01:27:44,498 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:27:44,498 - INFO - Starting trip suggestion for query: trip to cairo
+2025-09-22 01:27:44,502 - INFO - User preferences - Location: None, Destination: None, Duration: None
+2025-09-22 01:27:44,508 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 01:27:51,235 - INFO - Received response from LLM, length: 3498 characters
+2025-09-22 01:27:51,235 - INFO - suggest_trips_tool exited
+2025-09-22 01:27:51,235 - INFO - rag_retrieval function entered
+2025-09-22 01:27:51,834 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 01:27:53,017 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:27:54,133 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:27:58,220 - INFO - rag_retrieval function exited successfully
+2025-09-22 01:27:58,223 - INFO - call_model function entered
+2025-09-22 01:27:58,224 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:28:01,098 - INFO - call_model function exited
+2025-09-22 01:28:01,098 - INFO - write_memory function entered
+2025-09-22 01:28:01,751 - INFO - write_memory function exited
+2025-09-22 01:28:01,763 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 01:28:01,763 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 01:28:01,763 - INFO - Selected non-empty itinerary content
+2025-09-22 01:28:01,763 - INFO - run_agent function exited
+2025-09-22 01:28:01,766 - INFO - Main execution completed
+2025-09-22 01:28:23,150 - INFO - Main execution started
+2025-09-22 01:28:25,754 - INFO - run_agent function entered
+2025-09-22 01:28:25,770 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:28:25,770 - INFO - get_agent function entered
+2025-09-22 01:28:25,770 - INFO - get_agent function exited
+2025-09-22 01:28:25,785 - INFO - extract_user_info function entered
+2025-09-22 01:28:38,979 - INFO - Main execution started
+2025-09-22 01:28:58,679 - INFO - run_agent function entered
+2025-09-22 01:28:58,679 - INFO - User preferences in run_agent: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:28:58,679 - INFO - get_agent function entered
+2025-09-22 01:28:58,679 - INFO - get_agent function exited
+2025-09-22 01:28:58,715 - INFO - extract_user_info function entered
+2025-09-22 01:29:00,429 - INFO - extract_user_info function exited
+2025-09-22 01:29:00,429 - INFO - call_model function entered
+2025-09-22 01:29:00,429 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:29:01,450 - INFO - call_model function exited
+2025-09-22 01:29:01,459 - INFO - suggest_trips_tool entered with query: trip to cairo, user: {'origin': 'dubai', 'duration': '6 days'}
+2025-09-22 01:29:01,459 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 01:29:01,459 - INFO - Starting trip suggestion for query: trip to cairo
+2025-09-22 01:29:01,459 - INFO - User preferences - Location: None, Destination: None, Duration: 6 days
+2025-09-22 01:29:01,465 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 01:29:07,414 - INFO - Received response from LLM, length: 3134 characters
+2025-09-22 01:29:07,414 - INFO - suggest_trips_tool exited
+2025-09-22 01:29:07,414 - INFO - rag_retrieval function entered
+2025-09-22 01:29:08,047 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 01:29:08,739 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:29:09,496 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 01:29:12,437 - INFO - rag_retrieval function exited successfully
+2025-09-22 01:29:12,437 - INFO - call_model function entered
+2025-09-22 01:29:12,437 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 01:29:15,212 - INFO - call_model function exited
+2025-09-22 01:29:15,212 - INFO - write_memory function entered
+2025-09-22 01:29:16,142 - INFO - write_memory function exited
+2025-09-22 01:29:16,142 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 01:29:16,142 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 01:29:16,142 - INFO - Selected non-empty itinerary content
+2025-09-22 01:29:16,142 - INFO - Running flight search: Flights from dubai to cairo roundtrip duration 6 days
+2025-09-22 01:29:18,479 - INFO - run_agent function exited
+2025-09-22 01:29:18,494 - INFO - Main execution completed
