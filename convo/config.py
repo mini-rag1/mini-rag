@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     GROQ_API_KEY: str
     COHERE_API_KEY: str
     TAVILY_API_KEY: str = ""
+    LANGSMITH_TRACING: bool = False
+    LANGSMITH_API_KEY: str = ""
+    LANGSMITH_PROJECT: str = "default"
 
     class Config:
         # Look for .env file in the project root directory

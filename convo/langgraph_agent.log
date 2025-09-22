@@ -2012,3 +2012,420 @@ Please retry in 17.890116904s. [violations {
 2025-09-22 01:29:16,142 - INFO - Running flight search: Flights from dubai to cairo roundtrip duration 6 days
 2025-09-22 01:29:18,479 - INFO - run_agent function exited
 2025-09-22 01:29:18,494 - INFO - Main execution completed
+2025-09-22 17:33:30,229 - INFO - Main execution started
+2025-09-22 17:34:42,018 - INFO - run_agent function entered
+2025-09-22 17:34:42,022 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:34:42,024 - INFO - get_agent function entered
+2025-09-22 17:34:42,037 - INFO - get_agent function exited
+2025-09-22 17:34:42,478 - INFO - extract_user_info function entered
+2025-09-22 17:34:43,868 - INFO - extract_user_info function exited
+2025-09-22 17:34:43,874 - INFO - call_model function entered
+2025-09-22 17:34:43,878 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:34:44,792 - INFO - call_model function exited
+2025-09-22 17:34:44,810 - INFO - suggest_trips_tool entered with query: trip to dubai for 6 days and visit historical sites, user: {'origin': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'historical sites'}
+2025-09-22 17:34:44,814 - INFO - User preferences: {'user_location': None, 'destination': 'dubai', 'duration': '6 days', 'interests': 'historical sites', 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:34:44,818 - INFO - Starting trip suggestion for query: trip to dubai for 6 days and visit historical sites
+2025-09-22 17:34:44,821 - INFO - User preferences - Location: None, Destination: dubai, Duration: 6 days
+2025-09-22 17:34:44,860 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 17:34:52,218 - INFO - Received response from LLM, length: 3419 characters
+2025-09-22 17:34:52,220 - INFO - suggest_trips_tool exited
+2025-09-22 17:34:52,233 - INFO - rag_retrieval function entered
+2025-09-22 17:35:08,301 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 17:35:14,251 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:35:20,404 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:35:21,638 - INFO - rag_retrieval function exited successfully
+2025-09-22 17:35:21,656 - INFO - call_model function entered
+2025-09-22 17:35:21,671 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:35:24,168 - INFO - call_model function exited
+2025-09-22 17:35:24,175 - INFO - write_memory function entered
+2025-09-22 17:35:24,616 - INFO - write_memory function exited
+2025-09-22 17:35:24,632 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 17:35:24,634 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 17:35:24,636 - INFO - Selected non-empty itinerary content
+2025-09-22 17:35:24,644 - INFO - run_agent function exited
+2025-09-22 17:35:24,713 - INFO - Main execution completed
+2025-09-22 17:36:23,571 - INFO - Main execution started
+2025-09-22 17:42:11,550 - INFO - run_agent function entered
+2025-09-22 17:42:11,555 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:42:11,561 - INFO - get_agent function entered
+2025-09-22 17:42:11,594 - INFO - get_agent function exited
+2025-09-22 17:42:12,055 - INFO - extract_user_info function entered
+2025-09-22 17:42:13,285 - INFO - extract_user_info function exited
+2025-09-22 17:42:13,293 - INFO - call_model function entered
+2025-09-22 17:42:13,297 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:42:14,609 - INFO - call_model function exited
+2025-09-22 17:42:14,628 - INFO - suggest_trips_tool entered with query: trip to Cairo for 6 days and visiting historical sites, user: {'origin': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites'}
+2025-09-22 17:42:14,631 - INFO - User preferences: {'user_location': None, 'destination': 'cairo', 'duration': '6 days', 'interests': 'historical sites', 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:42:14,637 - INFO - Starting trip suggestion for query: trip to Cairo for 6 days and visiting historical sites
+2025-09-22 17:42:14,645 - INFO - User preferences - Location: None, Destination: cairo, Duration: 6 days
+2025-09-22 17:42:14,703 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 17:42:24,644 - INFO - Received response from LLM, length: 4648 characters
+2025-09-22 17:42:24,647 - INFO - suggest_trips_tool exited
+2025-09-22 17:42:24,659 - INFO - rag_retrieval function entered
+2025-09-22 17:42:33,386 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 17:42:35,817 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:42:41,330 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:42:44,747 - INFO - rag_retrieval function exited successfully
+2025-09-22 17:42:44,754 - INFO - call_model function entered
+2025-09-22 17:42:44,760 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:42:47,272 - INFO - call_model function exited
+2025-09-22 17:42:47,280 - INFO - write_memory function entered
+2025-09-22 17:42:48,631 - INFO - write_memory function exited
+2025-09-22 17:42:48,650 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 17:42:48,653 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 17:42:48,655 - INFO - Selected non-empty itinerary content
+2025-09-22 17:42:48,664 - INFO - run_agent function exited
+2025-09-22 17:42:48,784 - INFO - Main execution completed
+2025-09-22 17:45:16,337 - INFO - Main execution started
+2025-09-22 17:46:10,829 - INFO - run_agent function entered
+2025-09-22 17:46:10,831 - INFO - User preferences in run_agent: {'current_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:46:10,833 - INFO - get_agent function entered
+2025-09-22 17:46:10,845 - INFO - get_agent function exited
+2025-09-22 17:46:11,161 - INFO - extract_user_info function entered
+2025-09-22 17:46:12,267 - INFO - extract_user_info function exited
+2025-09-22 17:46:12,274 - INFO - call_model function entered
+2025-09-22 17:46:12,278 - INFO - Processing with user preferences: {'current_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:46:13,115 - INFO - call_model function exited
+2025-09-22 17:46:13,141 - INFO - suggest_trips_tool entered with query: trip from cairo to dubai and visiting historical sites, user: {'duration': '6 days'}
+2025-09-22 17:46:13,143 - INFO - User preferences: {'current_location': None, 'destination': None, 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:46:13,147 - INFO - Starting trip suggestion for query: trip from cairo to dubai and visiting historical sites
+2025-09-22 17:46:13,150 - INFO - User preferences - Location: Not specified, Destination: None, Duration: 6 days
+2025-09-22 17:46:13,192 - ERROR - Error in suggest_trips_tool: 'UserScheme' object has no attribute 'user_location'
+2025-09-22 17:46:13,252 - INFO - rag_retrieval function entered
+2025-09-22 17:46:22,448 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 17:46:24,857 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:46:27,287 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 17:46:31,111 - INFO - rag_retrieval function exited successfully
+2025-09-22 17:46:31,118 - INFO - call_model function entered
+2025-09-22 17:46:31,124 - INFO - Processing with user preferences: {'current_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:46:32,355 - INFO - call_model function exited
+2025-09-22 17:46:32,375 - INFO - rag_process_tool entered
+2025-09-22 17:46:39,468 - INFO - rag_process_tool exited
+2025-09-22 17:46:39,477 - INFO - rag_retrieval function entered
+2025-09-22 17:46:46,353 - INFO - rag_retrieval function exited successfully
+2025-09-22 17:46:46,361 - INFO - call_model function entered
+2025-09-22 17:46:46,378 - INFO - Processing with user preferences: {'current_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:46:47,531 - INFO - call_model function exited
+2025-09-22 17:46:47,560 - INFO - search_query_tool entered
+2025-09-22 17:46:49,420 - INFO - search_query_tool exited
+2025-09-22 17:46:49,430 - INFO - rag_retrieval function entered
+2025-09-22 17:46:56,928 - INFO - rag_retrieval function exited successfully
+2025-09-22 17:46:56,934 - INFO - call_model function entered
+2025-09-22 17:46:56,971 - INFO - Processing with user preferences: {'current_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 17:47:00,596 - INFO - call_model function exited
+2025-09-22 17:47:00,604 - INFO - write_memory function entered
+2025-09-22 17:47:01,819 - INFO - write_memory function exited
+2025-09-22 17:47:01,972 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 17:47:01,974 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 17:47:01,975 - INFO - Selected non-empty itinerary content
+2025-09-22 17:47:01,979 - INFO - run_agent function exited
+2025-09-22 17:47:01,982 - INFO - Main execution completed
+2025-09-22 22:19:30,947 - INFO - Main execution started
+2025-09-22 22:22:50,943 - INFO - Main execution started
+2025-09-22 22:23:29,377 - INFO - Main execution started
+2025-09-22 22:24:07,153 - INFO - run_agent function entered
+2025-09-22 22:24:07,156 - INFO - User preferences in run_agent: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 22:24:07,157 - INFO - get_agent function entered
+2025-09-22 22:24:07,160 - INFO - get_agent function exited
+2025-09-22 22:24:07,252 - INFO - extract_user_info function entered
+2025-09-22 22:24:08,392 - INFO - extract_user_info function exited
+2025-09-22 22:24:08,394 - INFO - call_model function entered
+2025-09-22 22:24:08,395 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 22:24:09,149 - INFO - call_model function exited
+2025-09-22 22:24:09,154 - INFO - suggest_trips_tool entered with query: trip from cairo to dubai, user: {'duration': '6 days'}
+2025-09-22 22:24:09,157 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:24:09,158 - INFO - Starting trip suggestion for query: trip from cairo to dubai
+2025-09-22 22:24:09,160 - INFO - User preferences - Location: None, Destination: None, Duration: 6 days
+2025-09-22 22:24:09,172 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 22:24:16,867 - INFO - Received response from LLM, length: 3835 characters
+2025-09-22 22:24:16,868 - INFO - suggest_trips_tool exited
+2025-09-22 22:24:16,872 - INFO - rag_retrieval function entered
+2025-09-22 22:24:18,665 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 22:24:19,758 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:24:20,720 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:24:21,930 - INFO - rag_retrieval function exited successfully
+2025-09-22 22:24:21,937 - INFO - call_model function entered
+2025-09-22 22:24:21,939 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anything', 'want_flight_links': True}
+2025-09-22 22:24:25,527 - INFO - call_model function exited
+2025-09-22 22:24:25,529 - INFO - write_memory function entered
+2025-09-22 22:24:26,098 - INFO - write_memory function exited
+2025-09-22 22:24:26,104 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:24:26,105 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 22:24:26,105 - INFO - Selected non-empty itinerary content
+2025-09-22 22:24:26,107 - INFO - Running flight search: Flights from cairo to dubai roundtrip duration 6 days
+2025-09-22 22:24:27,896 - INFO - run_agent function exited
+2025-09-22 22:24:27,926 - INFO - Main execution completed
+2025-09-22 22:25:18,091 - INFO - Main execution started
+2025-09-22 22:25:55,864 - INFO - run_agent function entered
+2025-09-22 22:25:55,865 - INFO - User preferences in run_agent: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anytrhing', 'want_flight_links': True}
+2025-09-22 22:25:55,866 - INFO - get_agent function entered
+2025-09-22 22:25:55,869 - INFO - get_agent function exited
+2025-09-22 22:25:55,995 - INFO - extract_user_info function entered
+2025-09-22 22:25:57,276 - INFO - extract_user_info function exited
+2025-09-22 22:25:57,278 - INFO - call_model function entered
+2025-09-22 22:25:57,279 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anytrhing', 'want_flight_links': True}
+2025-09-22 22:25:57,989 - INFO - call_model function exited
+2025-09-22 22:25:57,994 - INFO - suggest_trips_tool entered with query: trip from cairo to dubai, user: {'duration': '6 days', 'origin': 'cairo', 'destination': 'dubai'}
+2025-09-22 22:25:57,995 - INFO - User preferences: {'user_location': None, 'destination': 'dubai', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:25:57,997 - INFO - Starting trip suggestion for query: trip from cairo to dubai
+2025-09-22 22:25:57,997 - INFO - User preferences - Location: None, Destination: dubai, Duration: 6 days
+2025-09-22 22:25:58,011 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 22:26:04,216 - INFO - Received response from LLM, length: 3264 characters
+2025-09-22 22:26:04,217 - INFO - suggest_trips_tool exited
+2025-09-22 22:26:04,220 - INFO - rag_retrieval function entered
+2025-09-22 22:26:06,115 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 22:26:06,818 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:26:08,274 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:26:09,304 - INFO - rag_retrieval function exited successfully
+2025-09-22 22:26:09,306 - INFO - call_model function entered
+2025-09-22 22:26:09,309 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'dubai', 'duration': '6 days', 'interests': 'having fun and sea view', 'budget': '6000$', 'travel_style': 'anytrhing', 'want_flight_links': True}
+2025-09-22 22:26:12,458 - INFO - call_model function exited
+2025-09-22 22:26:12,488 - INFO - write_memory function entered
+2025-09-22 22:26:13,680 - INFO - write_memory function exited
+2025-09-22 22:26:13,699 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:26:13,700 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 22:26:13,701 - INFO - Selected non-empty itinerary content
+2025-09-22 22:26:13,703 - INFO - Running flight search: Flights from cairo to dubai roundtrip duration 6 days
+2025-09-22 22:26:15,274 - INFO - run_agent function exited
+2025-09-22 22:26:15,719 - INFO - Main execution completed
+2025-09-22 22:28:54,409 - INFO - Main execution started
+2025-09-22 22:29:08,521 - INFO - run_agent function entered
+2025-09-22 22:29:08,521 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:29:08,522 - INFO - get_agent function entered
+2025-09-22 22:29:08,525 - INFO - get_agent function exited
+2025-09-22 22:29:08,601 - INFO - extract_user_info function entered
+2025-09-22 22:29:09,502 - INFO - extract_user_info function exited
+2025-09-22 22:29:09,503 - INFO - call_model function entered
+2025-09-22 22:29:09,505 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:29:10,376 - INFO - call_model function exited
+2025-09-22 22:29:10,382 - INFO - suggest_trips_tool entered with query: trip to dubai, user: {'duration': '6 days', 'origin': 'cairo'}
+2025-09-22 22:29:10,384 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:29:10,385 - INFO - Starting trip suggestion for query: trip to dubai
+2025-09-22 22:29:10,386 - INFO - User preferences - Location: None, Destination: None, Duration: 6 days
+2025-09-22 22:29:10,399 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 22:29:16,673 - INFO - Received response from LLM, length: 3248 characters
+2025-09-22 22:29:16,674 - INFO - suggest_trips_tool exited
+2025-09-22 22:29:16,677 - INFO - rag_retrieval function entered
+2025-09-22 22:29:18,286 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 22:29:18,965 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:29:19,913 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:29:20,948 - INFO - rag_retrieval function exited successfully
+2025-09-22 22:29:20,952 - INFO - call_model function entered
+2025-09-22 22:29:20,961 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:29:24,661 - INFO - call_model function exited
+2025-09-22 22:29:24,663 - INFO - write_memory function entered
+2025-09-22 22:29:25,350 - INFO - write_memory function exited
+2025-09-22 22:29:25,355 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:29:25,356 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 22:29:25,356 - INFO - Selected non-empty itinerary content
+2025-09-22 22:29:25,358 - INFO - run_agent function exited
+2025-09-22 22:29:25,369 - INFO - Main execution completed
+2025-09-22 22:32:23,459 - INFO - Main execution started
+2025-09-22 22:32:28,648 - INFO - run_agent function entered
+2025-09-22 22:32:28,649 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:32:28,650 - INFO - get_agent function entered
+2025-09-22 22:32:28,655 - INFO - get_agent function exited
+2025-09-22 22:32:28,925 - INFO - extract_user_info function entered
+2025-09-22 22:32:29,857 - INFO - extract_user_info function exited
+2025-09-22 22:32:29,861 - INFO - call_model function entered
+2025-09-22 22:32:29,862 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:32:30,712 - INFO - call_model function exited
+2025-09-22 22:32:30,725 - INFO - suggest_trips_tool entered with query: trip from dubai to cairo, user: {'duration': '6', 'origin': 'dubai', 'destination': 'cairo'}
+2025-09-22 22:32:30,726 - INFO - User preferences: {'user_location': None, 'destination': 'cairo', 'duration': '6', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:32:30,727 - INFO - Starting trip suggestion for query: trip from dubai to cairo
+2025-09-22 22:32:30,728 - INFO - User preferences - Location: None, Destination: cairo, Duration: 6
+2025-09-22 22:32:30,742 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 22:32:38,516 - INFO - Received response from LLM, length: 3842 characters
+2025-09-22 22:32:38,519 - INFO - suggest_trips_tool exited
+2025-09-22 22:32:38,525 - INFO - rag_retrieval function entered
+2025-09-22 22:32:40,960 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-22 22:32:42,122 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:32:43,397 - INFO - HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+2025-09-22 22:32:46,618 - INFO - rag_retrieval function exited successfully
+2025-09-22 22:32:46,624 - INFO - call_model function entered
+2025-09-22 22:32:46,625 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:32:49,539 - INFO - call_model function exited
+2025-09-22 22:32:49,551 - INFO - write_memory function entered
+2025-09-22 22:32:50,118 - INFO - write_memory function exited
+2025-09-22 22:32:50,145 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:32:50,192 - INFO - Found ToolMessage (candidate) for itinerary
+2025-09-22 22:32:50,194 - INFO - Selected non-empty itinerary content
+2025-09-22 22:32:50,196 - INFO - run_agent function exited
+2025-09-22 22:32:50,373 - INFO - Main execution completed
+2025-09-22 22:46:37,309 - INFO - Main execution started
+2025-09-22 22:50:48,017 - INFO - run_agent function entered
+2025-09-22 22:50:48,018 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:50:48,018 - INFO - get_agent function entered
+2025-09-22 22:50:48,022 - INFO - get_agent function exited
+2025-09-22 22:50:48,324 - INFO - extract_user_info function entered
+2025-09-22 22:50:49,721 - INFO - extract_user_info function exited
+2025-09-22 22:50:49,725 - INFO - call_model function entered
+2025-09-22 22:50:49,726 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:50:50,767 - INFO - call_model function exited
+2025-09-22 22:50:50,773 - INFO - write_memory function entered
+2025-09-22 22:50:51,440 - INFO - write_memory function exited
+2025-09-22 22:50:51,445 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:50:51,446 - INFO - Found AIMessage (candidate) for itinerary
+2025-09-22 22:50:51,446 - INFO - run_agent function exited - no itinerary found
+2025-09-22 22:50:51,448 - INFO - Main execution completed
+2025-09-22 22:57:08,802 - INFO - Main execution started
+2025-09-22 22:57:21,738 - INFO - run_agent function entered
+2025-09-22 22:57:21,739 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:57:21,740 - INFO - get_agent function entered
+2025-09-22 22:57:21,744 - INFO - get_agent function exited
+2025-09-22 22:57:21,994 - INFO - extract_user_info function entered
+2025-09-22 22:57:23,179 - INFO - extract_user_info function exited
+2025-09-22 22:57:23,183 - INFO - call_model function entered
+2025-09-22 22:57:23,184 - INFO - Processing with user preferences: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:57:24,521 - INFO - call_model function exited
+2025-09-22 22:57:24,527 - INFO - write_memory function entered
+2025-09-22 22:57:25,223 - INFO - write_memory function exited
+2025-09-22 22:57:25,228 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 22:57:25,229 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 22:57:25,229 - INFO - run_agent function exited - no itinerary found
+2025-09-22 22:57:25,230 - INFO - Main execution completed
+2025-09-22 22:59:11,707 - INFO - Main execution started
+2025-09-22 22:59:18,377 - INFO - run_agent function entered
+2025-09-22 22:59:18,378 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 22:59:18,378 - INFO - get_agent function entered
+2025-09-22 22:59:18,381 - INFO - get_agent function exited
+2025-09-22 22:59:18,655 - INFO - extract_user_info function entered
+2025-09-22 22:59:19,788 - INFO - Updated user preferences in state: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 22:59:19,789 - INFO - extract_user_info function exited
+2025-09-22 22:59:19,792 - INFO - call_model function entered
+2025-09-22 22:59:19,793 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 22:59:20,587 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 22:59:20,589 - INFO - Model response content: ''
+2025-09-22 22:59:20,589 - INFO - Model response tool_calls: []
+2025-09-22 22:59:20,590 - INFO - call_model function exited
+2025-09-22 22:59:20,595 - INFO - write_memory function entered
+2025-09-22 22:59:21,551 - INFO - write_memory function exited
+2025-09-22 22:59:21,556 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 22:59:21,557 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 22:59:21,557 - INFO - run_agent function exited - no itinerary found
+2025-09-22 22:59:21,559 - INFO - Main execution completed
+2025-09-22 23:01:23,347 - INFO - Main execution started
+2025-09-22 23:01:32,673 - INFO - run_agent function entered
+2025-09-22 23:01:32,673 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 23:01:32,674 - INFO - get_agent function entered
+2025-09-22 23:01:32,677 - INFO - get_agent function exited
+2025-09-22 23:01:32,915 - INFO - extract_user_info function entered
+2025-09-22 23:01:32,916 - INFO - Extracting from messages: ['i want a 6days trip from dubai to cairo and please add flight links']
+2025-09-22 23:01:33,937 - INFO - User extractor result: {'messages': [AIMessage(content='', additional_kwargs={'function_call': {'name': 'UserScheme', 'arguments': '{"want_flight_links": true, "user_location": "dubai", "duration": "6 days", "destination": "cairo"}'}}, response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.0-flash', 'safety_ratings': []}, id='run--1113a84f-dc2f-47ad-a13e-f562e9211e15-0', tool_calls=[{'name': 'UserScheme', 'args': {'want_flight_links': True, 'user_location': 'dubai', 'duration': '6 days', 'destination': 'cairo'}, 'id': '2c55299d-ea3a-4f39-b049-483a275eb7dd', 'type': 'tool_call'}], usage_metadata={'input_tokens': 138, 'output_tokens': 17, 'total_tokens': 155, 'input_token_details': {'cache_read': 0}})], 'responses': [UserScheme(user_location='dubai', destination='cairo', duration='6 days', interests=None, budget=None, travel_style=None, want_flight_links=True)], 'response_metadata': [{'id': '2c55299d-ea3a-4f39-b049-483a275eb7dd'}], 'attempts': 1}
+2025-09-22 23:01:33,939 - INFO - Extracted scheme: [UserScheme(user_location='dubai', destination='cairo', duration='6 days', interests=None, budget=None, travel_style=None, want_flight_links=True)]
+2025-09-22 23:01:33,940 - INFO - User preferences dict: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:01:33,941 - INFO - Updated user preferences in state: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:01:33,941 - INFO - extract_user_info function exited
+2025-09-22 23:01:33,944 - INFO - call_model function entered
+2025-09-22 23:01:33,945 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:01:34,950 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 23:01:34,951 - INFO - Model response content: ''
+2025-09-22 23:01:34,951 - INFO - Model response tool_calls: [{'name': 'suggest_trips_tool', 'args': {'user': {'want_flight_links': True, 'trip_duration': '6', 'origin': 'dubai', 'destination': 'cairo'}, 'query': 'trip from dubai to cairo for 6 days'}, 'id': '2e3ea142-dc02-48f0-872a-503c5793337d', 'type': 'tool_call'}]
+2025-09-22 23:01:34,952 - INFO - call_model function exited
+2025-09-22 23:01:34,965 - INFO - suggest_trips_tool entered with query: trip from dubai to cairo for 6 days, user: {'want_flight_links': True, 'trip_duration': '6', 'origin': 'dubai', 'destination': 'cairo'}
+2025-09-22 23:01:34,966 - INFO - User preferences: {'user_location': None, 'destination': 'cairo', 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:01:34,966 - INFO - Starting trip suggestion for query: trip from dubai to cairo for 6 days
+2025-09-22 23:01:34,967 - INFO - User preferences - Location: None, Destination: cairo, Duration: None
+2025-09-22 23:01:34,980 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 23:01:42,379 - INFO - Received response from LLM, length: 3457 characters
+2025-09-22 23:01:42,380 - INFO - suggest_trips_tool exited
+2025-09-22 23:01:42,388 - INFO - call_model function entered
+2025-09-22 23:01:42,391 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:01:45,575 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 23:01:45,576 - INFO - Model response content: "OK, here's a possible 6-day itinerary from Dubai to Cairo. I am including potential flight options for your convenience.\n\n**Day 1: Arrival in Cairo & Giza Exploration**\n\n*   Arrive at Cairo International Airport (CAI). Transfer to your hotel in Giza.\n*   Visit the Giza Pyramids and the Sphinx.\n*   Evening: Sound and Light Show at the Pyramids.\n*   Dinner: Abu Shakra (Egyptian cuisine) near the pyramids.\n\n**Day 2: Ancient Wonders**\n\n*   Visit the Egyptian Museum in Cairo (Tahrir Square).\n*   Explore Old Cairo: the Hanging Church, Ben Ezra Synagogue, and the Mosque of Muhammad Ali (Alabaster Mosque) in the Citadel.\n*   Evening: Dinner cruise on the Nile River with a belly dancing show.\n\n**Day 3: Islamic Cairo & Khan el-Khalili**\n\n*   Explore Islamic Cairo: Visit the Mosque of Ibn Tulun and the Gayer-Anderson Museum.\n*   Wander through the Khan el-Khalili bazaar and buy souvenirs.\n*   Enjoy a traditional Egyptian dinner in Khan el-Khalili.\n\n**Day 4: Saqqara & Memphis**\n\n*   Day trip to Saqqara, home to the Step Pyramid of Djoser.\n*   Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramses II.\n*   Return to Cairo and relax at your hotel.\n\n**Day 5: Coptic Cairo & Relaxation**\n\n*   Revisit Coptic Cairo to explore more churches and monasteries.\n*   Relax by your hotel pool or explore a local park.\n*   Evening: Attend a Sufi whirling dervishes performance at the Wikala al-Ghouri.\n\n**Day 6: Departure**\n\n*   Enjoy a leisurely breakfast and last-minute souvenir shopping.\n*   Transfer to Cairo International Airport (CAI) for your flight back to Dubai.\n\nI hope this itinerary helps you plan your trip to Cairo! Let me know if you have any other questions or need further assistance."
+2025-09-22 23:01:45,584 - INFO - Model response tool_calls: []
+2025-09-22 23:01:45,585 - INFO - call_model function exited
+2025-09-22 23:01:45,593 - INFO - write_memory function entered
+2025-09-22 23:01:46,091 - INFO - write_memory function exited
+2025-09-22 23:01:46,098 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 23:01:46,098 - INFO - AIMessage has tool_calls: [{'name': 'suggest_trips_tool', 'args': {'user': {'want_flight_links': True, 'trip_duration': '6', 'origin': 'dubai', 'destination': 'cairo'}, 'query': 'trip from dubai to cairo for 6 days'}, 'id': '2e3ea142-dc02-48f0-872a-503c5793337d', 'type': 'tool_call'}]
+2025-09-22 23:01:46,102 - INFO - Found ToolMessage (candidate) for itinerary: '## 6-Day Trip from Dubai to Cairo\n\n**Day 1: Arrival in Cairo & Giza Exploration**\n\n*   **Morning:** '
+2025-09-22 23:01:46,103 - INFO - Selected non-empty itinerary content
+2025-09-22 23:01:46,104 - INFO - run_agent function exited
+2025-09-22 23:01:46,119 - INFO - Main execution completed
+2025-09-22 23:05:42,975 - INFO - Main execution started
+2025-09-22 23:06:00,201 - INFO - run_agent function entered
+2025-09-22 23:06:00,202 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 23:06:00,203 - INFO - get_agent function entered
+2025-09-22 23:06:00,206 - INFO - get_agent function exited
+2025-09-22 23:06:00,443 - INFO - extract_user_info function entered
+2025-09-22 23:06:00,443 - INFO - Extracting from messages: ['i want a 6 days trip from dubai to cairo and please give me flight links ']
+2025-09-22 23:06:01,558 - INFO - User extractor result: {'messages': [AIMessage(content='', additional_kwargs={'function_call': {'name': 'UserScheme', 'arguments': '{"want_flight_links": true, "user_location": "dubai", "duration": "6 days", "destination": "cairo"}'}}, response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.0-flash', 'safety_ratings': []}, id='run--4c5e0de9-ec0b-403d-80be-ba83e72c2440-0', tool_calls=[{'name': 'UserScheme', 'args': {'want_flight_links': True, 'user_location': 'dubai', 'duration': '6 days', 'destination': 'cairo'}, 'id': 'cf0f4e73-08a0-43c1-9aef-cc8d1a5bb3c3', 'type': 'tool_call'}], usage_metadata={'input_tokens': 140, 'output_tokens': 17, 'total_tokens': 157, 'input_token_details': {'cache_read': 0}})], 'responses': [UserScheme(user_location='dubai', destination='cairo', duration='6 days', interests=None, budget=None, travel_style=None, want_flight_links=True)], 'response_metadata': [{'id': 'cf0f4e73-08a0-43c1-9aef-cc8d1a5bb3c3'}], 'attempts': 1}
+2025-09-22 23:06:01,561 - INFO - Extracted scheme: [UserScheme(user_location='dubai', destination='cairo', duration='6 days', interests=None, budget=None, travel_style=None, want_flight_links=True)]
+2025-09-22 23:06:01,561 - INFO - User preferences dict: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:01,562 - INFO - Updated user preferences in state: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:01,563 - INFO - extract_user_info function exited
+2025-09-22 23:06:01,566 - INFO - call_model function entered
+2025-09-22 23:06:01,567 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:02,319 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 23:06:02,320 - INFO - Model response content: ''
+2025-09-22 23:06:02,321 - INFO - Model response tool_calls: [{'name': 'suggest_trips_tool', 'args': {'user': {'want_flight_links': True, 'duration': '6 days', 'origin': 'dubai'}, 'query': 'trip to cairo'}, 'id': '4a9888e8-71b2-41f0-a8d7-5362716e64aa', 'type': 'tool_call'}]
+2025-09-22 23:06:02,321 - INFO - call_model function exited
+2025-09-22 23:06:02,333 - INFO - suggest_trips_tool entered with query: trip to cairo, user: {'want_flight_links': True, 'duration': '6 days', 'origin': 'dubai'}
+2025-09-22 23:06:02,334 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:02,335 - INFO - Starting trip suggestion for query: trip to cairo
+2025-09-22 23:06:02,335 - INFO - User preferences - Location: None, Destination: None, Duration: 6 days
+2025-09-22 23:06:02,345 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 23:06:09,150 - INFO - Received response from LLM, length: 3377 characters
+2025-09-22 23:06:09,150 - INFO - suggest_trips_tool exited
+2025-09-22 23:06:09,157 - INFO - call_model function entered
+2025-09-22 23:06:09,158 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:12,225 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 23:06:12,226 - INFO - Model response content: 'Here is a possible 6-day itinerary for your trip to Cairo from Dubai.\n\n**Day 1: Arrival & Giza Exploration**\n\n*   Arrive at Cairo International Airport (CAI). Transfer to your hotel in Giza.\n*   Visit the Giza Pyramids and the Sphinx.\n*   Sound and Light Show at the Pyramids.\n\n**Day 2: Ancient History Immersion**\n\n*   Visit the Egyptian Museum.\n*   Explore Old Cairo: the Hanging Church, Ben Ezra Synagogue, and the Mosque of Muhammad Ali in the Citadel.\n*   Dinner cruise on the Nile River with traditional entertainment.\n\n**Day 3: Islamic Cairo & Khan el-Khalili**\n\n*   Explore Islamic Cairo: Visit the Mosque of Ibn Tulun and the Gayer-Anderson Museum.\n*   Immerse yourself in the Khan el-Khalili bazaar.\n*   Enjoy a traditional Egyptian dinner in Khan el-Khalili.\n\n**Day 4: Saqqara & Memphis**\n\n*   Day trip to Saqqara to see the Step Pyramid of Djoser.\n*   Visit Memphis, the ancient capital of Egypt, and see the colossal statue of Ramses II.\n\n**Day 5: Coptic Cairo & Relaxation**\n\n*   Explore Coptic Cairo in more detail, visiting the Coptic Museum.\n*   Relax by the pool at your hotel, or visit a local cafe.\n*   Attend a Whirling Dervishes performance (Sufi dance).\n\n**Day 6: Departure**\n\n*   Enjoy a leisurely breakfast at your hotel. Do some last-minute souvenir shopping.\n*   Check out of your hotel and transfer to Cairo International Airport (CAI) for your departure.\n\nI am also including flight links for your consideration.'
+2025-09-22 23:06:12,229 - INFO - Model response tool_calls: [{'name': 'search_query_tool', 'args': {'query': 'flights from Dubai to Cairo'}, 'id': 'd436e29d-1075-4567-a639-a1953ec9b54a', 'type': 'tool_call'}]
+2025-09-22 23:06:12,231 - INFO - call_model function exited
+2025-09-22 23:06:12,242 - INFO - search_query_tool entered
+2025-09-22 23:06:13,817 - INFO - search_query_tool exited
+2025-09-22 23:06:13,824 - INFO - call_model function entered
+2025-09-22 23:06:13,825 - INFO - Processing with user preferences: {'user_location': 'dubai', 'destination': 'cairo', 'duration': '6 days', 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:06:17,727 - INFO - Model response type: <class 'langchain_core.messages.ai.AIMessage'>
+2025-09-22 23:06:17,729 - INFO - Model response content: "OK, I have planned a 6-day trip from Dubai to Cairo and found some flight links for you. Here's a summary:\n\n**6-Day Cairo Itinerary:**\n\n*   **Day 1:** Arrival in Cairo, Giza Pyramids & Sphinx, Sound and Light Show\n*   **Day 2:** Egyptian Museum, Old Cairo (Hanging Church, Synagogue, Mosque), Nile Dinner Cruise\n*   **Day 3:** Islamic Cairo (Mosque of Ibn Tulun), Khan el-Khalili Bazaar\n*   **Day 4:** Saqqara (Step Pyramid), Memphis (Ramses II Statue)\n*   **Day 5:** Coptic Cairo, Relaxation, Whirling Dervishes Performance\n*   **Day 6:** Departure\n\n**Flight Information (Dubai to Cairo):**\n\nI've searched for flights and found these links for you to compare prices and options:\n\n*   **Google Flights:** [https://www.google.com/travel/flights/flights-from-dubai-to-cairo.html](https://www.google.com/travel/flights/flights-from-dubai-to-cairo.html)\n*   **Expedia:** [https://www.expedia.com/lp/flights/dxb/cai/dubai-to-cairo](https://www.expedia.com/lp/flights/dxb/cai/dubai-to-cairo)\n*   **flydubai:** [https://www.flydubai.com/en-ae/flights-from-dubai-to-cairo/](https://www.flydubai.com/en-ae/flights-from-dubai-to-cairo/)\n*   **Skyscanner:** [https://www.skyscanner.com/routes/dxb/cai/dubai-to-cairo.html](https://www.skyscanner.com/routes/dxb/cai/dubai-to-cairo.html)\n*   **MakeMyTrip:** [https://ae.makemytrip.global/international-flights/united\\_arab\\_emirates/dubai-cairo-cheap-airtickets.html](https://ae.makemytrip.global/international-flights/united_arab_emirates/dubai-cairo-cheap-airtickets.html)\n\n**Next Steps:**\n\n*   Check the flight links to find the best prices and times for your trip.\n*   Book your flights and accommodations in advance, especially if you're traveling during peak season.\n*   Consider purchasing a Cairo Pass for access to many of the historical sites."
+2025-09-22 23:06:17,733 - INFO - Model response tool_calls: []
+2025-09-22 23:06:17,733 - INFO - call_model function exited
+2025-09-22 23:06:17,744 - INFO - write_memory function entered
+2025-09-22 23:06:18,515 - INFO - write_memory function exited
+2025-09-22 23:06:18,526 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 23:06:18,527 - INFO - AIMessage has tool_calls: [{'name': 'suggest_trips_tool', 'args': {'user': {'want_flight_links': True, 'duration': '6 days', 'origin': 'dubai'}, 'query': 'trip to cairo'}, 'id': '4a9888e8-71b2-41f0-a8d7-5362716e64aa', 'type': 'tool_call'}]
+2025-09-22 23:06:18,527 - INFO - Found ToolMessage (candidate) for itinerary: '## 6-Day Cairo Adventure\n\n**Day 1: Arrival & Giza Exploration**\n\n*   **Morning:** Arrive at Cairo In'
+2025-09-22 23:06:18,531 - INFO - Selected non-empty itinerary content
+2025-09-22 23:06:18,532 - INFO - Flight search requested - Location: dubai, Destination: cairo, Duration: 6 days
+2025-09-22 23:06:18,533 - INFO - Running flight search: Flights from dubai to cairo roundtrip duration 6 days
+2025-09-22 23:06:20,128 - INFO - run_agent function exited
+2025-09-22 23:06:20,153 - INFO - Main execution completed
+2025-09-22 23:07:30,783 - INFO - Main execution started
+2025-09-22 23:08:03,938 - INFO - run_agent function entered
+2025-09-22 23:08:03,939 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 23:08:03,940 - INFO - get_agent function entered
+2025-09-22 23:08:03,943 - INFO - get_agent function exited
+2025-09-22 23:08:04,170 - INFO - extract_user_info function entered
+2025-09-22 23:08:05,106 - INFO - Updated user preferences in state: {'user_location': 'cairo', 'destination': 'bali', 'duration': 'two weeks', 'interests': 'honeymoon', 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:08:05,107 - INFO - extract_user_info function exited
+2025-09-22 23:08:05,111 - INFO - call_model function entered
+2025-09-22 23:08:05,112 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'bali', 'duration': 'two weeks', 'interests': 'honeymoon', 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:08:06,072 - INFO - call_model function exited
+2025-09-22 23:08:06,083 - INFO - suggest_trips_tool entered with query: holiday trip to Bali for honeymoon, user: {'interests': 'honeymoon', 'duration': 'two weeks', 'origin': 'Cairo'}
+2025-09-22 23:08:06,084 - INFO - User preferences: {'user_location': None, 'destination': None, 'duration': 'two weeks', 'interests': 'honeymoon', 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 23:08:06,085 - INFO - Starting trip suggestion for query: holiday trip to Bali for honeymoon
+2025-09-22 23:08:06,086 - INFO - User preferences - Location: None, Destination: None, Duration: two weeks
+2025-09-22 23:08:06,100 - INFO - Sending prompt to LLM for trip suggestion
+2025-09-22 23:08:18,016 - INFO - Received response from LLM, length: 6277 characters
+2025-09-22 23:08:18,017 - INFO - suggest_trips_tool exited
+2025-09-22 23:08:18,023 - INFO - call_model function entered
+2025-09-22 23:08:18,024 - INFO - Processing with user preferences: {'user_location': 'cairo', 'destination': 'bali', 'duration': 'two weeks', 'interests': 'honeymoon', 'budget': None, 'travel_style': None, 'want_flight_links': True}
+2025-09-22 23:08:22,728 - INFO - call_model function exited
+2025-09-22 23:08:22,736 - INFO - write_memory function entered
+2025-09-22 23:08:23,264 - INFO - write_memory function exited
+2025-09-22 23:08:23,271 - INFO - Found AIMessage (candidate) for itinerary: ''
+2025-09-22 23:08:23,272 - INFO - AIMessage has tool_calls: [{'name': 'suggest_trips_tool', 'args': {'config': {'want_flight_links': True}, 'user': {'interests': 'honeymoon', 'duration': 'two weeks', 'origin': 'Cairo'}, 'query': 'holiday trip to Bali for honeymoon'}, 'id': '6884b90c-e0ce-47f3-bc1f-46062746ee1d', 'type': 'tool_call'}]
+2025-09-22 23:08:23,272 - INFO - Found ToolMessage (candidate) for itinerary: '## Two-Week Romantic Bali Honeymoon Itinerary\n\n**Day 1: Arrival in Seminyak & Sunset Beach Bliss**\n\n'
+2025-09-22 23:08:23,273 - INFO - Selected non-empty itinerary content
+2025-09-22 23:08:23,275 - INFO - Flight search requested - Location: cairo, Destination: bali, Duration: two weeks
+2025-09-22 23:08:23,276 - INFO - Running flight search: Flights from cairo to bali roundtrip duration two weeks
+2025-09-22 23:08:25,544 - INFO - run_agent function exited
+2025-09-22 23:08:25,579 - INFO - Main execution completed
+2025-09-22 23:12:28,075 - INFO - Main execution started
+2025-09-22 23:12:30,697 - INFO - run_agent function entered
+2025-09-22 23:12:30,698 - INFO - User preferences in run_agent: {'user_location': None, 'destination': None, 'duration': None, 'interests': None, 'budget': None, 'travel_style': None, 'want_flight_links': False}
+2025-09-22 23:12:30,699 - INFO - get_agent function entered
+2025-09-22 23:12:30,702 - INFO - get_agent function exited
+2025-09-22 23:12:30,966 - INFO - extract_user_info function entered

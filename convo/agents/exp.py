@@ -13,22 +13,8 @@ import uuid
 from langgraph.store.memory import InMemoryStore
 from langchain_core.runnables.config import RunnableConfig
 from langgraph.store.base import BaseStore
-
-# Import for create_extractor - this might need to be adjusted based on your actual package
-try:
-    from trustcall import create_extractor
-except ImportError:
-    # If trustcall is not available, you may need to install it or use an alternative
-    # You can modify this to use the correct package for your environment
-    print("Warning: 'trustcall' package not found. Please install it if needed for create_extractor functionality.")
-    
-    # Placeholder function in case the import fails
-    def create_extractor(llm, tools, tool_choice=None, enable_inserts=False):
-        """Placeholder function when trustcall is not available."""
-        print("Warning: Using placeholder create_extractor function")
-        def invoke(inputs):
-            return {"responses": []}
-        return type('Extractor', (), {'invoke': invoke})
+from trustcall import create_extractor
+from langsmith import traceable
 
 # Configure logging
 logging.basicConfig(
@@ -63,7 +49,10 @@ import operator
 from langgraph.prebuilt import ToolNode
 from langchain_core.tools import tool
 from langgraph.checkpoint.memory import MemorySaver
+from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
 
+load_dotenv()
 settings = get_settings()
 tracer = FlowTracer()
 
@@ -72,9 +61,6 @@ class AgentState(TypedDict):
     user: UserScheme
     context: str
     rag_context: str
-
-
-from langchain_google_genai import ChatGoogleGenerativeAI
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key=settings.GOOGLE_API_KEY)
 
@@ -85,7 +71,9 @@ user_extractor = create_extractor(
     enable_inserts= True,
 )
 
+
 @tool
+@traceable
 def rag_process_tool(query: str) -> str:
     """Process queries using RAG to get relevant information from documents."""
     logger.info("rag_process_tool entered")
@@ -96,6 +84,7 @@ def rag_process_tool(query: str) -> str:
     return result
 
 @tool
+@traceable
 def search_query_tool(query: str) -> str:
     """Search for information using web search for flights, pre-made trips, or anything you don't have information about."""
     logger.info("search_query_tool entered")
@@ -106,6 +95,7 @@ def search_query_tool(query: str) -> str:
     return result
 
 @tool
+@traceable
 def suggest_trips_tool(query: str, user: Dict[str, Any]) -> str:
     """Suggest travel itineraries based on user preferences and queries."""
     logger.info(f"suggest_trips_tool entered with query: {query}, user: {user}")
@@ -180,6 +170,14 @@ def extract_user_info(state: AgentState, config: RunnableConfig, store: BaseStor
     # Store user preferences
     key = "user_preferences"
     store.put(namespace, key, user_preferences)
+    
+    # Update the state with extracted user preferences
+    if user_preferences:
+        updated_user = UserScheme(**user_preferences)
+        state["user"] = updated_user
+        logger.info(f"Updated user preferences in state: {updated_user.model_dump()}")
+    else:
+        logger.warning("No user preferences extracted, keeping default")
     
     logger.info("extract_user_info function exited")
     return state
@@ -359,67 +357,6 @@ def write_memory(state: AgentState, config: RunnableConfig, store: BaseStore) ->
     logger.info("write_memory function exited")
     return state
 
-# def handle_tools(state: AgentState) -> AgentState:
-#     """Handle tool execution and return updated state with tool messages."""
-#     logger.info("handle_tools function entered")
-
-#     messages = state["messages"]
-#     user = state.get("user")
-#     context = state.get("context", "")
-#     rag_context = state.get("rag_context", "")
-
-#     last_message = messages[-1]
-    
-#     if not isinstance(last_message, AIMessage) or not hasattr(last_message, 'tool_calls') or not last_message.tool_calls:
-#         logger.info("handle_tools: No tool calls found, returning state")
-#         return {
-#             "messages": messages,
-#             "user": user,
-#             "context": context,
-#             "rag_context": rag_context
-#         }
-
-#     tool_messages = []
-#     for tool_call in last_message.tool_calls:
-#         tool_name = tool_call["name"]
-#         tool_args = tool_call["args"]
-#         tool_call_id = tool_call.get("id", "")
-
-#         logger.info(f"Executing tool: {tool_name} with args: {tool_args}")
-
-#         tool = next((t for t in tools if t.name == tool_name), None)
-#         if not tool:
-#             logger.error(f"Tool {tool_name} not found")
-#             tool_messages.append(ToolMessage(
-#                 content=f"Error: Tool {tool_name} not found",
-#                 tool_call_id=tool_call_id
-#             ))
-#             continue
-
-#         try:
-#             if tool_name == "suggest_trips_tool":
-#                 tool_args["user"] = user.model_dump() if hasattr(user, "model_dump") else user
-#             result = tool.invoke(tool_args)
-#             tool_messages.append(ToolMessage(
-#                 content=str(result),
-#                 tool_call_id=tool_call_id
-#             ))
-#         except Exception as e:
-#             logger.error(f"Error executing tool {tool_name}: {str(e)}")
-
-#             tool_messages.append(ToolMessage(
-#                 content=f"Error executing tool {tool_name}: {str(e)}",
-#                 tool_call_id=tool_call_id
-#             ))
-
-#     logger.info("handle_tools function exited")
-#     return {
-#         "messages": messages + tool_messages,
-#         "user": user,
-#         "context": context,
-#         "rag_context": rag_context
-#     }
-
 def route_to_tools(state: AgentState):
     if state["messages"][-1].tool_calls:
         return "tools"
@@ -524,8 +461,9 @@ def get_agent():
         route_to_tools,
         {"tools": "tools", END: "memory"}
     )
-    workflow.add_edge("tools", "rag_retrieval")
-    workflow.add_edge("rag_retrieval", "call_model")
+    # workflow.add_edge("tools", "rag_retrieval")
+    # workflow.add_edge("rag_retrieval", "call_model")
+    workflow.add_edge("tools", "call_model")
     workflow.add_edge("memory", END)
 
     # Create in-memory store for across thread memory
@@ -562,29 +500,25 @@ def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
     # Get the complete result first
     result = agent.invoke(initial_state, config=config)
     
-    # Optional: Stream the responses for real-time output
-    # for chunk in agent.stream(initial_state, config, stream_mode="values"):
-    #     if "messages" in chunk and chunk["messages"]:
-    #         latest_msg = chunk["messages"][-1]
-    #         if hasattr(latest_msg, "pretty_print"):
-    #             latest_msg.pretty_print()
-    
     trip_itinerary = None
     for msg in result.get("messages", []):
         try:
             content = None
             if isinstance(msg, ToolMessage):
                 content = msg.content
-                logger.info("Found ToolMessage (candidate) for itinerary")
+                logger.info(f"Found ToolMessage (candidate) for itinerary: {repr(content[:100])}")
             elif isinstance(msg, AIMessage):
                 content = msg.content
-                logger.info("Found AIMessage (candidate) for itinerary")
+                logger.info(f"Found AIMessage (candidate) for itinerary: {repr(content[:100])}")
+                # Also check if it has tool_calls
+                if hasattr(msg, 'tool_calls') and msg.tool_calls:
+                    logger.info(f"AIMessage has tool_calls: {msg.tool_calls}")
             elif isinstance(msg, dict) and msg.get('role') == 'tool':
                 content = msg.get('content')
-                logger.info("Found dict tool message (candidate) for itinerary")
+                logger.info(f"Found dict tool message (candidate) for itinerary: {repr(content[:100])}")
             elif isinstance(msg, dict) and msg.get('role') == 'assistant':
                 content = msg.get('content')
-                logger.info("Found dict assistant message (candidate) for itinerary")
+                logger.info(f"Found dict assistant message (candidate) for itinerary: {repr(content[:100])}")
 
             if isinstance(content, str) and content.strip():
                 trip_itinerary = content
@@ -604,11 +538,14 @@ def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
     cleaned_text = re.sub(r" +", " ", cleaned_text)
 
     additional_sections = []
-    if getattr(user_preferences, 'want_flight_links', False):
+    # Use the updated user preferences from the final state, not the original ones
+    final_user_preferences = result.get("user", user_preferences)
+    if getattr(final_user_preferences, 'want_flight_links', False):
         try:
-            user_location = getattr(user_preferences, 'user_location', None)
-            destination = getattr(user_preferences, 'destination', None)
-            duration = getattr(user_preferences, 'duration', None)
+            user_location = getattr(final_user_preferences, 'user_location', None)
+            destination = getattr(final_user_preferences, 'destination', None)
+            duration = getattr(final_user_preferences, 'duration', None)
+            logger.info(f"Flight search requested - Location: {user_location}, Destination: {destination}, Duration: {duration}")
             if not user_location or not destination:
                 logger.warning("Missing user_location or destination for flight search")
                 additional_sections.append("Error: Please provide both a starting location and destination for flight search.")
@@ -617,7 +554,10 @@ def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
                 logger.info(f"Running flight search: {flight_query}")
                 flight_results = search_query(flight_query)
                 if flight_results:
-                    additional_sections.append("Flight search results:\n" + str(flight_results))
+                    additional_sections.append("## Flight Options:\n" + str(flight_results))
+                else:
+                    logger.warning("No flight results returned")
+                    additional_sections.append("Flight search completed but no results were returned.")
         except Exception as e:
             logger.error(f"Flight search failed: {type(e).__name__}: {e}")
             additional_sections.append(f"Flight search failed: {type(e).__name__}: {e}")
