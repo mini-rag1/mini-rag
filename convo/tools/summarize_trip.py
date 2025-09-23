@@ -37,6 +37,13 @@ def summarize_trip(user: UserScheme, itinerary: str) -> str:
         google_api_key=settings.GOOGLE_API_KEY,
     )
 
+    # llm = ChatGroq(
+    #         model="llama-3.1-8b-instant",
+    #         temperature=0.0,
+    #         max_retries=2,
+    #         # other params...
+    #     )
+
     prompt = f"""
     You are a travel assistant. Based on the following user query, provide a helpful summary 
     of travel information, tips, or recommendations.

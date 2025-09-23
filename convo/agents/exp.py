@@ -50,6 +50,7 @@ from langgraph.prebuilt import ToolNode
 from langchain_core.tools import tool
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -62,15 +63,31 @@ class AgentState(TypedDict):
     context: str
     rag_context: str
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key=settings.GOOGLE_API_KEY)
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",
+                             google_api_key=settings.GOOGLE_API_KEY)
+
+# llm = ChatGroq(
+#     model="llama-3.1-8b-instant",
+#     temperature=0.0,
+#     max_retries=2,
+#     # other params...
+# )
 
 user_extractor = create_extractor(
     llm,
-    tools = [{"type": "function", "function": {"name": "UserScheme", "description": "Extract user preferences from conversation", "parameters": UserScheme.model_json_schema()}}],
+    tools = [
+        {
+            "type": "function", 
+            "function": {
+                "name": "UserScheme",
+                "description": "Extract user preferences from conversation",
+                "parameters": UserScheme.model_json_schema()
+            }
+        }
+    ],
     tool_choice = "UserScheme",
     enable_inserts= True,
 )
-
 
 @tool
 @traceable
@@ -98,39 +115,27 @@ def search_query_tool(query: str) -> str:
 @traceable
 def suggest_trips_tool(query: str, user: Dict[str, Any]) -> str:
     """Suggest travel itineraries based on user preferences and queries."""
-    logger.info(f"suggest_trips_tool entered with query: {query}, user: {user}")
+    logger.info(f"suggest_trips_tool entered with query: {query}")
     try:
-        # Handle case when user is empty or not properly formatted
-        if not user or (isinstance(user, str) and user.strip() in ["{}", "'{}'"]):
-            user = {}
-        
-        # Convert string to dict if needed
+        # Convert to dictionary if string format
         if isinstance(user, str):
             try:
                 user = json.loads(user.replace("'", '"'))
-            except (json.JSONDecodeError, TypeError):
+            except:
                 user = {}
+                
+        # Use empty dict if user is None or empty
+        user = user or {}
         
-        # Ensure the user data has the correct types before creating UserScheme
-        if "duration" in user and not isinstance(user["duration"], str):
-            user["duration"] = str(user["duration"])
-        
-        if "interests" in user and not isinstance(user["interests"], str):
-            if isinstance(user["interests"], list):
-                user["interests"] = ", ".join(user["interests"]) if user["interests"] else ""
-            else:
-                user["interests"] = str(user["interests"])
-        
-        # Create a default UserScheme if user dict is empty
-        if not user:
-            user_scheme = UserScheme()
-        else:
-            # Convert user dict to UserScheme
+        # Create UserScheme instance
+        try:
             user_scheme = UserScheme(**user)
+        except:
+            user_scheme = UserScheme()
             
-        # Log user preferences for debugging
         logger.info(f"User preferences: {user_scheme.model_dump()}")
-
+        
+        # Get trip suggestions
         result = suggest_trips(query, user_scheme)
         
         logger.info("suggest_trips_tool exited")
@@ -161,23 +166,42 @@ def extract_user_info(state: AgentState, config: RunnableConfig, store: BaseStor
     user_id = config["configurable"].get("user_id", "default_user")
     namespace = ("memory", user_id)
     
-    # Extract user profile
-    system_msg = "Extract the user profile from the following conversation"
-    result = user_extractor.invoke({"messages": [SystemMessage(content=system_msg)] + state["messages"]})
-    scheme = result.get("responses", [])
-    user_preferences = scheme[0].model_dump() if scheme else {}
-    
-    # Store user preferences
-    key = "user_preferences"
-    store.put(namespace, key, user_preferences)
-    
-    # Update the state with extracted user preferences
-    if user_preferences:
-        updated_user = UserScheme(**user_preferences)
-        state["user"] = updated_user
-        logger.info(f"Updated user preferences in state: {updated_user.model_dump()}")
+    # Don't override existing user preferences from direct input
+    if state["user"] and any(v for v in state["user"].model_dump().values() if v):
+        logger.info("Using provided user preferences instead of extracting from conversation")
+        user_preferences = state["user"].model_dump()
+        
+        # Store user preferences
+        key = "user_preferences"
+        store.put(namespace, key, user_preferences)
+        
+        logger.info(f"Using existing user preferences: {user_preferences}")
     else:
-        logger.warning("No user preferences extracted, keeping default")
+        # Extract user profile
+        system_msg = "Extract the user profile from the following conversation"
+        result = user_extractor.invoke({"messages": [SystemMessage(content=system_msg)] + state["messages"]})
+        scheme = result.get("responses", [])
+        user_preferences = scheme[0].model_dump() if scheme else {}
+        
+        # Store user preferences
+        key = "user_preferences"
+        store.put(namespace, key, user_preferences)
+        
+        # Update the state with extracted user preferences
+        if user_preferences:
+            # Handle None values for boolean field
+            if user_preferences.get('want_flight_links') is None:
+                user_preferences['want_flight_links'] = False
+            
+            try:
+                updated_user = UserScheme(**user_preferences)
+                state["user"] = updated_user
+                logger.info(f"Updated user preferences in state: {updated_user.model_dump()}")
+            except Exception as e:
+                logger.error(f"Error creating UserScheme: {e}")
+                logger.warning("Keeping default user preferences")
+        else:
+            logger.warning("No user preferences extracted, keeping default")
     
     logger.info("extract_user_info function exited")
     return state
@@ -197,12 +221,6 @@ def call_model(state: AgentState, config: RunnableConfig,
         existing_memory_content = existing_memory.value.get("memory")
     else:
         existing_memory_content = "No existing memory."
-
-    MODEL_SYSTEM_MESSAGE = """You are a helpful assistant with memory that provides information about the user. 
-    If you have memory for this user, use it to personalize your responses.
-    Here is the memory (it may be empty): {memory}"""
-
-    system_msg = MODEL_SYSTEM_MESSAGE.format(memory = existing_memory_content)
 
     messages = state["messages"]
     rag_context = state.get("rag_context", "")
@@ -254,6 +272,14 @@ def call_model(state: AgentState, config: RunnableConfig,
         - Flight schedules or pre-made itineraries or premade trips 
         - FAQs, travel restrictions, or rules contained in the RAG docs
         - Destination highlights already documented
+    - Use `search_query_tool` for current information, live prices, and flight booking links, such as:
+        - Current flight prices and booking links
+        - Real-time travel information
+        - Hotel booking links and current rates
+        - Live transportation schedules
+    - IMPORTANT: If the user wants flight links (want_flight_links is True), you MUST call BOTH tools:
+        1. Call suggest_trips_tool first to create the detailed trip itinerary
+        2. Call search_query_tool to get actual flight information and booking links
     - When calling a tool, return a structured tool call with the tool name and arguments, for example (pseudocode):
         {"name": "search_query_tool", "args": {"query": "Flights from New York to Cairo roundtrip, departure next week, economy"}}
     - For suggest_trips_tool, include the user preferences as a dictionary in the args, for example:
@@ -261,6 +287,12 @@ def call_model(state: AgentState, config: RunnableConfig,
     - After receiving tool results, your assistant response must interpret and format the results for the user (do NOT simply echo raw tool output).
     - Respect the user's preference for flight links (want_flight_links). If set to False, do not include flight information unless explicitly requested.
     """
+
+    # Add user preferences to system message
+    if user.want_flight_links:
+        system_content += f"\n\nCRITICAL INSTRUCTION: The user wants flight links included (want_flight_links=True). You MUST call search_query_tool with a query like \"Flights from {user.user_location or 'origin'} to {user.destination or 'destination'}\" to get current flight information and booking links for their trip. This is a REQUIRED step."
+    
+    system_content += f"\nUser Location: {user.user_location}, Destination: {user.destination}, Duration: {user.duration}, Interests: {user.interests}, Budget: {user.budget}, Travel Style: {user.travel_style}, Flight Links: {user.want_flight_links}"
 
     if rag_context:
         system_content += f"\nRAG Context: {rag_context}\nUse this information to provide accurate, specific answers about travel destinations, requirements, and opportunities."
@@ -270,6 +302,14 @@ def call_model(state: AgentState, config: RunnableConfig,
 
     system_message = SystemMessage(content=system_content)
     formatted_messages = [system_message]
+    
+    logger.info(f"System message length: {len(system_content)}")
+    # Avoid logging unicode characters that might cause encoding issues
+    try:
+        logger.info(f"System message preview: {system_content[:200]}")
+    except UnicodeEncodeError:
+        logger.info("System message preview contains characters that cannot be encoded in console output")
+    logger.info(f"User preferences in system: want_flight_links={user.want_flight_links}, location={user.user_location}, destination={user.destination}")
 
     for msg in messages:
         if isinstance(msg, dict):
@@ -295,6 +335,12 @@ def call_model(state: AgentState, config: RunnableConfig,
             formatted_messages.append(msg)
 
     response = llm_with_tools.invoke(formatted_messages)
+
+    logger.info(f"Model response type: {type(response)}")
+    logger.info(f"Model response content: {repr(response.content if hasattr(response, 'content') else 'No content')}")
+    if hasattr(response, 'tool_calls'):
+        logger.info(f"Model response tool_calls: {response.tool_calls}")
+    
     new_messages = messages + [response]
     
     logger.info("call_model function exited")
@@ -345,8 +391,8 @@ def write_memory(state: AgentState, config: RunnableConfig, store: BaseStore) ->
     Based on the chat history below, please update the user information:"""
 
     # Format the memory in the system prompt
-    system_msg = CREATE_MEMORY_INSTRUCTION.format(memory=existing_memory_content)
-    new_memory = llm.invoke([SystemMessage(content=system_msg)] + state['messages'])
+    system_msg = CREATE_MEMORY_INSTRUCTION.format(memory = existing_memory_content)
+    new_memory = llm.invoke([SystemMessage(content = system_msg)] + state['messages'])
 
     # Overwrite the existing memory in the store 
     key = "user_memory"
@@ -441,7 +487,6 @@ def custom_tool_node(tools):
 
     return _tool_node
 
-
 def get_agent():
     """Create and return the compiled LangGraph agent."""
     logger.info("get_agent function entered")
@@ -476,96 +521,90 @@ def get_agent():
     return workflow.compile(checkpointer=within_thread_memory, store=across_thread_memory)
 
 def run_agent(user_input: str, user_preferences: Optional[UserScheme] = None):
-    """Run the agent with a user input."""
+    """Process user query and return formatted travel itinerary with optional flight links."""
     logger.info("run_agent function entered")
 
     if user_preferences is None:
         user_preferences = UserScheme()
-    
+
     logger.info(f"User preferences in run_agent: {user_preferences.model_dump()}")
     agent = get_agent()
-    
-    # Create a unique user_id and thread_id for this conversation
-    user_id = str(uuid.uuid4())
-    thread_id = str(uuid.uuid4())
-    config = {"configurable": {"user_id": user_id, "thread_id": thread_id}}
 
+    # Initialize agent invocation
+    config = {"configurable": {"user_id": str(uuid.uuid4()), "thread_id": str(uuid.uuid4())}}
     initial_state = {
         "messages": [HumanMessage(content=user_input)],
         "user": user_preferences,
         "context": "",
         "rag_context": ""
     }
-    
-    # Get the complete result first
     result = agent.invoke(initial_state, config=config)
     
-    trip_itinerary = None
+    # Message categorization
+    itinerary_message = None
+    flight_links_message = None
+    final_ai_message = None
+    
+    # Find different message types
     for msg in result.get("messages", []):
-        try:
-            content = None
-            if isinstance(msg, ToolMessage):
-                content = msg.content
-                logger.info(f"Found ToolMessage (candidate) for itinerary: {repr(content[:100])}")
-            elif isinstance(msg, AIMessage):
-                content = msg.content
-                logger.info(f"Found AIMessage (candidate) for itinerary: {repr(content[:100])}")
-                # Also check if it has tool_calls
-                if hasattr(msg, 'tool_calls') and msg.tool_calls:
-                    logger.info(f"AIMessage has tool_calls: {msg.tool_calls}")
-            elif isinstance(msg, dict) and msg.get('role') == 'tool':
-                content = msg.get('content')
-                logger.info(f"Found dict tool message (candidate) for itinerary: {repr(content[:100])}")
-            elif isinstance(msg, dict) and msg.get('role') == 'assistant':
-                content = msg.get('content')
-                logger.info(f"Found dict assistant message (candidate) for itinerary: {repr(content[:100])}")
-
-            if isinstance(content, str) and content.strip():
-                trip_itinerary = content
-                logger.info("Selected non-empty itinerary content")
-                break
-        except Exception as e:
-            logger.error(f"Error processing message: {type(e).__name__}: {str(e)}")
+        if not hasattr(msg, 'content') or not msg.content.strip():
             continue
-
-    if not trip_itinerary:
-        logger.info("run_agent function exited - no itinerary found")
+            
+        content = msg.content.strip()
+        
+        # Check for itinerary (has Day 1, Day 2 format)
+        if "Day 1" in content and "Day 2" in content:
+            itinerary_message = msg
+        # Check for search results (likely flight info)
+        elif isinstance(msg, ToolMessage) and "URL:" in content and "flight" in content.lower():
+            flight_links_message = msg
+        # Keep track of latest AI message
+        elif isinstance(msg, AIMessage):
+            final_ai_message = msg
+    
+    # Build final output
+    output_parts = []
+    
+    # 1. Add itinerary first (from either tool message or AI message)
+    if itinerary_message:
+        itinerary_content = itinerary_message.content
+        
+        # Remove any potential flight sections to avoid duplication
+        if user_preferences.want_flight_links:
+            # Simple pattern to find and remove flight sections
+            itinerary_content = re.sub(r'(?i)(\n\n|^).*?FLIGHT.*?(\n\n|\Z)', '\n\n', itinerary_content)
+            
+        output_parts.append(itinerary_content.strip())
+    
+    # 2. Add summary content from final AI message if it's not duplicating the itinerary
+    if final_ai_message and final_ai_message != itinerary_message:
+        content = final_ai_message.content
+        
+        # Remove any flight sections to avoid duplication
+        if user_preferences.want_flight_links:
+            # Simple pattern to remove flight sections and other flight references
+            content = re.sub(r'(?i)(\n\n|^).*?FLIGHT.*?(\n\n|\Z)', '\n\n', content)
+            content = re.sub(r'(?i)I\'ll.*?flights?.*?(\n|\Z)', '', content)
+        
+        # Only add if not empty and adds value
+        if content.strip() and not content.strip().isspace():
+            output_parts.append(content.strip())
+    
+    # 3. Add flight links at the very end if user requested them
+    if user_preferences.want_flight_links and flight_links_message:
+        output_parts.append("\n\nFLIGHT INFORMATION:")
+        output_parts.append(flight_links_message.content.strip())
+    
+    # If we have no content, return a fallback message
+    if not output_parts:
+        logger.info("No output generated.")
         return "No itinerary found."
 
-    cleaned_text = str(trip_itinerary).strip()
-    cleaned_text = re.sub(r"\n\s*\n", "\n\n", cleaned_text)
-    cleaned_text = re.sub(r"\t+", " ", cleaned_text)
-    cleaned_text = re.sub(r" +", " ", cleaned_text)
-
-    additional_sections = []
-    # Use the updated user preferences from the final state, not the original ones
-    final_user_preferences = result.get("user", user_preferences)
-    if getattr(final_user_preferences, 'want_flight_links', False):
-        try:
-            user_location = getattr(final_user_preferences, 'user_location', None)
-            destination = getattr(final_user_preferences, 'destination', None)
-            duration = getattr(final_user_preferences, 'duration', None)
-            logger.info(f"Flight search requested - Location: {user_location}, Destination: {destination}, Duration: {duration}")
-            if not user_location or not destination:
-                logger.warning("Missing user_location or destination for flight search")
-                additional_sections.append("Error: Please provide both a starting location and destination for flight search.")
-            else:
-                flight_query = f"Flights from {user_location} to {destination} roundtrip duration {duration}"
-                logger.info(f"Running flight search: {flight_query}")
-                flight_results = search_query(flight_query)
-                if flight_results:
-                    additional_sections.append("## Flight Options:\n" + str(flight_results))
-                else:
-                    logger.warning("No flight results returned")
-                    additional_sections.append("Flight search completed but no results were returned.")
-        except Exception as e:
-            logger.error(f"Flight search failed: {type(e).__name__}: {e}")
-            additional_sections.append(f"Flight search failed: {type(e).__name__}: {e}")
-
-    final_output = cleaned_text
-    if additional_sections:
-        final_output += "\n\n" + "\n\n".join(additional_sections)
-
+    # Combine all parts and clean up formatting
+    final_output = "\n\n".join(output_parts)
+    final_output = re.sub(r'\n{3,}', '\n\n', final_output)  # Replace multiple newlines with just two
+    final_output = re.sub(r' {2,}', ' ', final_output)      # Replace multiple spaces with just one
+    
     logger.info("run_agent function exited")
     return final_output
 

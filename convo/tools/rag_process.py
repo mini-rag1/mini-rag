@@ -44,6 +44,13 @@ def rag_process(query: str) -> str:
             google_api_key=settings.GOOGLE_API_KEY,
         )
 
+        # llm = ChatGroq(
+        #     model="llama-3.1-8b-instant",
+        #     temperature=0.0,
+        #     max_retries=2,
+        #     # other params...
+        # )
+
         # Embeddings
         try:
             embeddings = CohereEmbeddings(

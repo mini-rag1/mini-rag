@@ -55,6 +55,13 @@ def suggest_trips(query: str,user : UserScheme) -> str:
         google_api_key=settings.GOOGLE_API_KEY,
     )
 
+    # llm = ChatGroq(
+    #         model="llama-3.1-8b-instant",
+    #         temperature=0.0,
+    #         max_retries=2,
+    #         # other params...
+    #     )
+
     prompt = f"""
         You are a travel assistant. Based on the following user query, suggest a detailed travel itinerary.
 

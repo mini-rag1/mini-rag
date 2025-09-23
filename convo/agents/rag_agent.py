@@ -43,17 +43,17 @@ settings = get_settings()
 class State(MessagesState):
     rag_context: Optional[str]
 
-llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash",
-        google_api_key=settings.GOOGLE_API_KEY,
-    )
+# llm = ChatGoogleGenerativeAI(
+#         model="gemini-2.0-flash",
+#         google_api_key=settings.GOOGLE_API_KEY,
+#     )
 
-# llm = ChatGroq(
-#     model="openai/gpt-oss-120b",
-#     temperature=0.3,
-#     max_retries=2,
-#     groq_api_key=settings.GROQ_API_KEY,
-# )
+llm = ChatGroq(
+    model="openai/gpt-oss-120b",
+    temperature=0.3,
+    max_retries=2,
+    groq_api_key=settings.GROQ_API_KEY,
+)
 
 @tool
 def rag_process_tool(query: str) -> str:
